@@ -33,7 +33,7 @@ public class MovableAnimatedActor extends AnimatedActor
         int w = getWidth();
         int h = getHeight();
 
-        if(Mayflower.isKeyDown(Keyboard.KEY_D) && x + w < 800) // Moving Right
+        if(Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && x + w < 800) // Moving Right
         {
             if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0)
                 setLocation(x + 1, y - 1);

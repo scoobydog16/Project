@@ -10,7 +10,7 @@ public class GameOverWorld extends World
     
     public void act() 
     {
-        if(Mayflower.isKeyDown(Keyboard.KEY_SPACE))
+        if(Mayflower.isKeyDown(Keyboard.KEY_ENTER))
             Mayflower.setWorld(new MyWorld());
     }
 
