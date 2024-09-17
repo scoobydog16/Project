@@ -2,6 +2,7 @@ import mayflower.*;
 
 public class Animation
 {
+    //array of animation frames for objects
     private MayflowerImage frames[];
     private int frameRate;
     private int currentFrame;
