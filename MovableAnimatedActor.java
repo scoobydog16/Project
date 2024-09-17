@@ -80,6 +80,9 @@ public class MovableAnimatedActor extends AnimatedActor
                 newAction = "fallLeft";
         }
         
+        if(isTouching(Ladder.class))
+            newAction = "climbing";
+        
         if(super.isBlocked())
             setLocation(x, y);
         
@@ -102,7 +105,9 @@ public class MovableAnimatedActor extends AnimatedActor
                 
             if(newAction.equals("walkLeft"))
                 setAnimation(walkLeft);
-                
+            
+            if(newAction.equals("climbing"))
+                System.out.print("climbing");
             currentAction = newAction;
         }
     }
