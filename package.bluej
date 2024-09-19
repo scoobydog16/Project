@@ -2,6 +2,7 @@
 dependency1.from=AnimatedActor
 dependency1.to=Animation
 dependency1.type=UsesDependency
+<<<<<<< HEAD
 dependency10.from=MovableAnimatedActor
 dependency10.to=Animation
 dependency10.type=UsesDependency
@@ -29,6 +30,32 @@ dependency17.type=UsesDependency
 dependency18.from=MyWorld
 dependency18.to=Block
 dependency18.type=UsesDependency
+=======
+dependency10.from=Bomb
+dependency10.to=Cat
+dependency10.type=UsesDependency
+dependency11.from=MovableAnimatedActor
+dependency11.to=Animation
+dependency11.type=UsesDependency
+dependency12.from=MovableAnimatedActor
+dependency12.to=Ladder
+dependency12.type=UsesDependency
+dependency13.from=MyWorld
+dependency13.to=Cat
+dependency13.type=UsesDependency
+dependency14.from=MyWorld
+dependency14.to=Dog
+dependency14.type=UsesDependency
+dependency15.from=MyWorld
+dependency15.to=Jack
+dependency15.type=UsesDependency
+dependency16.from=MyWorld
+dependency16.to=Ninja
+dependency16.type=UsesDependency
+dependency17.from=MyWorld
+dependency17.to=Block
+dependency17.type=UsesDependency
+>>>>>>> a86d7826a5085b81220138c31cf6068b1f220718
 dependency2.from=Ninja
 dependency2.to=Animation
 dependency2.type=UsesDependency
@@ -47,27 +74,48 @@ dependency6.type=UsesDependency
 dependency7.from=Lab6Runner
 dependency7.to=MyMayflower
 dependency7.type=UsesDependency
+<<<<<<< HEAD
 dependency8.from=GameOverWorld
 dependency8.to=MyWorld
 dependency8.type=UsesDependency
 dependency9.from=TitleWorld
 dependency9.to=MyWorld
+=======
+dependency8.from=TitleWorld
+dependency8.to=MyWorld
+dependency8.type=UsesDependency
+dependency9.from=MyMayflower
+dependency9.to=TitleWorld
+>>>>>>> a86d7826a5085b81220138c31cf6068b1f220718
 dependency9.type=UsesDependency
-editor.fx.0.height=739
+editor.fx.0.height=741
 editor.fx.0.width=816
+<<<<<<< HEAD
 editor.fx.0.x=579
 editor.fx.0.y=168
+=======
+editor.fx.0.x=761
+editor.fx.0.y=219
+>>>>>>> a86d7826a5085b81220138c31cf6068b1f220718
 objectbench.height=316
 objectbench.width=996
 package.divider.horizontal=0.6
 package.divider.vertical=0.6333711691259932
 package.editor.height=551
 package.editor.width=906
+<<<<<<< HEAD
 package.editor.x=35
 package.editor.y=62
 package.frame.height=981
 package.frame.width=1036
 package.numDependencies=18
+=======
+package.editor.x=852
+package.editor.y=168
+package.frame.height=981
+package.frame.width=1036
+package.numDependencies=17
+>>>>>>> a86d7826a5085b81220138c31cf6068b1f220718
 package.numTargets=18
 package.showExtends=true
 package.showUses=true
