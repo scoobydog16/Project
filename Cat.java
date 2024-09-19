@@ -2,6 +2,7 @@ import mayflower.*;
 
 public class Cat extends MovableAnimatedActor
 {
+    private int lives;
     private Animation walkRight;
     private Animation walkLeft;
     private Animation idleRight;
@@ -29,7 +30,7 @@ public class Cat extends MovableAnimatedActor
         idleRight = new Animation(5000000, frames);
         idleRight.scale(100,87);
         idleRight.setTransparency(50);
-        idleRight.setBounds(18,5,54,80);
+        idleRight.setBounds(18,5,54,79);
         
         for(int i = 0; i < 8; i++)
         {
@@ -84,5 +85,15 @@ public class Cat extends MovableAnimatedActor
     public void act()
     {
         super.act();
+    }
+    
+    public int getLives()
+    {
+        return lives;
+    }
+    
+    public void decreaseLives(int amount)
+    {
+        lives -= amount;
     }
 }

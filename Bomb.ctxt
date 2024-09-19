@@ -4,6 +4,4 @@ comment1.params=
 comment1.target=Bomb()
 comment2.params=
 comment2.target=void\ act()
-comment3.params=amount
-comment3.target=void\ increaseLives(int)
-numComments=4
+numComments=3
