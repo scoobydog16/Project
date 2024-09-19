@@ -23,9 +23,11 @@ public class GravityActor extends Actor
             if(!isBlocked())
             {
                 vertVelocity -= 0.07f;
-            }   
-            setLocation(x, y - vertVelocity);   
+                
+            }
+              
         }
+
     }
     
     public boolean isBlocked() 
@@ -46,8 +48,10 @@ public class GravityActor extends Actor
     
     public boolean aboveBlock()
     {
-        if(isTouching(Block.class))
-            return getOneIntersectingObject(Block.class).getY() >= this.getY() + getHeight();
+        if(isBlocked())
+        {
+           return getOneIntersectingObject(Block.class).getY() >= this.getY() + getHeight();
+        }
         return false;
     }
     
