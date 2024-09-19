@@ -12,10 +12,14 @@ public class MovableAnimatedActor extends Actor
     private Animation fallLeft;
     private String currentAction;
     private String direction;
+    private float jumpForce;
+    boolean isJumping;
 
     public MovableAnimatedActor()
     {
        direction = "right";
+       jumpForce = 13f;
+       isJumping = false;
     }
     
     public void act()
@@ -35,8 +39,12 @@ public class MovableAnimatedActor extends Actor
 
         if(Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && x + w < 800) // Moving Right
         {
-            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0)
-                setLocation(x + 1, y);
+            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+            {
+                setLocation(x + 1, y - 3);
+                vertVelocity = jumpForce;
+                isJumping = true;
+            }
             else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600)
                 setLocation(x + 1, y + 1);
             else
@@ -46,8 +54,12 @@ public class MovableAnimatedActor extends Actor
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_LEFT) && x > 0)
         {
-            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0)
-                setLocation(x - 1, y);
+            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+            {
+                setLocation(x - 1, y - 3);
+                vertVelocity = jumpForce;
+                isJumping = true;
+            }
             else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600)
                 setLocation(x - 1, y + 1);
             else
@@ -61,11 +73,12 @@ public class MovableAnimatedActor extends Actor
             setLocation(x,y + 1);
             newAction = "walkRight";
         }
-        else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0)
-        {
-            setLocation(x,y);
-            newAction = "walkRight";
-        }
+        if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+            {
+                setLocation(x, y - 3);
+                vertVelocity = jumpForce;
+                isJumping = true;
+            }
         else
         {
            newAction = "idle";
