@@ -32,6 +32,8 @@ public class MyWorld extends World
     	addObject(blockB, 528,372);
     	
     	Mayflower.showBounds(true);
+    	
+    	showText("Lives: getLives", 10, 30, Color.PURPLE);
     }
     
     public void act()
