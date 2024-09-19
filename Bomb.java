@@ -21,7 +21,7 @@ public class Bomb extends Actor
             Cat c = (Cat) a;
             World w = getWorld();
            w.removeObject(this);
-           c.increaseLives(1);
+           //c.increaseLives(1);
            
         }   
     }
@@ -31,5 +31,5 @@ public class Bomb extends Actor
         
     }
     
-    public int getLives(
+   
 }
