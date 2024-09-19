@@ -1,6 +1,6 @@
 import mayflower.*;
 
-public class MovableAnimatedActor extends AnimatedActor
+public class MovableAnimatedActor extends Actor
 {
     // instance variables - replace the example below with your own
     
