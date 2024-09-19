@@ -3,11 +3,11 @@ import mayflower.*;
 public class Cat extends MovableAnimatedActor
 {
     
-    private Animation walk;
+    private Animation walkRight;
     private Animation walkLeft;
-    private Animation idle;
+    private Animation idleRight;
     private Animation idleLeft;
-    private Animation fall;
+    private Animation fallRight;
     private Animation fallLeft;
     
     public Cat() 
@@ -18,28 +18,28 @@ public class Cat extends MovableAnimatedActor
         {
             frames[i] = "img/cat/Walk (" + (i + 1) + ").png";
         }
-        walk = new Animation(5000000, frames);
-        walk.scale(100,87);
-        walk.setTransparency(50);
-        walk.setBounds(18,6,54,80);
+        walkRight = new Animation(5000000, frames);
+        walkRight.scale(100,87);
+        walkRight.setTransparency(50);
+        walkRight.setBounds(18,6,54,80);
         
         for(int i = 0; i < 10; i++)
         {
             frames[i] = "img/cat/Idle (" + (i + 1) + ").png";
         }
-        idle = new Animation(5000000, frames);
-        idle.scale(100,87);
-        idle.setTransparency(50);
-        idle.setBounds(18,5,54,80);
+        idleRight = new Animation(5000000, frames);
+        idleRight.scale(100,87);
+        idleRight.setTransparency(50);
+        idleRight.setBounds(18,5,54,80);
         
         for(int i = 0; i < 8; i++)
         {
             frames8[i] = "img/cat/Fall (" + (i + 1) + ").png";
         }
-        fall = new Animation(500000000, frames8);
-        fall.scale(100,87);
-        fall.setTransparency(50);
-        fall.setBounds(18,5,54,80);
+        fallRight = new Animation(500000000, frames8);
+        fallRight.scale(100,87);
+        fallRight.setTransparency(50);
+        fallRight.setBounds(18,5,54,80);
         
         for(int i = 0; i < 8; i++)
         {
@@ -75,11 +75,11 @@ public class Cat extends MovableAnimatedActor
         
         
         
-        setWalkRightAnimation(walk);
+        setWalkRightAnimation(walkRight);
         setWalkLeftAnimation(walkLeft);
-        setIdleAnimation(idle);
+        setIdleAnimation(idleRight);
         setIdleLeftAnimation(idleLeft);
-        setFallAnimation(fall);
+        setFallAnimation(fallRight);
         setFallLeftAnimation(fallLeft);
     }
     public void act()
