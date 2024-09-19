@@ -2,10 +2,13 @@ import mayflower.*;
 
 public class GravityActor extends Actor
 {
-
+    
+    public boolean gravOn;
+    public float vertVelocity;
+    
     public GravityActor()
     {
-
+        vertVelocity = 0f;
     }
      
     public void act() 
@@ -14,7 +17,12 @@ public class GravityActor extends Actor
         int y = getY();
         setLocation(x, y + 1);
         if(isBlocked())
+        {
             setLocation(x, y - 1);
+            vertVelocity = 0f;
+        }    
+        else
+            vertVelocity += 0.07f;
     }
     
     public boolean isBlocked() 

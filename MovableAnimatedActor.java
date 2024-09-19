@@ -36,7 +36,7 @@ public class MovableAnimatedActor extends AnimatedActor
         if(Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && x + w < 800) // Moving Right
         {
             if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0)
-                setLocation(x + 1, y - 1);
+                setLocation(x + 1, y);
             else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600)
                 setLocation(x + 1, y + 1);
             else
@@ -47,7 +47,7 @@ public class MovableAnimatedActor extends AnimatedActor
         else if(Mayflower.isKeyDown(Keyboard.KEY_LEFT) && x > 0)
         {
             if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0)
-                setLocation(x - 1, y - 1);
+                setLocation(x - 1, y);
             else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600)
                 setLocation(x - 1, y + 1);
             else
@@ -63,7 +63,7 @@ public class MovableAnimatedActor extends AnimatedActor
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0)
         {
-            setLocation(x,y - 1);
+            setLocation(x,y);
             newAction = "walkRight";
         }
         else
@@ -84,7 +84,10 @@ public class MovableAnimatedActor extends AnimatedActor
             newAction = "climbing";
         
         if(super.isBlocked())
+        {
             setLocation(x, y);
+            newAction = "idle";
+        }
         
         if(newAction != null && !currentAction.equals(newAction))
         {
