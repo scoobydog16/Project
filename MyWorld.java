@@ -18,13 +18,13 @@ public class MyWorld extends World
     	addObject(cat, 400, 0);
     	
     	dog = new Dog();
-    	addObject(dog, 200, 100);
+    	//addObject(dog, 200, 100);
     	
     	jack = new Jack();
-    	addObject(jack, 300, 100);
+    	//addObject(jack, 300, 100);
     	
     	ninja = new Ninja();
-    	addObject(ninja, 400,100);
+    	//addObject(ninja, 400,100);
     	
     	blockA = new Block();
     	addObject(blockA, 400,500);

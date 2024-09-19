@@ -13,13 +13,11 @@ public class MovableAnimatedActor extends AnimatedActor
     private String currentAction;
     private String direction;
     private float jumpForce;
-    boolean isJumping;
 
     public MovableAnimatedActor()
     {
        direction = "right";
        jumpForce = 13f;
-       isJumping = false;
     }
     
     public void act()
@@ -74,11 +72,11 @@ public class MovableAnimatedActor extends AnimatedActor
             newAction = "walkRight";
         }
         if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
-            {
+        {
                 setLocation(x, y - 3);
                 vertVelocity = jumpForce;
                 isJumping = true;
-            }
+        }
         else
         {
            newAction = "idle";
