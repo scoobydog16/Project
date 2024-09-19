@@ -37,16 +37,19 @@ public class MovableAnimatedActor extends AnimatedActor
 
         if(Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && x + w < 800) // Moving Right
         {
+            
             if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
             {
+                
                 setLocation(x + 1, y - 3);
                 vertVelocity = jumpForce;
                 isJumping = true;
             }
-            else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600)
-                setLocation(x + 1, y + 1);
             else
+            {
+                System.out.println("moving right");
                 setLocation(x + 1, y);
+            }
             newAction = "walkRight";
             direction = "right";
         }
@@ -58,8 +61,6 @@ public class MovableAnimatedActor extends AnimatedActor
                 vertVelocity = jumpForce;
                 isJumping = true;
             }
-            else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600)
-                setLocation(x - 1, y + 1);
             else
                 setLocation(x - 1, y);
             setLocation(x - 1, y + 1);
