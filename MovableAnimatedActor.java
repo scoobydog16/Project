@@ -6,9 +6,9 @@ public class MovableAnimatedActor extends AnimatedActor
     
     private Animation walkRight;
     private Animation walkLeft;
-    private Animation idle;
+    private Animation idleRight;
     private Animation idleLeft;
-    private Animation fall;
+    private Animation fallRight;
     private Animation fallLeft;
     private String currentAction;
     private String direction;
@@ -26,8 +26,8 @@ public class MovableAnimatedActor extends AnimatedActor
          String newAction = null;
         if(currentAction == null)
         {
-            setAnimation(idle);
-            currentAction = "idle";
+            setAnimation(idleRight);
+            currentAction = "idleRight";
         }
         
         int x = getX();
@@ -37,19 +37,16 @@ public class MovableAnimatedActor extends AnimatedActor
 
         if(Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && x + w < 800) // Moving Right
         {
-            
             if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
             {
-                
                 setLocation(x + 1, y - 3);
                 vertVelocity = jumpForce;
                 isJumping = true;
             }
+            else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600)
+                setLocation(x + 1, y + 1);
             else
-            {
-                System.out.println("moving right");
                 setLocation(x + 1, y);
-            }
             newAction = "walkRight";
             direction = "right";
         }
@@ -61,6 +58,8 @@ public class MovableAnimatedActor extends AnimatedActor
                 vertVelocity = jumpForce;
                 isJumping = true;
             }
+            else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600)
+                setLocation(x - 1, y + 1);
             else
                 setLocation(x - 1, y);
             setLocation(x - 1, y + 1);
@@ -80,14 +79,14 @@ public class MovableAnimatedActor extends AnimatedActor
         }
         else
         {
-           newAction = "idle";
+           newAction = "idleRight";
            if(direction != null && direction.equals("left"))
                 newAction = "idleLeft";
         }
         
         if(isFalling())
         {
-           newAction = "fall";
+           newAction = "fallRight";
            if(direction != null && direction.equals("left"))
                 newAction = "fallLeft";
         }
@@ -98,19 +97,19 @@ public class MovableAnimatedActor extends AnimatedActor
         if(super.isBlocked())
         {
             setLocation(x, y);
-            newAction = "idle";
+            newAction = "idleRight";
         }
         
         if(newAction != null && !currentAction.equals(newAction))
         {
-            if(newAction.equals("idle"))
-                setAnimation(idle);
+            if(newAction.equals("idleRight"))
+                setAnimation(idleRight);
             
             if(newAction.equals("idleLeft"))
                 setAnimation(idleLeft);
             
-            if(newAction.equals("fall"))
-                setAnimation(fall);
+            if(newAction.equals("fallRight"))
+                setAnimation(fallRight);
             
             if(newAction.equals("fallLeft"))
                 setAnimation(fallLeft);
@@ -142,7 +141,7 @@ public class MovableAnimatedActor extends AnimatedActor
     
     public void setIdleAnimation(Animation ani)
     {
-        idle = ani;
+        idleRight = ani;
     }
     
     public void setIdleLeftAnimation(Animation ani)
@@ -152,7 +151,7 @@ public class MovableAnimatedActor extends AnimatedActor
     
     public void setFallAnimation(Animation ani)
     {
-        fall = ani;
+        fallRight = ani;
     }
     
     public void setFallLeftAnimation(Animation ani)
