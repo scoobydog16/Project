@@ -17,7 +17,7 @@ public class MovableAnimatedActor extends AnimatedActor
     public MovableAnimatedActor()
     {
        direction = "right";
-       jumpForce = 9f;
+       jumpForce = 90f;
     }
     
     public void act()
@@ -34,17 +34,21 @@ public class MovableAnimatedActor extends AnimatedActor
         int y = getY();
         int w = getWidth();
         int h = getHeight();
+        float horzChange = 0;
+        float vertChange = 0;
 
         if(Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && x + w < 800) // Moving Right
         {
             if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
             {
-                setLocation(x + 1, y - 3);
+                horzChange += 1;
+                vertChange -= 3;
                 vertVelocity = jumpForce;
                 isJumping = true;
+                System.out.println("UP");
             }
             else
-                setLocation(x + 1, y);
+                horzChange += 1;
             newAction = "walkRight";
             direction = "right";
         }
@@ -52,27 +56,29 @@ public class MovableAnimatedActor extends AnimatedActor
         {
             if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
             {
-                setLocation(x - 1, y - 3);
+                horzChange -= 1;
+                vertChange -= 3;
                 vertVelocity = jumpForce;
                 isJumping = true;
+                System.out.println("UP");
             }
             else
-                setLocation(x - 1, y);
-            setLocation(x - 1, y + 1);
+                horzChange -= 1;
             newAction = "walkLeft";
             direction = "left";
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600) 
         {
-            setLocation(x,y + 1);
+            vertChange += 1;
             newAction = "walkRight";
         }
-        if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+        else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
         {
             System.out.println("jumping");
-                setLocation(x, y - 3);
-                vertVelocity = jumpForce;
-                isJumping = true;
+            vertChange -= 3;
+            vertVelocity = jumpForce;
+            isJumping = true;
+            System.out.println("UP");
         }
         else
         {
@@ -93,8 +99,7 @@ public class MovableAnimatedActor extends AnimatedActor
         
         if(super.isBlocked())
         {
-            setLocation(x, y);
-            newAction = "idleRight";
+            //newAction = "idleRight";
         }
         
         if(newAction != null && !currentAction.equals(newAction))
@@ -121,6 +126,10 @@ public class MovableAnimatedActor extends AnimatedActor
                 System.out.print("climbing");
             currentAction = newAction;
         }
+        
+        System.out.println(vertVelocity);
+        System.out.println(isJumping);
+        setLocation(x + horzChange, y + vertChange + vertVelocity);
     }
     
     public void setAnimation(Animation a)
