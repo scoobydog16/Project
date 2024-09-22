@@ -130,8 +130,6 @@ public class MovableAnimatedActor extends AnimatedActor
             currentAction = newAction;
         }
         
-        System.out.println(vertVelocity);
-        System.out.println(onBlock);
         setLocation(x + horzChange, y + vertChange + vertVelocity);
     }
     
