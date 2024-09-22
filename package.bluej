@@ -17,12 +17,18 @@ dependency13.type=UsesDependency
 dependency14.from=MyWorld
 dependency14.to=Block
 dependency14.type=UsesDependency
-dependency15.from=MovableAnimatedActor
-dependency15.to=Animation
+dependency15.from=GravityActor
+dependency15.to=Block
 dependency15.type=UsesDependency
 dependency16.from=MovableAnimatedActor
-dependency16.to=Ladder
+dependency16.to=Animation
 dependency16.type=UsesDependency
+<<<<<<< HEAD
+=======
+dependency17.from=MovableAnimatedActor
+dependency17.to=Ladder
+dependency17.type=UsesDependency
+>>>>>>> 9fcd9ae9bd00b04dd2b668802a39bc29154e0172
 dependency2.from=Ninja
 dependency2.to=Animation
 dependency2.type=UsesDependency
@@ -51,6 +57,7 @@ editor.fx.0.height=632
 editor.fx.0.width=816
 editor.fx.0.x=224
 editor.fx.0.y=128
+<<<<<<< HEAD
 objectbench.height=278
 objectbench.width=1511
 package.divider.horizontal=0.6
@@ -62,6 +69,19 @@ package.editor.y=0
 package.frame.height=830
 package.frame.width=1550
 package.numDependencies=16
+=======
+objectbench.height=316
+objectbench.width=996
+package.divider.horizontal=0.6
+package.divider.vertical=0.6331669691470054
+package.editor.height=552
+package.editor.width=909
+package.editor.x=14
+package.editor.y=57
+package.frame.height=981
+package.frame.width=1036
+package.numDependencies=17
+>>>>>>> 9fcd9ae9bd00b04dd2b668802a39bc29154e0172
 package.numTargets=19
 package.showExtends=true
 package.showUses=true
