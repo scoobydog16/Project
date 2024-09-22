@@ -23,18 +23,9 @@ dependency15.type=UsesDependency
 dependency16.from=MovableAnimatedActor
 dependency16.to=Animation
 dependency16.type=UsesDependency
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 dependency17.from=MovableAnimatedActor
 dependency17.to=Ladder
 dependency17.type=UsesDependency
->>>>>>> 9fcd9ae9bd00b04dd2b668802a39bc29154e0172
-=======
-dependency17.from=MovableAnimatedActor
-dependency17.to=Ladder
-dependency17.type=UsesDependency
->>>>>>> 7f04912eaaa0f8ce00a65af4c05491c17bf2b2f8
 dependency2.from=Ninja
 dependency2.to=Animation
 dependency2.type=UsesDependency
@@ -63,22 +54,6 @@ editor.fx.0.height=632
 editor.fx.0.width=816
 editor.fx.0.x=224
 editor.fx.0.y=128
-<<<<<<< HEAD
-<<<<<<< HEAD
-objectbench.height=278
-objectbench.width=1511
-package.divider.horizontal=0.6
-package.divider.vertical=0.6081599123767798
-package.editor.height=438
-package.editor.width=1410
-package.editor.x=0
-package.editor.y=0
-package.frame.height=830
-package.frame.width=1550
-package.numDependencies=16
-=======
-=======
->>>>>>> 7f04912eaaa0f8ce00a65af4c05491c17bf2b2f8
 objectbench.height=316
 objectbench.width=996
 package.divider.horizontal=0.6
@@ -86,18 +61,10 @@ package.divider.vertical=0.6331669691470054
 package.editor.height=552
 package.editor.width=909
 package.editor.x=14
-<<<<<<< HEAD
-package.editor.y=57
-package.frame.height=981
-package.frame.width=1036
-package.numDependencies=17
->>>>>>> 9fcd9ae9bd00b04dd2b668802a39bc29154e0172
-=======
 package.editor.y=56
 package.frame.height=981
 package.frame.width=1036
 package.numDependencies=17
->>>>>>> 7f04912eaaa0f8ce00a65af4c05491c17bf2b2f8
 package.numTargets=19
 package.showExtends=true
 package.showUses=true
@@ -161,8 +128,8 @@ target16.name=NextLevel
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=90
-target16.x=380
-target16.y=80
+target16.x=440
+target16.y=10
 target17.height=50
 target17.name=Bomb
 target17.showInterface=false

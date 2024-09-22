@@ -27,7 +27,7 @@ public class MovableAnimatedActor extends AnimatedActor
         if(currentAction == null)
         {
             setAnimation(idleRight);
-            currentAction = "idleRight";
+            currentAction = "idle";
         }
         
         int x = getX();
@@ -86,23 +86,16 @@ public class MovableAnimatedActor extends AnimatedActor
             onBlock = false;
             newAction = "fall";
         }
-        else
+        else if (isBlocked())
         {
            newAction = "idle";
         }
         
-        if(isFalling() || isJumping)
-        {
-           newAction = "fall";
-        }
-        
         if(isTouching(Ladder.class))
             newAction = "climbing";
-        
-        if(super.isBlocked())
-        {
-            //newAction = "idle";
-        }
+            
+        if(isJumping)
+            newAction = "fall";
         
         if(newAction != null && !currentAction.equals(newAction))
         {
@@ -131,6 +124,12 @@ public class MovableAnimatedActor extends AnimatedActor
             currentAction = newAction;
         }
         
+        setLocation(x + horzChange, y);
+        if(isTouching(Block.class))
+            horzChange = 0;
+        setLocation(x,y);
+        
+        System.out.println(currentAction);
         setLocation(x + horzChange, y + vertChange + vertVelocity);
     }
     
@@ -166,4 +165,6 @@ public class MovableAnimatedActor extends AnimatedActor
     {
         fallLeft = ani;
     }
+    
+    
 }
