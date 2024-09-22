@@ -17,13 +17,17 @@ public class MovableAnimatedActor extends AnimatedActor
     public MovableAnimatedActor()
     {
        direction = "right";
-       jumpForce = -4f;
+       jumpForce = -6f;
     }
     
     public void act()
     {
-         super.act();
-         String newAction = null;
+        super.act();
+        String newAction = null;
+        String newDir = direction;
+        // ^^^ if player is doing same action, walking/jumping, but just changes direction the player wouldn't change
+        // animation because if statement at the end only checks if action is different, so now it also can
+        // check if direction changed
         if(currentAction == null)
         {
             setAnimation(idleRight);
@@ -53,7 +57,7 @@ public class MovableAnimatedActor extends AnimatedActor
                 horzChange += 1;
                 newAction = "walk";
             }   
-            direction = "right";
+            newDir = "right";
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_LEFT) && x > 0)
         {
@@ -71,7 +75,7 @@ public class MovableAnimatedActor extends AnimatedActor
                 horzChange -= 1;
                 newAction = "walk";
             }  
-            direction = "left";
+            newDir = "left";
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600) 
         {
@@ -97,9 +101,10 @@ public class MovableAnimatedActor extends AnimatedActor
         if(isJumping)
             newAction = "fall";
         
-        if(newAction != null && !currentAction.equals(newAction))
-        {
-            if(direction.equals("left"))
+        if(newAction != null && !currentAction.equals(newAction) || !newDir.equals(direction))
+        {   // divides the setting animation into the direction of left or right
+            // each one should have the same checks of each animation, idle, fall, walk, ect...
+            if(newDir.equals("left"))
             {
                 if(newAction.equals("idle"))
                     setAnimation(idleLeft);
@@ -110,7 +115,7 @@ public class MovableAnimatedActor extends AnimatedActor
                 else if(newAction.equals("climbing"))
                     System.out.print("climbing");
             }
-            else if(direction.equals("right"))
+            else if(newDir.equals("right"))
             {
                 if(newAction.equals("idle"))
                     setAnimation(idleRight);
@@ -122,14 +127,21 @@ public class MovableAnimatedActor extends AnimatedActor
                     System.out.print("climbing");
             }
             currentAction = newAction;
+            direction = newDir;
         }
         
+
         setLocation(x + horzChange, y);
         if(isTouching(Block.class))
             horzChange = 0;
         setLocation(x,y);
+        // ^^^ if moving left/right causes the player to run into a block
+        // the player will no longer move left/right to avoid phasing through it
         
-        System.out.println(currentAction);
+        // (current position + left/right movement, current position + up/down movement and changing velocity
+        // up/down movement: instant changes so that way the player isn't touching something while jumping,
+        // mostly to avoid errors
+        // changing velocity is the simulation of gravity/the jump force
         setLocation(x + horzChange, y + vertChange + vertVelocity);
     }
     
