@@ -44,6 +44,8 @@ public class GravityActor extends Actor
                 vertVelocity = 0f;
             }
         }
+        else
+            isJumping = true;
         return ret;
     }
     
@@ -53,6 +55,7 @@ public class GravityActor extends Actor
         setLocation(getX(), getY() + 1);
         ret = isTouching(Block.class);
         setLocation(getX(), getY() - 1);
+        
         return !ret;
     }
 
