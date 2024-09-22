@@ -17,7 +17,7 @@ public class MovableAnimatedActor extends AnimatedActor
     public MovableAnimatedActor()
     {
        direction = "right";
-       jumpForce = 90f;
+       jumpForce = -4f;
     }
     
     public void act()
@@ -39,12 +39,13 @@ public class MovableAnimatedActor extends AnimatedActor
 
         if(Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && x + w < 800) // Moving Right
         {
-            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
             {
                 horzChange += 1;
                 vertChange -= 3;
                 vertVelocity = jumpForce;
                 isJumping = true;
+                onBlock = false;
                 System.out.println("UP");
             }
             else
@@ -54,12 +55,13 @@ public class MovableAnimatedActor extends AnimatedActor
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_LEFT) && x > 0)
         {
-            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
             {
                 horzChange -= 1;
                 vertChange -= 3;
                 vertVelocity = jumpForce;
                 isJumping = true;
+                onBlock = false;
                 System.out.println("UP");
             }
             else
@@ -72,12 +74,13 @@ public class MovableAnimatedActor extends AnimatedActor
             vertChange += 1;
             newAction = "walkRight";
         }
-        else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+        else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
         {
             System.out.println("jumping");
             vertChange -= 3;
             vertVelocity = jumpForce;
             isJumping = true;
+            onBlock = false;
             System.out.println("UP");
         }
         else
@@ -128,7 +131,7 @@ public class MovableAnimatedActor extends AnimatedActor
         }
         
         System.out.println(vertVelocity);
-        System.out.println(isJumping);
+        System.out.println(onBlock);
         setLocation(x + horzChange, y + vertChange + vertVelocity);
     }
     
