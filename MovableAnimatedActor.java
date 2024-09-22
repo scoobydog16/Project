@@ -46,11 +46,13 @@ public class MovableAnimatedActor extends AnimatedActor
                 vertVelocity = jumpForce;
                 isJumping = true;
                 onBlock = false;
-                System.out.println("UP");
+                newAction = "fall";
             }
             else
+            {
                 horzChange += 1;
-            newAction = "walkRight";
+                newAction = "walk";
+            }   
             direction = "right";
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_LEFT) && x > 0)
@@ -62,39 +64,36 @@ public class MovableAnimatedActor extends AnimatedActor
                 vertVelocity = jumpForce;
                 isJumping = true;
                 onBlock = false;
-                System.out.println("UP");
+                newAction = "fall";
             }
             else
+            {
                 horzChange -= 1;
-            newAction = "walkLeft";
+                newAction = "walk";
+            }  
             direction = "left";
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600) 
         {
             vertChange += 1;
-            newAction = "walkRight";
+            newAction = "fall";
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
         {
-            System.out.println("jumping");
             vertChange -= 3;
             vertVelocity = jumpForce;
             isJumping = true;
             onBlock = false;
-            System.out.println("UP");
+            newAction = "fall";
         }
         else
         {
-           newAction = "idleRight";
-           if(direction != null && direction.equals("left"))
-                newAction = "idleLeft";
+           newAction = "idle";
         }
         
-        if(isFalling())
+        if(isFalling() || isJumping)
         {
-           newAction = "fallRight";
-           if(direction != null && direction.equals("left"))
-                newAction = "fallLeft";
+           newAction = "fall";
         }
         
         if(isTouching(Ladder.class))
@@ -102,31 +101,33 @@ public class MovableAnimatedActor extends AnimatedActor
         
         if(super.isBlocked())
         {
-            //newAction = "idleRight";
+            //newAction = "idle";
         }
         
         if(newAction != null && !currentAction.equals(newAction))
         {
-            if(newAction.equals("idleRight"))
-                setAnimation(idleRight);
-            
-            if(newAction.equals("idleLeft"))
-                setAnimation(idleLeft);
-            
-            if(newAction.equals("fallRight"))
-                setAnimation(fallRight);
-            
-            if(newAction.equals("fallLeft"))
-                setAnimation(fallLeft);
-                
-            if(newAction.equals("walkRight"))
-                setAnimation(walkRight);
-                
-            if(newAction.equals("walkLeft"))
-                setAnimation(walkLeft);
-            
-            if(newAction.equals("climbing"))
-                System.out.print("climbing");
+            if(direction.equals("left"))
+            {
+                if(newAction.equals("idle"))
+                    setAnimation(idleLeft);
+                else if(newAction.equals("fall"))
+                    setAnimation(fallLeft);
+                else if(newAction.equals("walk"))
+                    setAnimation(walkLeft);
+                else if(newAction.equals("climbing"))
+                    System.out.print("climbing");
+            }
+            else if(direction.equals("right"))
+            {
+                if(newAction.equals("idle"))
+                    setAnimation(idleRight);
+                if(newAction.equals("fall"))
+                    setAnimation(fallRight);
+                if(newAction.equals("walk"))
+                    setAnimation(walkRight);
+                if(newAction.equals("climbing"))
+                    System.out.print("climbing");
+            }
             currentAction = newAction;
         }
         
