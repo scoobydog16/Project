@@ -9,6 +9,7 @@ public class MyWorld extends World
 	private Ninja ninja;
 	private Block blockA;
 	private Block blockB;
+	private Ladder ladder;
 	
     public MyWorld() 
     {
@@ -25,6 +26,9 @@ public class MyWorld extends World
     	
     	ninja = new Ninja();
     	//addObject(ninja, 400,100);
+    	
+    	ladder = new Ladder();
+    	addObject(ladder, 528,272);
     	
     	blockA = new Block();
     	addObject(blockA, 400,500);
