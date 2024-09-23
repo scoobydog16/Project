@@ -17,7 +17,7 @@ public class MovableAnimatedActor extends AnimatedActor
     public MovableAnimatedActor()
     {
        direction = "right";
-       jumpForce = -6f;
+       jumpForce = -3f;
     }
     
     public void act()
@@ -47,9 +47,13 @@ public class MovableAnimatedActor extends AnimatedActor
             {
                 horzChange += 1;
                 vertChange -= 3;
-                vertVelocity = jumpForce;
-                isJumping = true;
-                onBlock = false;
+                if(!isTouching(Ladder.class))
+                {
+                    vertVelocity = jumpForce;
+                    isJumping = true;
+                    onBlock = false;
+                }
+                
                 newAction = "fall";
             }
             else
@@ -65,9 +69,13 @@ public class MovableAnimatedActor extends AnimatedActor
             {
                 horzChange -= 1;
                 vertChange -= 3;
-                vertVelocity = jumpForce;
-                isJumping = true;
-                onBlock = false;
+                if(!isTouching(Ladder.class))
+                {
+                    vertVelocity = jumpForce;
+                    isJumping = true;
+                    onBlock = false;
+                }
+                
                 newAction = "fall";
             }
             else
@@ -85,9 +93,12 @@ public class MovableAnimatedActor extends AnimatedActor
         else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
         {
             vertChange -= 3;
-            vertVelocity = jumpForce;
-            isJumping = true;
-            onBlock = false;
+            if(!isTouching(Ladder.class))
+            {
+                vertVelocity = jumpForce;
+                isJumping = true;
+                onBlock = false;
+            }
             newAction = "fall";
         }
         else if (isBlocked())
@@ -96,7 +107,29 @@ public class MovableAnimatedActor extends AnimatedActor
         }
         
         if(isTouching(Ladder.class))
-            newAction = "climbing";
+        {
+            if(gravOn)
+                gravOn = false;
+            if(Mayflower.isKeyDown(Keyboard.KEY_UP))
+            {
+                vertChange -= 3;
+                setLocation(x, y + 1);
+                if(getOneIntersectingObject(Ladder.class).getY() >= y + h - 5)
+                {
+                    vertVelocity = jumpForce;
+                    isJumping = true;
+                    onBlock = false;
+                    gravOn = true;
+                }
+                setLocation(x,y);
+            }
+            if(Mayflower.isKeyDown(Keyboard.KEY_DOWN))
+                vertChange += 2;
+                
+            
+        }
+        else if(!gravOn && !isTouching(Ladder.class))
+            gravOn = true;
             
         if(isJumping)
             newAction = "fall";
@@ -137,6 +170,13 @@ public class MovableAnimatedActor extends AnimatedActor
         setLocation(x,y);
         // ^^^ if moving left/right causes the player to run into a block
         // the player will no longer move left/right to avoid phasing through it
+        
+        setLocation(x, y + vertChange);
+        if(isTouching(Block.class))
+            vertChange = 0;
+        setLocation(x,y);
+        // ^^^ if moving up/down causes the player to run into a block
+        // the player will no longer move up/down to avoid phasing through it
         
         // (current position + left/right movement, current position + up/down movement and changing velocity
         // up/down movement: instant changes so that way the player isn't touching something while jumping,
