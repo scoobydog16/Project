@@ -20,7 +20,6 @@ public class Cat extends MovableAnimatedActor
         }
         walkRight = new Animation(1000000, frames);
         walkRight.scale(100,87);
-        walkRight.setTransparency(50);
         walkRight.setBounds(18,6,54,80);
         
         for(int i = 0; i < 10; i++)
@@ -29,7 +28,6 @@ public class Cat extends MovableAnimatedActor
         }
         idleRight = new Animation(1000000, frames);
         idleRight.scale(100,87);
-        idleRight.setTransparency(50);
         idleRight.setBounds(18,5,54,79);
         
         for(int i = 0; i < 8; i++)
@@ -38,7 +36,6 @@ public class Cat extends MovableAnimatedActor
         }
         fallRight = new Animation(50000000, frames8);
         fallRight.scale(100,87);
-        fallRight.setTransparency(50);
         fallRight.setBounds(18,5,54,80);
         
         for(int i = 0; i < 8; i++)
@@ -47,7 +44,6 @@ public class Cat extends MovableAnimatedActor
         }
         fallLeft = new Animation(50000000, frames8);
         fallLeft.scale(100,87);
-        fallLeft.setTransparency(50);
         fallLeft.mirrorHorizontally();
         fallLeft.setBounds(28,5,54,80);
         
@@ -58,7 +54,6 @@ public class Cat extends MovableAnimatedActor
         }
         walkLeft = new Animation(1000000, frames);
         walkLeft.scale(100,87);
-        walkLeft.setTransparency(50);
         walkLeft.mirrorHorizontally();
         walkLeft.setBounds(28,5,54,80);
         
@@ -69,7 +64,6 @@ public class Cat extends MovableAnimatedActor
         }
         idleLeft = new Animation(1000000, frames);
         idleLeft.scale(100,87);
-        idleLeft.setTransparency(50);
         idleLeft.mirrorHorizontally();
         idleLeft.setBounds(28,5,54,80);
         
