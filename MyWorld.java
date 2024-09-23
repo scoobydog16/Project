@@ -33,7 +33,7 @@ public class MyWorld extends World
     	
     	Mayflower.showBounds(true);
     	
-    	showText("Lives: getLives", 10, 30, Color.BLACK);
+    	showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
     }
     
     public void act()

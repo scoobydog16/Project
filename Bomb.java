@@ -17,19 +17,16 @@ public class Bomb extends Actor
     {
         if(isTouching(Cat.class))
         {
-            Object a = getOneIntersectingObject(Cat.class);
-            Cat c = (Cat) a;
+            Cat c =  getOneIntersectingObject(Cat.class);
             World w = getWorld();
            w.removeObject(this);
-           //c.increaseLives(1);
+           c.decreaseLives(1);
+           
            
         }   
     }
     
-    public void increaseLives(int amount)
-    {
-        
-    }
+    
     
    
 }
