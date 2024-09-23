@@ -28,7 +28,7 @@ public class MyWorld extends World
     	//addObject(ninja, 400,100);
     	
     	ladder = new Ladder();
-    	addObject(ladder, 528,272);
+    	addObject(ladder, 458,372);
     	
     	blockA = new Block();
     	addObject(blockA, 400,500);

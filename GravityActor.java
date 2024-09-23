@@ -22,9 +22,11 @@ public class GravityActor extends Actor
         {
             if(!isBlocked())
             {
-                vertVelocity -= -0.07f;
+                vertVelocity -= -0.09f;
             } 
         }
+        else
+            vertVelocity = 0;
     }
     
     public boolean isBlocked() 
