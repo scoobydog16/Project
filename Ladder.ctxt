@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Ladder
+<<<<<<< HEAD
 comment0.text=\r\n<<<<<<<\ HEAD\r\n\ When\ the\ player\ comes\ in\ contact\ with\ this\ object\ they\ can\ ignore\ normal\ gravity\ and\ climb\ vertically\r\n\ (without\ gravity\ affecting\ their\ speed)\r\n\r\n\=\=\=\=\=\=\=\r\n\ \r\n\ Allows\ Cat\ to\ climb\ upwards\ without\ jumping\r\n\ \r\n>>>>>>>\ 3703fbc1dee8168dd1bf4747b836738116fb3e27\r\n
+=======
+comment0.text=\r\n\ When\ the\ player\ comes\ in\ contact\ with\ this\ object\ they\ can\ ignore\ normal\ gravity\ and\ climb\ vertically\r\n\ (without\ gravity\ affecting\ their\ speed)\r\n\r\n\ \r\n\ Allows\ Cat\ to\ climb\ upwards\ without\ jumping\r\n\ \r\n
+>>>>>>> 6b8e12e2976885c810d4e7c1349e42258b415ce9
 comment1.params=
 comment1.target=Ladder()
 comment2.params=
