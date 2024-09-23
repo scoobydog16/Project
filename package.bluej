@@ -3,6 +3,30 @@ dependency1.from=Ninja
 dependency1.to=Animation
 dependency1.type=UsesDependency
 dependency10.from=MyWorld
+<<<<<<< HEAD
+dependency10.to=Cat
+dependency10.type=UsesDependency
+dependency11.from=MyWorld
+dependency11.to=Dog
+dependency11.type=UsesDependency
+dependency12.from=MyWorld
+dependency12.to=Jack
+dependency12.type=UsesDependency
+dependency13.from=MyWorld
+dependency13.to=Ninja
+dependency13.type=UsesDependency
+dependency14.from=MyWorld
+dependency14.to=Block
+dependency14.type=UsesDependency
+dependency15.from=Cat
+dependency15.to=Animation
+dependency15.type=UsesDependency
+dependency16.from=MovableAnimatedActor
+dependency16.to=Animation
+dependency16.type=UsesDependency
+dependency17.from=MovableAnimatedActor
+dependency17.to=Ladder
+=======
 dependency10.to=Jack
 dependency10.type=UsesDependency
 dependency11.from=MyWorld
@@ -25,6 +49,7 @@ dependency16.to=Ladder
 dependency16.type=UsesDependency
 dependency17.from=MovableAnimatedActor
 dependency17.to=Block
+>>>>>>> 68a7f06b5e12561fc7ad17fd6d88e3f59f81086c
 dependency17.type=UsesDependency
 dependency18.from=GravityActor
 dependency18.to=Block
@@ -47,14 +72,38 @@ dependency6.type=UsesDependency
 dependency7.from=Bomb
 dependency7.to=Cat
 dependency7.type=UsesDependency
+<<<<<<< HEAD
+dependency8.from=MyMayflower
+dependency8.to=TitleWorld
+dependency8.type=UsesDependency
+dependency9.from=Bomb
+dependency9.to=Cat
+=======
 dependency8.from=MyWorld
 dependency8.to=Cat
 dependency8.type=UsesDependency
 dependency9.from=MyWorld
 dependency9.to=Dog
+>>>>>>> 68a7f06b5e12561fc7ad17fd6d88e3f59f81086c
 dependency9.type=UsesDependency
 editor.fx.0.height=632
 editor.fx.0.width=816
+<<<<<<< HEAD
+editor.fx.0.x=761
+editor.fx.0.y=219
+objectbench.height=315
+objectbench.width=1896
+package.divider.horizontal=0.6
+package.divider.vertical=0.6603375527426161
+package.editor.height=619
+package.editor.width=1806
+package.editor.x=-182
+package.editor.y=115
+package.frame.height=1048
+package.frame.width=1936
+package.numDependencies=17
+package.numTargets=18
+=======
 editor.fx.0.x=224
 editor.fx.0.y=128
 objectbench.height=316
@@ -69,6 +118,7 @@ package.frame.height=981
 package.frame.width=1036
 package.numDependencies=18
 package.numTargets=19
+>>>>>>> 68a7f06b5e12561fc7ad17fd6d88e3f59f81086c
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
