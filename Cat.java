@@ -2,7 +2,7 @@ import mayflower.*;
 
 public class Cat extends MovableAnimatedActor
 {
-    private int lives;
+    private int lives = 3;
     private Animation walkRight;
     private Animation walkLeft;
     private Animation idleRight;

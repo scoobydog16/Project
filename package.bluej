@@ -2,6 +2,7 @@
 dependency1.from=Ninja
 dependency1.to=Animation
 dependency1.type=UsesDependency
+<<<<<<< HEAD
 dependency10.from=MovableAnimatedActor
 dependency10.to=Ladder
 dependency10.type=UsesDependency
@@ -16,10 +17,27 @@ dependency13.to=Cat
 dependency13.type=UsesDependency
 dependency14.from=MyWorld
 dependency14.to=Dog
+=======
+dependency10.from=MyWorld
+dependency10.to=Block
+dependency10.type=UsesDependency
+dependency11.from=MyWorld
+dependency11.to=Ladder
+dependency11.type=UsesDependency
+dependency12.from=MovableAnimatedActor
+dependency12.to=Animation
+dependency12.type=UsesDependency
+dependency13.from=MovableAnimatedActor
+dependency13.to=Ladder
+dependency13.type=UsesDependency
+dependency14.from=MovableAnimatedActor
+dependency14.to=Block
+>>>>>>> 31f7a66a1d1f7c11fbf786b6878094e8c515ef0b
 dependency14.type=UsesDependency
 dependency15.from=MyWorld
 dependency15.to=Jack
 dependency15.type=UsesDependency
+<<<<<<< HEAD
 dependency16.from=MyWorld
 dependency16.to=Ninja
 dependency16.type=UsesDependency
@@ -32,12 +50,15 @@ dependency18.type=UsesDependency
 dependency19.from=Cat
 dependency19.to=Animation
 dependency19.type=UsesDependency
+=======
+>>>>>>> 31f7a66a1d1f7c11fbf786b6878094e8c515ef0b
 dependency2.from=Jack
 dependency2.to=Animation
 dependency2.type=UsesDependency
 dependency3.from=Dog
 dependency3.to=Animation
 dependency3.type=UsesDependency
+<<<<<<< HEAD
 dependency4.from=Bomb
 dependency4.to=Cat
 dependency4.type=UsesDependency
@@ -55,11 +76,31 @@ dependency8.to=MyWorld
 dependency8.type=UsesDependency
 dependency9.from=MovableAnimatedActor
 dependency9.to=Animation
+=======
+dependency4.from=AnimatedActor
+dependency4.to=Animation
+dependency4.type=UsesDependency
+dependency5.from=Cat
+dependency5.to=Animation
+dependency5.type=UsesDependency
+dependency6.from=MyWorld
+dependency6.to=Cat
+dependency6.type=UsesDependency
+dependency7.from=MyWorld
+dependency7.to=Dog
+dependency7.type=UsesDependency
+dependency8.from=MyWorld
+dependency8.to=Jack
+dependency8.type=UsesDependency
+dependency9.from=MyWorld
+dependency9.to=Ninja
+>>>>>>> 31f7a66a1d1f7c11fbf786b6878094e8c515ef0b
 dependency9.type=UsesDependency
 editor.fx.0.height=632
 editor.fx.0.width=816
 editor.fx.0.x=224
 editor.fx.0.y=128
+<<<<<<< HEAD
 objectbench.height=315
 objectbench.width=1896
 package.divider.horizontal=0.6
@@ -72,6 +113,20 @@ package.frame.height=1048
 package.frame.width=1936
 package.numDependencies=19
 package.numTargets=19
+=======
+objectbench.height=316
+objectbench.width=996
+package.divider.horizontal=0.6
+package.divider.vertical=0.6337868480725624
+package.editor.height=552
+package.editor.width=906
+package.editor.x=14
+package.editor.y=55
+package.frame.height=982
+package.frame.width=1036
+package.numDependencies=15
+package.numTargets=18
+>>>>>>> 31f7a66a1d1f7c11fbf786b6878094e8c515ef0b
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -110,8 +165,8 @@ target12.showInterface=false
 target12.type=ClassTarget
 target12.typeParameters=
 target12.width=80
-target12.x=470
-target12.y=460
+target12.x=140
+target12.y=190
 target13.height=50
 target13.name=MyMayflower
 target13.showInterface=false
@@ -160,14 +215,6 @@ target18.typeParameters=
 target18.width=80
 target18.x=70
 target18.y=10
-target19.height=50
-target19.name=BlockLevelOne
-target19.showInterface=false
-target19.type=ClassTarget
-target19.typeParameters=
-target19.width=120
-target19.x=730
-target19.y=490
 target2.height=70
 target2.name=GameWin
 target2.showInterface=false
