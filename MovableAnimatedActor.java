@@ -17,110 +17,132 @@ public class MovableAnimatedActor extends AnimatedActor
     public MovableAnimatedActor()
     {
        direction = "right";
-       jumpForce = 9f;
+       jumpForce = -6f;
     }
     
     public void act()
     {
-         super.act();
-         String newAction = null;
+        super.act();
+        String newAction = null;
+        String newDir = direction;
+        // ^^^ if player is doing same action, walking/jumping, but just changes direction the player wouldn't change
+        // animation because if statement at the end only checks if action is different, so now it also can
+        // check if direction changed
         if(currentAction == null)
         {
             setAnimation(idleRight);
-            currentAction = "idleRight";
+            currentAction = "idle";
         }
         
         int x = getX();
         int y = getY();
         int w = getWidth();
         int h = getHeight();
+        float horzChange = 0;
+        float vertChange = 0;
 
         if(Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && x + w < 800) // Moving Right
         {
-            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
             {
-                setLocation(x + 1, y - 3);
+                horzChange += 1;
+                vertChange -= 3;
                 vertVelocity = jumpForce;
                 isJumping = true;
+                onBlock = false;
+                newAction = "fall";
             }
             else
-                setLocation(x + 1, y);
-            newAction = "walkRight";
-            direction = "right";
+            {
+                horzChange += 1;
+                newAction = "walk";
+            }   
+            newDir = "right";
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_LEFT) && x > 0)
         {
-            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
             {
-                setLocation(x - 1, y - 3);
+                horzChange -= 1;
+                vertChange -= 3;
                 vertVelocity = jumpForce;
                 isJumping = true;
+                onBlock = false;
+                newAction = "fall";
             }
             else
-                setLocation(x - 1, y);
-            setLocation(x - 1, y + 1);
-            newAction = "walkLeft";
-            direction = "left";
+            {
+                horzChange -= 1;
+                newAction = "walk";
+            }  
+            newDir = "left";
         }
         else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600) 
         {
-            setLocation(x,y + 1);
-            newAction = "walkRight";
+            vertChange += 1;
+            newAction = "fall";
         }
-        if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && aboveBlock() && !isJumping)
+        else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
         {
-            System.out.println("jumping");
-                setLocation(x, y - 3);
-                vertVelocity = jumpForce;
-                isJumping = true;
+            vertChange -= 3;
+            vertVelocity = jumpForce;
+            isJumping = true;
+            onBlock = false;
+            newAction = "fall";
         }
-        else
+        else if (isBlocked())
         {
-           newAction = "idleRight";
-           if(direction != null && direction.equals("left"))
-                newAction = "idleLeft";
-        }
-        
-        if(isFalling())
-        {
-           newAction = "fallRight";
-           if(direction != null && direction.equals("left"))
-                newAction = "fallLeft";
+           newAction = "idle";
         }
         
         if(isTouching(Ladder.class))
             newAction = "climbing";
+            
+        if(isJumping)
+            newAction = "fall";
         
-        if(super.isBlocked())
-        {
-            setLocation(x, y);
-            newAction = "idleRight";
-        }
-        
-        if(newAction != null && !currentAction.equals(newAction))
-        {
-            if(newAction.equals("idleRight"))
-                setAnimation(idleRight);
-            
-            if(newAction.equals("idleLeft"))
-                setAnimation(idleLeft);
-            
-            if(newAction.equals("fallRight"))
-                setAnimation(fallRight);
-            
-            if(newAction.equals("fallLeft"))
-                setAnimation(fallLeft);
-                
-            if(newAction.equals("walkRight"))
-                setAnimation(walkRight);
-                
-            if(newAction.equals("walkLeft"))
-                setAnimation(walkLeft);
-            
-            if(newAction.equals("climbing"))
-                System.out.print("climbing");
+        if(newAction != null && !currentAction.equals(newAction) || !newDir.equals(direction))
+        {   // divides the setting animation into the direction of left or right
+            // each one should have the same checks of each animation, idle, fall, walk, ect...
+            if(newDir.equals("left"))
+            {
+                if(newAction.equals("idle"))
+                    setAnimation(idleLeft);
+                else if(newAction.equals("fall"))
+                    setAnimation(fallLeft);
+                else if(newAction.equals("walk"))
+                    setAnimation(walkLeft);
+                else if(newAction.equals("climbing"))
+                    System.out.print("climbing");
+            }
+            else if(newDir.equals("right"))
+            {
+                if(newAction.equals("idle"))
+                    setAnimation(idleRight);
+                if(newAction.equals("fall"))
+                    setAnimation(fallRight);
+                if(newAction.equals("walk"))
+                    setAnimation(walkRight);
+                if(newAction.equals("climbing"))
+                    System.out.print("climbing");
+            }
             currentAction = newAction;
+            direction = newDir;
         }
+        
+
+        setLocation(x + horzChange, y);
+        if(isTouching(Block.class))
+            horzChange = 0;
+        setLocation(x,y);
+        // ^^^ if moving left/right causes the player to run into a block
+        // the player will no longer move left/right to avoid phasing through it
+        
+        // (current position + left/right movement, current position + up/down movement and changing velocity
+        // up/down movement: instant changes so that way the player isn't touching something while jumping,
+        // mostly to avoid errors
+        // changing velocity is the simulation of gravity/the jump force
+        setLocation(x + horzChange, y + vertChange + vertVelocity);
     }
     
     public void setAnimation(Animation a)
@@ -155,4 +177,6 @@ public class MovableAnimatedActor extends AnimatedActor
     {
         fallLeft = ani;
     }
+    
+    
 }

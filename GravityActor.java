@@ -6,28 +6,25 @@ public class GravityActor extends Actor
     public boolean gravOn;
     public float vertVelocity;
     public boolean isJumping;
+    public boolean onBlock;
     
     public GravityActor()
     {
         vertVelocity = 0f;
         gravOn = true;
         isJumping = false;
+        onBlock = false;
     }
      
     public void act() 
     {
-        int x = getX();
-        int y = getY();
         if(gravOn)
         {
             if(!isBlocked())
             {
-                vertVelocity -= 0.07f;
-                
-            }
-              
+                vertVelocity -= -0.07f;
+            } 
         }
-
     }
     
     public boolean isBlocked() 
@@ -39,20 +36,17 @@ public class GravityActor extends Actor
         if(ret)
         {
             Block a = getOneIntersectingObject(Block.class);
-            isJumping = false;
-            setLocation(x, a.getY());
-            vertVelocity = 0f;
+            if(a.getY() > y && a.getX() <= x + getWidth() && a.getX() + a.getWidth() >= x)
+            {
+                isJumping = false;
+                onBlock = true;
+                setLocation(x, a.getY() - getHeight());
+                vertVelocity = 0f;
+            }
         }
+        else
+            isJumping = true;
         return ret;
-    }
-    
-    public boolean aboveBlock()
-    {
-        if(isBlocked())
-        {
-           return getOneIntersectingObject(Block.class).getY() >= this.getY() + getHeight();
-        }
-        return false;
     }
     
     public boolean isFalling() 
@@ -61,6 +55,7 @@ public class GravityActor extends Actor
         setLocation(getX(), getY() + 1);
         ret = isTouching(Block.class);
         setLocation(getX(), getY() - 1);
+        
         return !ret;
     }
 
