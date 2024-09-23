@@ -1,9 +1,8 @@
 import mayflower.*;
 /**
- * Write a description of class Ladder here.
+ * When the player comes in contact with this object they can ignore normal gravity and climb vertically
+ * (without gravity affecting their speed)
  *
- * @author (your name)
- * @version (a version number or a date)
  */
 public class Ladder extends Actor
 {
