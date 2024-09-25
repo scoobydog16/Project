@@ -1,8 +1,11 @@
 import mayflower.*;
-
-
-
-public class MyWorld extends World 
+/**
+ * Write a description of class NolanTestWorld here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class YashTestWorld extends World
 {
     private Cat cat;
     private Dog dog;
@@ -16,12 +19,13 @@ public class MyWorld extends World
     
     
     
-    public MyWorld() 
+    
+    public YashTestWorld() 
     {
         setBackground("img/BG/BG.png");
         
         bomb = new Bomb();
-        addObject(bomb, 399, 300);
+        addObject(bomb, 399, 200);
         
         yarn = new Yarn();
         addObject(yarn, 200, 399);
@@ -30,7 +34,7 @@ public class MyWorld extends World
         addObject(cat, 400, 0);
         
         dog = new Dog();
-        //addObject(dog, 200, 100);
+        addObject(dog, 200, 100);
         
         jack = new Jack();
         //addObject(jack, 300, 100);
@@ -42,10 +46,14 @@ public class MyWorld extends World
         addObject(blockA, 400,500);
         blockB = new Block();
         addObject(blockB, 528,372);
+        Block b = new Block();
+        addObject(b, 200,500);
+        
         
         Mayflower.showBounds(true);
         
         showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
+        //showText("Score: " + cat.getScore(), 40, 30, Color.BLACK);
 
     }
     
@@ -53,6 +61,11 @@ public class MyWorld extends World
     {
     }
     
-    
+    public void addRandomObject(Actor item)
+    {
+        int x = 1;//random
+        int y = 2; //random
+        addObject(item, x , y);
+    }
     
 }
