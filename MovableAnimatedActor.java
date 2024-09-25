@@ -13,11 +13,32 @@ public class MovableAnimatedActor extends AnimatedActor
     private String currentAction;
     private String direction;
     private float jumpForce;
+    private float runSpeed;
+    private int upKey;
+    private int downKey;
+    private int leftKey;
+    private int rightKey;
 
     public MovableAnimatedActor()
     {
        direction = "right";
        jumpForce = -3f;
+       runSpeed = 4;
+       upKey = Keyboard.KEY_UP;
+       downKey = Keyboard.KEY_DOWN;
+       leftKey = Keyboard.KEY_LEFT;
+       rightKey = Keyboard.KEY_RIGHT;
+    }
+    
+    public MovableAnimatedActor(int runSpeed, int jumpForce, int up, int down, int left, int right)
+    {
+       direction = "right";
+       this.jumpForce = -jumpForce;
+       this.runSpeed = runSpeed;
+       upKey = up;
+       downKey = down;
+       leftKey = left;
+       rightKey = right;
     }
     
     public void act()
@@ -41,11 +62,11 @@ public class MovableAnimatedActor extends AnimatedActor
         float horzChange = 0;
         float vertChange = 0;
 
-        if(Mayflower.isKeyDown(Keyboard.KEY_RIGHT) && x + w < 800) // Moving Right
+        if(Mayflower.isKeyDown(rightKey) && x + w < 800) // Moving Right
         {
-            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
+            if(Mayflower.isKeyDown(upKey) && y > 0 && onBlock && !isJumping)
             {
-                horzChange += 1;
+                horzChange += runSpeed;
                 vertChange -= 3;
                 if(!isTouching(Ladder.class))
                 {
@@ -58,16 +79,16 @@ public class MovableAnimatedActor extends AnimatedActor
             }
             else
             {
-                horzChange += 1;
+                horzChange += runSpeed;
                 newAction = "walk";
             }   
             newDir = "right";
         }
-        else if(Mayflower.isKeyDown(Keyboard.KEY_LEFT) && x > 0)
+        else if(Mayflower.isKeyDown(leftKey) && x > 0)
         {
-            if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
+            if(Mayflower.isKeyDown(upKey) && y > 0 && onBlock && !isJumping)
             {
-                horzChange -= 1;
+                horzChange -= runSpeed;
                 vertChange -= 3;
                 if(!isTouching(Ladder.class))
                 {
@@ -80,17 +101,17 @@ public class MovableAnimatedActor extends AnimatedActor
             }
             else
             {
-                horzChange -= 1;
+                horzChange -= runSpeed;
                 newAction = "walk";
             }  
             newDir = "left";
         }
-        else if(Mayflower.isKeyDown(Keyboard.KEY_DOWN) && y + h < 600) 
+        else if(Mayflower.isKeyDown(downKey) && y + h < 600) 
         {
             vertChange += 1;
             newAction = "fall";
         }
-        else if(Mayflower.isKeyDown(Keyboard.KEY_UP) && y > 0 && onBlock && !isJumping)
+        else if(Mayflower.isKeyDown(upKey) && y > 0 && onBlock && !isJumping)
         {
             vertChange -= 3;
             if(!isTouching(Ladder.class))
@@ -110,7 +131,7 @@ public class MovableAnimatedActor extends AnimatedActor
         {
             if(gravOn)
                 gravOn = false;
-            if(Mayflower.isKeyDown(Keyboard.KEY_UP))
+            if(Mayflower.isKeyDown(upKey))
             {
                 vertChange -= 3;
                 setLocation(x, y + 1);
@@ -123,7 +144,7 @@ public class MovableAnimatedActor extends AnimatedActor
                 }
                 setLocation(x,y);
             }
-            if(Mayflower.isKeyDown(Keyboard.KEY_DOWN))
+            if(Mayflower.isKeyDown(downKey))
                 vertChange += 2;
                 
             
