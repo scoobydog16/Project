@@ -19,8 +19,10 @@ public class MovableAnimatedActor extends AnimatedActor
     private int leftKey;
     private int rightKey;
 
-    public MovableAnimatedActor(float jumpForce)
+    public MovableAnimatedActor(float jumpForce, float gravity)
     {
+       super(gravity); 
+        
        direction = "right";
        this.jumpForce = -jumpForce;
        runSpeed = 4;

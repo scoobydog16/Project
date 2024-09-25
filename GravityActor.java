@@ -7,6 +7,16 @@ public class GravityActor extends Actor
     public float vertVelocity;
     public boolean isJumping;
     public boolean onBlock;
+    public float gravity;
+    
+    public GravityActor(float gravity)
+    {
+        vertVelocity = 0f;
+        gravOn = true;
+        isJumping = false;
+        onBlock = false;
+        this.gravity = gravity;
+    }
     
     public GravityActor()
     {
@@ -14,6 +24,7 @@ public class GravityActor extends Actor
         gravOn = true;
         isJumping = false;
         onBlock = false;
+        this.gravity = -0.09f;
     }
      
     public void act() 
@@ -22,7 +33,7 @@ public class GravityActor extends Actor
         {
             if(!isBlocked())
             {
-                vertVelocity -= -0.09f;
+                vertVelocity -= -gravity;
             } 
         }
         else
