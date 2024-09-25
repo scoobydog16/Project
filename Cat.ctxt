@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Cat
-comment1.params=jumpHeight
-comment1.target=Cat(float)
+comment1.params=jumpHeight\ gravity
+comment1.target=Cat(float,\ float)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
