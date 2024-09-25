@@ -9,6 +9,7 @@ public class Cat extends MovableAnimatedActor
     private Animation idleLeft;
     private Animation fallRight;
     private Animation fallLeft;
+    private int score = 0;
     
     public Cat() 
     {
@@ -79,6 +80,16 @@ public class Cat extends MovableAnimatedActor
     public void act()
     {
         super.act();
+        
+        if(isTouching(Yarn.class))
+        {
+         
+            Object a = getOneIntersectingObject(Cat.class);
+            Cat c = (Cat) a;
+            World w  = getWorld();
+            //w.removeObject(this);
+            
+        }
     }
     
     public int getLives()
@@ -90,4 +101,10 @@ public class Cat extends MovableAnimatedActor
     {
         lives -= amount;
     }
+    
+    public void increaseScore(int score)
+    {
+        score++;
+    }
+   
 }

@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=int\ getLives()
 comment4.params=amount
 comment4.target=void\ decreaseLives(int)
-numComments=5
+comment5.params=score
+comment5.target=void\ increaseScore(int)
+numComments=6

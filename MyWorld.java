@@ -11,7 +11,8 @@ public class MyWorld extends World
     private Block blockA;
     private Block blockB;
     private Bomb bomb;
-    	private Ladder ladder;
+    private Ladder ladder;
+    private Yarn yarn;
     
     
     
@@ -20,8 +21,10 @@ public class MyWorld extends World
         setBackground("img/BG/BG.png");
         
         bomb = new Bomb();
-        addObject(bomb, 399, 200);
+        addObject(bomb, 399, 300);
         
+        yarn = new Yarn();
+        addObject(yarn, 200, 399);
         
         cat = new Cat();
         addObject(cat, 400, 0);
