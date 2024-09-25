@@ -26,11 +26,7 @@ public class SamarthTestWorld extends World
         yarn = new Yarn();
         addObject(yarn, 200, 399);
         
-<<<<<<< HEAD
-        cat = new Cat(7f);
-=======
-        cat = new Cat(20f, 0.1f);
->>>>>>> c8f5ff11abd8bd119364891d5773024d338ce390
+        cat = new Cat(15f, 0.45f);
         addObject(cat, 400, 0);
         
         dog = new Dog();
@@ -44,6 +40,8 @@ public class SamarthTestWorld extends World
         
         blockA = new MovingBlock();
         addObject(blockA, 400,500);
+        blockB = new Block();
+        addObject(blockB, 528,372);
         
         Mayflower.showBounds(true);
         
