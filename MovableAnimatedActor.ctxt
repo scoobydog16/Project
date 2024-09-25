@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=MovableAnimatedActor
-comment1.params=
-comment1.target=MovableAnimatedActor()
+comment1.params=jumpForce
+comment1.target=MovableAnimatedActor(float)
 comment10.params=ani
 comment10.target=void\ setFallLeftAnimation(Animation)
 comment2.params=runSpeed\ jumpForce\ up\ down\ left\ right

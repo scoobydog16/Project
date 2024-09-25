@@ -1,6 +1,6 @@
 import mayflower.*;
 
-public class GameWin extends MovableAnimatedActor
+public class GameWin extends World
 {
     
     public GameWin()
