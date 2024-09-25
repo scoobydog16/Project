@@ -20,8 +20,8 @@ public class TitleWorld extends World
             Mayflower.setWorld(new MyWorld());
         if(Mayflower.isKeyDown(Keyboard.KEY_N))
             Mayflower.setWorld(new NolanTestWorld());
-        //if(Mayflower.isKeyDown(Keyboard.KEY_ENTER))
-           // Mayflower.setWorld(new MyWorld());
+        if(Mayflower.isKeyDown(Keyboard.KEY_S))
+           Mayflower.setWorld(new SamarthTestWorld());
         //if(Mayflower.isKeyDown(Keyboard.KEY_ENTER))
             //Mayflower.setWorld(new MyWorld());
     }
