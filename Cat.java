@@ -11,8 +11,9 @@ public class Cat extends MovableAnimatedActor
     private Animation fallLeft;
     private int score = 0;
     
-    public Cat() 
+    public Cat(float jumpHeight) 
     {
+        super(jumpHeight);
         String frames[] = new String[10];
         String frames8[] = new String[8];
         for(int i = 0; i < 10; i++)
