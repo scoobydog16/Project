@@ -10,6 +10,7 @@ public class Bomb extends Actor
     public Bomb()
     {
         
+        
     }
 
     

@@ -2,6 +2,22 @@
 dependency1.from=Ninja
 dependency1.to=Animation
 dependency1.type=UsesDependency
+<<<<<<< HEAD
+dependency10.from=MovableAnimatedActor
+dependency10.to=Ladder
+dependency10.type=UsesDependency
+dependency11.from=MovableAnimatedActor
+dependency11.to=Block
+dependency11.type=UsesDependency
+dependency12.from=MyMayflower
+dependency12.to=TitleWorld
+dependency12.type=UsesDependency
+dependency13.from=MyWorld
+dependency13.to=Cat
+dependency13.type=UsesDependency
+dependency14.from=MyWorld
+dependency14.to=Dog
+=======
 dependency10.from=MyWorld
 dependency10.to=Ninja
 dependency10.type=UsesDependency
@@ -15,6 +31,7 @@ dependency13.from=MovableAnimatedActor
 dependency13.to=Animation
 dependency13.type=UsesDependency
 dependency14.from=MovableAnimatedActor
+<<<<<<< HEAD
 dependency14.to=Ladder
 dependency14.type=UsesDependency
 dependency15.from=MovableAnimatedActor
@@ -23,12 +40,54 @@ dependency15.type=UsesDependency
 dependency16.from=Danger
 dependency16.to=Cat
 dependency16.type=UsesDependency
+=======
+dependency14.to=Block
+>>>>>>> 31f7a66a1d1f7c11fbf786b6878094e8c515ef0b
+dependency14.type=UsesDependency
+dependency15.from=MyWorld
+dependency15.to=Jack
+dependency15.type=UsesDependency
+<<<<<<< HEAD
+dependency16.from=MyWorld
+dependency16.to=Ninja
+dependency16.type=UsesDependency
+dependency17.from=MyWorld
+dependency17.to=Block
+dependency17.type=UsesDependency
+dependency18.from=MyWorld
+dependency18.to=Ladder
+dependency18.type=UsesDependency
+dependency19.from=Cat
+dependency19.to=Animation
+dependency19.type=UsesDependency
+=======
+>>>>>>> 31f7a66a1d1f7c11fbf786b6878094e8c515ef0b
+>>>>>>> e7e351408808311e3660b70767927f92a5c4efe9
 dependency2.from=Jack
 dependency2.to=Animation
 dependency2.type=UsesDependency
 dependency3.from=Dog
 dependency3.to=Animation
 dependency3.type=UsesDependency
+<<<<<<< HEAD
+dependency4.from=Bomb
+dependency4.to=Cat
+dependency4.type=UsesDependency
+dependency5.from=AnimatedActor
+dependency5.to=Animation
+dependency5.type=UsesDependency
+dependency6.from=GravityActor
+dependency6.to=Block
+dependency6.type=UsesDependency
+dependency7.from=Lab6Runner
+dependency7.to=MyMayflower
+dependency7.type=UsesDependency
+dependency8.from=TitleWorld
+dependency8.to=MyWorld
+dependency8.type=UsesDependency
+dependency9.from=MovableAnimatedActor
+dependency9.to=Animation
+=======
 dependency4.from=AnimatedActor
 dependency4.to=Animation
 dependency4.type=UsesDependency
@@ -45,12 +104,31 @@ dependency8.from=MyWorld
 dependency8.to=Dog
 dependency8.type=UsesDependency
 dependency9.from=MyWorld
+<<<<<<< HEAD
 dependency9.to=Jack
+=======
+dependency9.to=Ninja
+>>>>>>> 31f7a66a1d1f7c11fbf786b6878094e8c515ef0b
+>>>>>>> e7e351408808311e3660b70767927f92a5c4efe9
 dependency9.type=UsesDependency
 editor.fx.0.height=632
 editor.fx.0.width=816
 editor.fx.0.x=224
 editor.fx.0.y=128
+<<<<<<< HEAD
+objectbench.height=315
+objectbench.width=1896
+package.divider.horizontal=0.6
+package.divider.vertical=0.6603375527426161
+package.editor.height=619
+package.editor.width=1806
+package.editor.x=-8
+package.editor.y=-8
+package.frame.height=1048
+package.frame.width=1936
+package.numDependencies=19
+package.numTargets=19
+=======
 objectbench.height=316
 objectbench.width=996
 package.divider.horizontal=0.6
@@ -61,8 +139,14 @@ package.editor.x=14
 package.editor.y=55
 package.frame.height=982
 package.frame.width=1036
+<<<<<<< HEAD
 package.numDependencies=16
 package.numTargets=20
+=======
+package.numDependencies=15
+package.numTargets=18
+>>>>>>> 31f7a66a1d1f7c11fbf786b6878094e8c515ef0b
+>>>>>>> e7e351408808311e3660b70767927f92a5c4efe9
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
