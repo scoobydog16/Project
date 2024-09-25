@@ -26,7 +26,7 @@ public class SamarthTestWorld extends World
         yarn = new Yarn();
         addObject(yarn, 200, 399);
         
-        cat = new Cat(10f);
+        cat = new Cat(20f, 0.1f);
         addObject(cat, 400, 0);
         
         dog = new Dog();

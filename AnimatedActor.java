@@ -12,6 +12,13 @@ public class AnimatedActor extends GravityActor
 
     }
     
+    public AnimatedActor(float gravity)
+    {
+        super(gravity);
+        // instatiates animationTimer with a time of 1000
+        animationTimer = new Timer(1000);
+    }
+    
     // allows Actors with Animations to use AnimatedActor methods
     public void setAnimation(Animation a) 
     {
