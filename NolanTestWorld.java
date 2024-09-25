@@ -25,8 +25,7 @@ public class NolanTestWorld extends World
         bomb = new Bomb();
         addObject(bomb, 399, 200);
         
-        float f = 20f;
-        cat = new Cat();
+        cat = new Cat(20f);
         addObject(cat, 400, 0);
         
         dog = new Dog();
