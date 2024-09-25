@@ -1,11 +1,8 @@
 import mayflower.*;
-/**
- * Write a description of class NolanTestWorld here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class NolanTestWorld extends World
+
+
+
+public class SamarthTestWorld extends World 
 {
     private Cat cat;
     private Dog dog;
@@ -14,23 +11,26 @@ public class NolanTestWorld extends World
     private Block blockA;
     private Block blockB;
     private Bomb bomb;
-    	private Ladder ladder;
+    private Ladder ladder;
+    private Yarn yarn;
     
     
     
-    public NolanTestWorld() 
+    public SamarthTestWorld() 
     {
         setBackground("img/BG/BG.png");
         
         bomb = new Bomb();
-        addObject(bomb, 399, 200);
+        addObject(bomb, 399, 300);
         
-        float f = 20f;
+        yarn = new Yarn();
+        addObject(yarn, 200, 399);
+        
         cat = new Cat();
         addObject(cat, 400, 0);
         
         dog = new Dog();
-        addObject(dog, 200, 100);
+        //addObject(dog, 200, 100);
         
         jack = new Jack();
         //addObject(jack, 300, 100);
@@ -42,9 +42,6 @@ public class NolanTestWorld extends World
         addObject(blockA, 400,500);
         blockB = new Block();
         addObject(blockB, 528,372);
-        Block b = new Block();
-        addObject(b, 200,500);
-        
         
         Mayflower.showBounds(true);
         
@@ -55,4 +52,5 @@ public class NolanTestWorld extends World
     public void act()
     {
     }
+    
 }
