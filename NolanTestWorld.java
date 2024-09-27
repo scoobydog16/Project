@@ -28,8 +28,8 @@ public class NolanTestWorld extends World
         dog = new Dog(7f, 0.1f);
         addObject(dog, 200, 100);
         
-        danger = new Danger();
-        addObject(danger, 200, 200);
+        danger = new Danger( 20, 30, 100, 100, "img/NolanStuff/Empty.png");
+        addObject(danger, 500, 200);
         blockA = new Block();
         addObject(blockA, 400,500);
         blockB = new Block();
@@ -40,9 +40,12 @@ public class NolanTestWorld extends World
         
         Mayflower.showBounds(true);
         
-        showText("Cat Lives: " + cat.getLives(), 10, 30, Color.BLACK);
-        showText("Dog Lives: " + cat.getLives(), 10, 60, Color.BLACK);
-
+        showText("Cat ", 10, 30, Color.BLACK);
+        showText("Lives: " + cat.getLives(), 80, 30, Color.BLACK);
+        cat.setTextPosition(80, 30);
+        showText("Dog ", 10, 60, Color.BLACK);
+        showText("Lives: " + cat.getLives(), 80, 60, Color.BLACK);
+        dog.setTextPosition(80, 60);
     }
     
     public void act()
