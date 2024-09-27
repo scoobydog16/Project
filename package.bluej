@@ -86,6 +86,7 @@ dependency34.type=UsesDependency
 dependency35.from=MyWorld
 dependency35.to=Ninja
 dependency35.type=UsesDependency
+<<<<<<< HEAD
 dependency36.from=MyWorld
 dependency36.to=Block
 dependency36.type=UsesDependency
@@ -100,6 +101,25 @@ dependency39.to=Yarn
 dependency39.type=UsesDependency
 dependency4.from=Bomb
 dependency4.to=Cat
+=======
+<<<<<<< HEAD
+dependency36.from=SamarthTestWorld
+dependency36.to=Bomb
+dependency36.type=UsesDependency
+dependency37.from=SamarthTestWorld
+dependency37.to=Ladder
+dependency37.type=UsesDependency
+dependency38.from=SamarthTestWorld
+dependency38.to=Yarn
+dependency38.type=UsesDependency
+dependency39.from=SamarthTestWorld
+dependency39.to=MovingBlock
+dependency39.type=UsesDependency
+=======
+>>>>>>> c8f5ff11abd8bd119364891d5773024d338ce390
+dependency4.from=AnimatedActor
+dependency4.to=Animation
+>>>>>>> 9784b0198005ffaa9bbb678c57145dea533f3eae
 dependency4.type=UsesDependency
 dependency5.from=Yarn
 dependency5.to=Cat
@@ -130,7 +150,15 @@ package.editor.x=819
 package.editor.y=31
 package.frame.height=982
 package.frame.width=1036
+<<<<<<< HEAD
 package.numDependencies=39
+=======
+<<<<<<< HEAD
+package.numDependencies=39
+=======
+package.numDependencies=35
+>>>>>>> c8f5ff11abd8bd119364891d5773024d338ce390
+>>>>>>> 9784b0198005ffaa9bbb678c57145dea533f3eae
 package.numTargets=23
 package.showExtends=true
 package.showUses=true
@@ -322,5 +350,5 @@ target9.showInterface=false
 target9.type=ClassTarget
 target9.typeParameters=
 target9.width=110
-target9.x=10
-target9.y=210
+target9.x=30
+target9.y=480

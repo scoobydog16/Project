@@ -16,13 +16,13 @@ public class TitleWorld extends World
     
     public void act() 
     {
-        if(Mayflower.isKeyDown(Keyboard.KEY_ENTER))
+        if(Mayflower.isKeyDown(Keyboard.KEY_ENTER)) //gameplay
             Mayflower.setWorld(new MyWorld());
         if(Mayflower.isKeyDown(Keyboard.KEY_N))
             Mayflower.setWorld(new NolanTestWorld());
         if(Mayflower.isKeyDown(Keyboard.KEY_S))
            Mayflower.setWorld(new SamarthTestWorld());
-        //if(Mayflower.isKeyDown(Keyboard.KEY_ENTER))
+        //if(Mayflower.isKeyDown(Keyboard.KEY_Y))
             //Mayflower.setWorld(new MyWorld());
     }
 
