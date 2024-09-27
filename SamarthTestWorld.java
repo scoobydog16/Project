@@ -29,7 +29,7 @@ public class SamarthTestWorld extends World
         cat = new Cat(15f, 0.45f);
         addObject(cat, 400, 0);
         
-        dog = new Dog();
+
         //addObject(dog, 200, 100);
         
         jack = new Jack();

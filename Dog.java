@@ -10,9 +10,9 @@ public class Dog extends MovableAnimatedActor
     private Animation fallRight;
     private Animation fallLeft;
     
-    public Dog() 
+    public Dog(float jumpHeight, float gravity) 
     {
-        super(2, 10, Keyboard.KEY_W, Keyboard.KEY_S, Keyboard.KEY_A, Keyboard.KEY_D);
+        super(jumpHeight, gravity, 10f, Keyboard.KEY_W, Keyboard.KEY_S, Keyboard.KEY_A, Keyboard.KEY_D);
         String frames[] = new String[10];
         String frames8[] = new String[8];
         for(int i = 0; i < 10; i++)

@@ -33,7 +33,7 @@ public class YashTestWorld extends World
         cat = new Cat(20f, 0.09f);
         addObject(cat, 400, 0);
         
-        dog = new Dog();
+
         addObject(dog, 200, 100);
         
         jack = new Jack();

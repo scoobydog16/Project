@@ -29,7 +29,6 @@ public class MyWorld extends World
         cat = new Cat(12f, 0.6f);
         addObject(cat, 400, 0);
         
-        dog = new Dog();
         //addObject(dog, 200, 100);
         
         jack = new Jack();
