@@ -13,17 +13,13 @@ public class NolanTestWorld extends World
     private Ninja ninja;
     private Block blockA;
     private Block blockB;
-    private Bomb bomb;
-    	private Ladder ladder;
+    private Ladder ladder;
     
     
     
     public NolanTestWorld() 
     {
         setBackground("img/BG/BG.png");
-        
-        bomb = new Bomb();
-        addObject(bomb, 399, 200);
         
         cat = new Cat(20f, 0.1f);
         addObject(cat, 400, 0);
