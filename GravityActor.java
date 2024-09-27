@@ -1,6 +1,6 @@
 import mayflower.*;
 
-public class GravityActor extends Actor
+public class GravityActor extends AnimatedActor
 {
     
     public boolean gravOn;
@@ -29,6 +29,7 @@ public class GravityActor extends Actor
      
     public void act() 
     {
+        super.act();
         if(gravOn)
         {
             if(!isBlocked())

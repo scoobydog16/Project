@@ -7,6 +7,8 @@ import mayflower.*;
  */
 public class NolanTestWorld extends World
 {
+
+    
     private Cat cat;
     private Dog dog;
 
@@ -17,6 +19,7 @@ public class NolanTestWorld extends World
     private Danger danger;
     private Water water;
     
+    Trigger button;
     
     public NolanTestWorld() 
     {
@@ -39,7 +42,9 @@ public class NolanTestWorld extends World
         
         water = new Water(100, 100, 0,0);
         addObject(water, 300,300);
-        
+
+        button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300});
+        addObject(button, 400,400);
         Mayflower.showBounds(true);
         
         showText("Cat ", 10, 30, Color.BLACK);

@@ -1,5 +1,5 @@
 import mayflower.*;
-public class AnimatedActor extends GravityActor
+public class AnimatedActor extends Actor
 {
     // creates Animation and Timer objects
     private Animation animation;
@@ -12,12 +12,6 @@ public class AnimatedActor extends GravityActor
 
     }
     
-    public AnimatedActor(float gravity)
-    {
-        super(gravity);
-        // instatiates animationTimer with a time of 1000
-        animationTimer = new Timer(1000);
-    }
     
     // allows Actors with Animations to use AnimatedActor methods
     public void setAnimation(Animation a) 
@@ -41,7 +35,5 @@ public class AnimatedActor extends GravityActor
                 setImage(nextFrame);
             }
         }
-        // does actions from GravityActor class
-        super.act();
     }
 }

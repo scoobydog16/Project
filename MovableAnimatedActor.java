@@ -1,6 +1,6 @@
 import mayflower.*;
 
-public class MovableAnimatedActor extends AnimatedActor
+public class MovableAnimatedActor extends GravityActor
 {
     // instance variables - replace the example below with your own
     private int lives = 3;
