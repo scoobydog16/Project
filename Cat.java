@@ -84,7 +84,6 @@ public class Cat extends MovableAnimatedActor
         
         if(isTouching(Yarn.class))
         {
-         
             Object a = getOneIntersectingObject(Cat.class);
             Cat c = (Cat) a;
             World w  = getWorld();
