@@ -10,17 +10,18 @@ public class Danger extends Actor
 
     public Danger()
     {
-
+        setImage("img/NolanStuff/Empty.png");
     }
         
     public void act()
     {
-        if(isTouching(Cat.class))
+        if(isTouching(Cat.class) || isTouching(Dog.class))
         {
-           Cat c =  getOneIntersectingObject(Cat.class);
+           MovableAnimatedActor c =  getOneIntersectingObject(MovableAnimatedActor.class);
            World w = getWorld();
-           w.removeObject(this);
            c.decreaseLives(1);
+           w.removeObject(this);
+           
         }   
     }
 }

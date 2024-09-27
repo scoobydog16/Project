@@ -9,11 +9,12 @@ public class NolanTestWorld extends World
 {
     private Cat cat;
     private Dog dog;
-    private Jack jack;
-    private Ninja ninja;
+
     private Block blockA;
     private Block blockB;
     private Ladder ladder;
+    
+    private Danger danger;
     
     
     
@@ -21,18 +22,14 @@ public class NolanTestWorld extends World
     {
         setBackground("img/BG/BG.png");
         
-        cat = new Cat(20f, 0.1f);
+        cat = new Cat(7f, 0.1f);
         addObject(cat, 400, 0);
         
-        dog = new Dog(20f, 0.1f);
+        dog = new Dog(7f, 0.1f);
         addObject(dog, 200, 100);
         
-        jack = new Jack();
-        //addObject(jack, 300, 100);
-        
-        ninja = new Ninja();
-        //addObject(ninja, 400,100);
-        
+        danger = new Danger();
+        addObject(danger, 200, 200);
         blockA = new Block();
         addObject(blockA, 400,500);
         blockB = new Block();
@@ -43,7 +40,8 @@ public class NolanTestWorld extends World
         
         Mayflower.showBounds(true);
         
-        showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
+        showText("Cat Lives: " + cat.getLives(), 10, 30, Color.BLACK);
+        showText("Dog Lives: " + cat.getLives(), 10, 60, Color.BLACK);
 
     }
     
