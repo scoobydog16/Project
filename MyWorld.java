@@ -45,7 +45,7 @@ public class MyWorld extends World
         Mayflower.showBounds(true);
         
         showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
-
+        cat.setTextPosition(10, 30);
     }
     
     public void act()

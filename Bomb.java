@@ -20,13 +20,14 @@ public class Bomb extends Actor
         {
             //This block of code will only execute if this Yarn is touching a
             // Cat object
-            Object a = getOneIntersectingObject(Cat.class);
+            MovableAnimatedActor a = getOneIntersectingObject(MovableAnimatedActor.class);
             // Now you can call Cat methods on the c variable
             Cat c = (Cat) a;
             World w = getWorld(); // get this Actor's World
+            c.decreaseLives(1);
             w.removeObject(this); // remove this Actor from the World
             
-            c.decreaseLives(1);
+            
             
           
         }

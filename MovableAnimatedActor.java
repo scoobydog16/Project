@@ -19,6 +19,9 @@ public class MovableAnimatedActor extends AnimatedActor
     private int leftKey;
     private int rightKey;
    private int score = 0;
+   private int textX;
+   private int textY;
+   
 
     public MovableAnimatedActor(float jumpForce, float gravity)
     {
@@ -252,6 +255,9 @@ public class MovableAnimatedActor extends AnimatedActor
     public void decreaseLives(int amount)
     {
         lives -= amount;
+        gameOver();
+        updateText();
+        
     }
     
     public void increaseScore(int score)
@@ -259,5 +265,29 @@ public class MovableAnimatedActor extends AnimatedActor
         score++;
     }
     
+    public void gameOver()
+    {
+     
+           if(lives < 0)
+           {
+               Mayflower.setWorld(new GameOverWorld());
+           }
+          
+        
+    }
     
+    public void setTextPosition(int x, int y)
+    {
+        
+        textX = x;
+        textY =y;
+    }
+    
+    public void updateText()
+    {
+        World w = getWorld();
+        w.removeText(textX, textY);
+        w.showText("Lives: " + lives, textX, textY, Color.BLACK);
+        
+    }
 }
