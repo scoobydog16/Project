@@ -2,14 +2,14 @@ import mayflower.*;
 
 public class Cat extends MovableAnimatedActor
 {
-    private int lives = 3;
+
     private Animation walkRight;
     private Animation walkLeft;
     private Animation idleRight;
     private Animation idleLeft;
     private Animation fallRight;
     private Animation fallLeft;
-    private int score = 0;
+
     
     public Cat(float jumpHeight, float gravity) 
     {
@@ -93,19 +93,6 @@ public class Cat extends MovableAnimatedActor
         }
     }
     
-    public int getLives()
-    {
-        return lives;
-    }
     
-    public void decreaseLives(int amount)
-    {
-        lives -= amount;
-    }
-    
-    public void increaseScore(int score)
-    {
-        score++;
-    }
    
 }

@@ -2,7 +2,7 @@ import mayflower.*;
 
 public class Dog extends MovableAnimatedActor
 {
-    private int lives = 3;
+
     private Animation walkRight;
     private Animation walkLeft;
     private Animation idleRight;
@@ -82,13 +82,5 @@ public class Dog extends MovableAnimatedActor
         super.act();
     }
     
-    public int getLives()
-    {
-        return lives;
-    }
     
-    public void decreaseLives(int amount)
-    {
-        lives -= amount;
-    }
 }

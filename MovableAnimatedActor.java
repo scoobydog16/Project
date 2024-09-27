@@ -3,7 +3,7 @@ import mayflower.*;
 public class MovableAnimatedActor extends AnimatedActor
 {
     // instance variables - replace the example below with your own
-    
+    private int lives = 3;
     private Animation walkRight;
     private Animation walkLeft;
     private Animation idleRight;
@@ -18,6 +18,7 @@ public class MovableAnimatedActor extends AnimatedActor
     private int downKey;
     private int leftKey;
     private int rightKey;
+   private int score = 0;
 
     public MovableAnimatedActor(float jumpForce, float gravity)
     {
@@ -241,6 +242,21 @@ public class MovableAnimatedActor extends AnimatedActor
     public void setFallLeftAnimation(Animation ani)
     {
         fallLeft = ani;
+    }
+    
+    public int getLives()
+    {
+        return lives;
+    }
+    
+    public void decreaseLives(int amount)
+    {
+        lives -= amount;
+    }
+    
+    public void increaseScore(int score)
+    {
+        score++;
     }
     
     
