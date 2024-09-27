@@ -2,7 +2,10 @@
 dependency1.from=Ninja
 dependency1.to=Animation
 dependency1.type=UsesDependency
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 dependency10.from=TitleWorld
 dependency10.to=NolanTestWorld
 dependency10.type=UsesDependency
@@ -11,6 +14,7 @@ dependency11.to=SamarthTestWorld
 dependency11.type=UsesDependency
 dependency12.from=MovableAnimatedActor
 dependency12.to=Animation
+<<<<<<< Updated upstream
 dependency12.type=UsesDependency
 dependency13.from=MovableAnimatedActor
 dependency13.to=Ladder
@@ -61,11 +65,34 @@ dependency18.to=Ninja
 dependency18.type=UsesDependency
 dependency19.from=MyWorld
 >>>>>>> 95174cfff271eecd5b3907f7debe4402e561c81c
+=======
+dependency12.type=UsesDependency
+dependency13.from=MovableAnimatedActor
+dependency13.to=Ladder
+dependency13.type=UsesDependency
+dependency14.from=MovableAnimatedActor
+dependency14.to=Block
+dependency14.type=UsesDependency
+dependency15.from=NolanTestWorld
+dependency15.to=Cat
+dependency15.type=UsesDependency
+dependency16.from=NolanTestWorld
+dependency16.to=Dog
+dependency16.type=UsesDependency
+dependency17.from=NolanTestWorld
+dependency17.to=Jack
+dependency17.type=UsesDependency
+dependency18.from=NolanTestWorld
+dependency18.to=Ninja
+dependency18.type=UsesDependency
+dependency19.from=NolanTestWorld
+>>>>>>> Stashed changes
 dependency19.to=Block
 dependency19.type=UsesDependency
 dependency2.from=Jack
 dependency2.to=Animation
 dependency2.type=UsesDependency
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 dependency20.from=YashTestWorld
 dependency20.to=Bomb
@@ -212,10 +239,111 @@ dependency7.to=Animation
 dependency7.type=UsesDependency
 dependency8.from=Cat
 dependency8.to=Yarn
+=======
+dependency20.from=NolanTestWorld
+dependency20.to=Ladder
+dependency20.type=UsesDependency
+dependency21.from=Dog
+dependency21.to=Animation
+dependency21.type=UsesDependency
+dependency22.from=MyWorld
+dependency22.to=Cat
+dependency22.type=UsesDependency
+dependency23.from=MyWorld
+dependency23.to=Dog
+dependency23.type=UsesDependency
+dependency24.from=MyWorld
+dependency24.to=Jack
+dependency24.type=UsesDependency
+dependency25.from=MyWorld
+dependency25.to=Ninja
+dependency25.type=UsesDependency
+dependency26.from=MyWorld
+dependency26.to=Block
+dependency26.type=UsesDependency
+dependency27.from=MyWorld
+dependency27.to=Bomb
+dependency27.type=UsesDependency
+dependency28.from=MyWorld
+dependency28.to=Ladder
+dependency28.type=UsesDependency
+dependency29.from=MyWorld
+dependency29.to=Yarn
+dependency29.type=UsesDependency
+dependency3.from=Bomb
+dependency3.to=Cat
+dependency3.type=UsesDependency
+dependency30.from=SamarthTestWorld
+dependency30.to=Cat
+dependency30.type=UsesDependency
+dependency31.from=SamarthTestWorld
+dependency31.to=Dog
+dependency31.type=UsesDependency
+dependency32.from=SamarthTestWorld
+dependency32.to=Jack
+dependency32.type=UsesDependency
+dependency33.from=SamarthTestWorld
+dependency33.to=Ninja
+dependency33.type=UsesDependency
+dependency34.from=SamarthTestWorld
+dependency34.to=Block
+dependency34.type=UsesDependency
+dependency35.from=SamarthTestWorld
+dependency35.to=Bomb
+dependency35.type=UsesDependency
+dependency36.from=SamarthTestWorld
+dependency36.to=Ladder
+dependency36.type=UsesDependency
+dependency37.from=SamarthTestWorld
+dependency37.to=Yarn
+dependency37.type=UsesDependency
+dependency38.from=SamarthTestWorld
+dependency38.to=MovingBlock
+dependency38.type=UsesDependency
+dependency39.from=YashTestWorld
+dependency39.to=Cat
+dependency39.type=UsesDependency
+dependency4.from=AnimatedActor
+dependency4.to=Animation
+dependency4.type=UsesDependency
+dependency40.from=YashTestWorld
+dependency40.to=Dog
+dependency40.type=UsesDependency
+dependency41.from=YashTestWorld
+dependency41.to=Jack
+dependency41.type=UsesDependency
+dependency42.from=YashTestWorld
+dependency42.to=Ninja
+dependency42.type=UsesDependency
+dependency43.from=YashTestWorld
+dependency43.to=Block
+dependency43.type=UsesDependency
+dependency44.from=YashTestWorld
+dependency44.to=Bomb
+dependency44.type=UsesDependency
+dependency45.from=YashTestWorld
+dependency45.to=Ladder
+dependency45.type=UsesDependency
+dependency46.from=YashTestWorld
+dependency46.to=Yarn
+dependency46.type=UsesDependency
+dependency5.from=Yarn
+dependency5.to=Cat
+dependency5.type=UsesDependency
+dependency6.from=Cat
+dependency6.to=Animation
+dependency6.type=UsesDependency
+dependency7.from=Cat
+dependency7.to=Yarn
+dependency7.type=UsesDependency
+dependency8.from=Danger
+dependency8.to=Cat
+>>>>>>> Stashed changes
 dependency8.type=UsesDependency
 dependency9.from=TitleWorld
 dependency9.to=MyWorld
 dependency9.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=714
@@ -263,6 +391,23 @@ package.frame.height=1048
 package.frame.width=1936
 package.numDependencies=39
 >>>>>>> 95174cfff271eecd5b3907f7debe4402e561c81c
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+objectbench.height=315
+objectbench.width=1896
+package.divider.horizontal=0.6
+package.divider.vertical=0.6603375527426161
+package.editor.height=619
+package.editor.width=1806
+package.editor.x=-290
+package.editor.y=148
+package.frame.height=1048
+package.frame.width=1936
+package.numDependencies=46
+>>>>>>> Stashed changes
 package.numTargets=24
 package.showExtends=true
 package.showUses=true
@@ -417,9 +562,12 @@ target24.type=ClassTarget
 target24.typeParameters=
 target24.width=110
 target24.x=10
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 target24.y=260
 =======
+=======
+>>>>>>> Stashed changes
 target24.y=320
 >>>>>>> 95174cfff271eecd5b3907f7debe4402e561c81c
 target3.height=70
@@ -476,6 +624,7 @@ target9.showInterface=false
 target9.type=ClassTarget
 target9.typeParameters=
 target9.width=90
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 target9.x=440
 target9.y=10
@@ -483,3 +632,7 @@ target9.y=10
 target9.x=10
 target9.y=210
 >>>>>>> 95174cfff271eecd5b3907f7debe4402e561c81c
+=======
+target9.x=10
+target9.y=210
+>>>>>>> Stashed changes
