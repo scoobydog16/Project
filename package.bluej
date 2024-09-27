@@ -98,8 +98,13 @@ dependency38.type=UsesDependency
 dependency39.from=MyWorld
 dependency39.to=Ladder
 dependency39.type=UsesDependency
+<<<<<<< HEAD
 dependency4.from=GravityActor
 dependency4.to=Block
+=======
+dependency4.from=Bomb
+dependency4.to=Cat
+>>>>>>> 20c1579463d652fcccbd23fada61ab22866afd20
 dependency4.type=UsesDependency
 dependency40.from=MyWorld
 dependency40.to=Yarn
@@ -143,13 +148,21 @@ dependency8.type=UsesDependency
 dependency9.from=MovableAnimatedActor
 dependency9.to=Block
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=552
 editor.fx.0.y=98
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+>>>>>>> 20c1579463d652fcccbd23fada61ab22866afd20
 objectbench.height=316
 objectbench.width=1896
 package.divider.horizontal=0.6
+<<<<<<< HEAD
 package.divider.vertical=0.6592827004219409
 package.editor.height=618
 package.editor.width=1806
@@ -159,6 +172,17 @@ package.frame.height=1048
 package.frame.width=1936
 package.numDependencies=48
 package.numTargets=24
+=======
+package.divider.vertical=0.6337868480725624
+package.editor.height=552
+package.editor.width=906
+package.editor.x=75
+package.editor.y=42
+package.frame.height=982
+package.frame.width=1036
+package.numDependencies=39
+package.numTargets=23
+>>>>>>> 20c1579463d652fcccbd23fada61ab22866afd20
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -356,6 +380,12 @@ target9.name=NextLevel
 target9.showInterface=false
 target9.type=ClassTarget
 target9.typeParameters=
+<<<<<<< HEAD
 target9.width=90
 target9.x=440
 target9.y=10
+=======
+target9.width=110
+target9.x=10
+target9.y=210
+>>>>>>> 20c1579463d652fcccbd23fada61ab22866afd20
