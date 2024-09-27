@@ -18,9 +18,9 @@ public class MovableAnimatedActor extends GravityActor
     private int downKey;
     private int leftKey;
     private int rightKey;
-   private int score = 0;
-   private int textX;
-   private int textY;
+    private int score = 0;
+    private int textX;
+    private int textY;
    
 
     public MovableAnimatedActor(float jumpForce, float gravity)

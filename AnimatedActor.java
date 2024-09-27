@@ -2,7 +2,7 @@ import mayflower.*;
 public class AnimatedActor extends Actor
 {
     // creates Animation and Timer objects
-    private Animation animation;
+    public Animation animation;
     private Timer animationTimer;
     
     public AnimatedActor()

@@ -1,7 +1,7 @@
 import mayflower.*;
 
 
-public class Trigger extends Actor
+public class Trigger extends RunOnceAnimatedActor
 {
     public static enum TriggerType
     {
@@ -13,12 +13,20 @@ public class Trigger extends Actor
     TriggerType trigger;
     boolean entered;
     MayflowerImage image;
-
+    Animation pressed;
+    Animation unpressed;
+    
     public Trigger(Actor obj, TriggerType type, int[] pos)
     {
-        image = new MayflowerImage("img/NolanStuff/Empty.png");
-        image.crop(0,0,100,100);
-        setImage(image);
+        String[] frames = new String[8];
+
+        for(int i = 1; i < 9; i++)
+            frames[i-1] = "img/NolanStuff/Button (" + i + ").png";
+        pressed = new Animation(10000000, frames);
+        for(int i = 1; i < 9; i++)
+            frames[8-i] = "img/NolanStuff/Button (" + i + ").png";
+        unpressed = new Animation(10000000, frames);    
+        setImage("img/NolanStuff/Button (1).png");
         trigger = type;
         affectedObject = obj;
         entered = false;
@@ -39,11 +47,14 @@ public class Trigger extends Actor
             entered = false;
             playerExit();
         }
+        super.act();
     }
     
     public void playerEnter()
     {
         World w = getWorld();
+        setAnimation(pressed);
+        unpressed.reset();
         if(trigger == TriggerType.holdActivate)
         {
             w.addObject(affectedObject, spawnPos[0], spawnPos[1]);
@@ -68,10 +79,14 @@ public class Trigger extends Actor
         if(trigger == TriggerType.holdActivate)
         {
             w.removeObject(affectedObject);
+            setAnimation(unpressed);
+            pressed.reset();
         }
         else if(trigger == TriggerType.holdDeactivate)
         {
             w.addObject(affectedObject, spawnPos[0], spawnPos[1]);
+            setAnimation(unpressed);
+            pressed.reset();
         }
     }
 }

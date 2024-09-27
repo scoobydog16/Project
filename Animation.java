@@ -28,6 +28,11 @@ public class Animation
         return frame;
     }
     
+    public boolean lastFrame()
+    {
+        return currentFrame + 1 == frames.length;
+    }
+    
     public void scale(int w, int h) {
        for(int i = 0; i < frames.length; i++)
             frames[i].scale(w,h); 
@@ -47,6 +52,11 @@ public class Animation
     {
         //System.out.println(frameRate);
         return frameRate;
+    }
+    
+    public void reset()
+    {
+        currentFrame = 0;
     }
     
     public void mirrorHorizontally() 

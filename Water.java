@@ -19,7 +19,6 @@ public class Water extends Danger
         if(playerEnter)
             if(!isTouching(Dog.class))
             {
-                System.out.println("left");
                 playerExit();
             }
     }
@@ -28,7 +27,6 @@ public class Water extends Danger
     {
         if(isTouching(Dog.class) && !playerEnter)
         {
-            System.out.println("swimming");
             image.setTransparency(30);
             setImage(image);
             playerEnter = true;
