@@ -39,7 +39,7 @@ public class SamarthTestWorld extends World
         //addObject(ninja, 400,100);
         
         blockA = new MovingBlock();
-        addObject(blockA, 400,500);
+        addObject(blockA, 800,500);
         
         Mayflower.showBounds(true);
         

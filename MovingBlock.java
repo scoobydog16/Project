@@ -12,6 +12,6 @@ public class MovingBlock extends Block
         int x = getX();
         int y = getY();
         int w = getWidth();
-        setLocation(x-10, y);
+        setLocation(x-2, y);
     }
 }
