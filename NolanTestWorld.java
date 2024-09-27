@@ -15,7 +15,7 @@ public class NolanTestWorld extends World
     private Ladder ladder;
     
     private Danger danger;
-    
+    private Water water;
     
     
     public NolanTestWorld() 
@@ -37,6 +37,8 @@ public class NolanTestWorld extends World
         Block b = new Block();
         addObject(b, 200,500);
         
+        water = new Water(100, 100, 0,0);
+        addObject(water, 300,300);
         
         Mayflower.showBounds(true);
         
