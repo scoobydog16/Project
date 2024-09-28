@@ -15,7 +15,7 @@ public class NolanTestWorld extends World
     private Block blockA;
     private Block blockB;
     private Ladder ladder;
-    
+    private Tree tree;
     private Danger danger;
     private Water water;
     
@@ -39,6 +39,11 @@ public class NolanTestWorld extends World
         addObject(blockB, 528,372);
         Block b = new Block();
         addObject(b, 200,500);
+        
+        ladder = new Ladder();
+        addObject(ladder, 200, 400);
+        tree = new Tree();
+        addObject(tree, 500, 300);
         
         water = new Water(100, 100, 0,0);
         addObject(water, 300,300);

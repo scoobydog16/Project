@@ -3,7 +3,7 @@ import mayflower.*;
 public class MovableAnimatedActor extends GravityActor
 {
     // instance variables - replace the example below with your own
-    private int lives = 3;
+    
     private Animation walkRight;
     private Animation walkLeft;
     private Animation idleRight;
@@ -14,11 +14,13 @@ public class MovableAnimatedActor extends GravityActor
     private String direction;
     private float jumpForce;
     private float runSpeed;
+    public boolean isCat;
     private int upKey;
     private int downKey;
     private int leftKey;
     private int rightKey;
     private int score = 0;
+    private int lives = 3;
     private int textX;
     private int textY;
    
@@ -76,7 +78,7 @@ public class MovableAnimatedActor extends GravityActor
             {
                 horzChange += runSpeed;
                 vertChange -= 3;
-                if(!isTouching(Ladder.class))
+                if(!isTouching(Ladder.class) || !isTouching(Water.class) || (isCat && !isTouching(Tree.class)))
                 {
                     vertVelocity = jumpForce;
                     isJumping = true;
@@ -98,7 +100,7 @@ public class MovableAnimatedActor extends GravityActor
             {
                 horzChange -= runSpeed;
                 vertChange -= 3;
-                if(!isTouching(Ladder.class))
+                if(!isTouching(Ladder.class) || !isTouching(Water.class) || (isCat && !isTouching(Tree.class)))
                 {
                     vertVelocity = jumpForce;
                     isJumping = true;
@@ -122,7 +124,7 @@ public class MovableAnimatedActor extends GravityActor
         else if(Mayflower.isKeyDown(upKey) && y > 0 && onBlock && !isJumping)
         {
             vertChange -= 3;
-            if(!isTouching(Ladder.class))
+            if(!isTouching(Ladder.class) || !isTouching(Water.class) || (isCat && !isTouching(Tree.class)))
             {
                 vertVelocity = jumpForce;
                 isJumping = true;
@@ -135,7 +137,7 @@ public class MovableAnimatedActor extends GravityActor
            newAction = "idle";
         }
         
-        if(isTouching(Ladder.class))
+        if(isTouching(Ladder.class) || isTouching(Water.class) || (isCat && isTouching(Tree.class)))
         {
             if(gravOn)
                 gravOn = false;
@@ -143,7 +145,14 @@ public class MovableAnimatedActor extends GravityActor
             {
                 vertChange -= 3;
                 setLocation(x, y + 1);
-                if(getOneIntersectingObject(Ladder.class).getY() >= y + h - 5)
+                Actor touch;
+                if(isTouching(Ladder.class))
+                    touch = getOneIntersectingObject(Ladder.class);
+                else if (isTouching(Tree.class))
+                    touch = getOneIntersectingObject(Tree.class);
+                else
+                    touch = getOneIntersectingObject(Water.class);
+                if(touch != null &&touch.getY() >= y + h - 5 )
                 {
                     vertVelocity = jumpForce;
                     isJumping = true;
@@ -157,7 +166,8 @@ public class MovableAnimatedActor extends GravityActor
                 
             
         }
-        else if(!gravOn && !isTouching(Ladder.class))
+        else if(!gravOn && (!isTouching(Ladder.class) || !isTouching(Water.class) ||
+            (isCat && !isTouching(Tree.class))))
             gravOn = true;
             
         if(isJumping)

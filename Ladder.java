@@ -11,8 +11,8 @@ public class Ladder extends Actor
 {
     public Ladder()
     {
-       MayflowerImage thisImage = new MayflowerImage("img/NolanStuff/Empty.png");
-       thisImage.crop(0,0,40,100); 
+       MayflowerImage thisImage = new MayflowerImage("img/Ladder.png");
+       //thisImage.crop(0,0,40,100); 
        setImage(thisImage);
     }
 

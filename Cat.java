@@ -14,6 +14,7 @@ public class Cat extends MovableAnimatedActor
     public Cat(float jumpHeight, float gravity) 
     {
         super(jumpHeight, gravity);
+        isCat = true;
         String frames[] = new String[10];
         String frames8[] = new String[8];
         for(int i = 0; i < 10; i++)

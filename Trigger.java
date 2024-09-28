@@ -37,13 +37,11 @@ public class Trigger extends RunOnceAnimatedActor
     {
         if(!entered && isTouching(MovableAnimatedActor.class))
         {
-            System.out.println("entered");
             entered = true;
             playerEnter();    
         }
         else if(entered && !isTouching(MovableAnimatedActor.class))
         {
-            System.out.println("exited");
             entered = false;
             playerExit();
         }
