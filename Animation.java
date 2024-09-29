@@ -47,7 +47,6 @@ public class Animation
     {
         int w = (int)(frames[index].getWidth() * scaleFactor);
         int h = (int)(frames[index].getHeight() * scaleFactor);
-        System.out.println("width: " + w + " height: " + h);
         frames[index].scale(w,h); 
     }
     

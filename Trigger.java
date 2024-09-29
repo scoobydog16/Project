@@ -16,7 +16,7 @@ public class Trigger extends RunOnceAnimatedActor
     Animation pressed;
     Animation unpressed;
     
-    public Trigger(Actor obj, TriggerType type, int[] pos)
+    public Trigger(Actor obj, TriggerType type, int[] pos, float scale)
     {
         String[] frames = new String[8];
 
@@ -25,8 +25,15 @@ public class Trigger extends RunOnceAnimatedActor
         pressed = new Animation(10000000, frames);
         for(int i = 1; i < 9; i++)
             frames[8-i] = "img/NolanStuff/Button (" + i + ").png";
-        unpressed = new Animation(10000000, frames);    
-        setImage("img/NolanStuff/Button (1).png");
+        unpressed = new Animation(10000000, frames);
+        for(int i = 0; i < 8; i++)
+        {
+            pressed.scale(scale, i);
+            unpressed.scale(scale, i);
+        }
+        MayflowerImage img = new MayflowerImage("img/NolanStuff/Button (1).png");
+        img.scale((int)(img.getWidth() * scale), (int)(img.getHeight() * scale));
+        setImage(img);
         trigger = type;
         affectedObject = obj;
         entered = false;

@@ -14,7 +14,7 @@ public class Dog extends MovableAnimatedActor
     private Animation climbRight;
     private Animation climbLeft;
     
-    public Dog(float jumpHeight, float gravity) 
+    public Dog(float jumpHeight, float gravity, float scale) 
     {
         super(jumpHeight, gravity, 2f, Keyboard.KEY_W, Keyboard.KEY_S, Keyboard.KEY_A, Keyboard.KEY_D);
         isCat = false;
@@ -92,10 +92,12 @@ public class Dog extends MovableAnimatedActor
         setIdleLeftAnimation(idleLeft);
         setFallRightAnimation(fallRight);
         setFallLeftAnimation(fallLeft);
-        setClimbRightAnimation(climbRight);
-        setClimbLeftAnimation(climbLeft);
         setSwimRightAnimation(swimRight);
         setSwimLeftAnimation(swimLeft);
+        setClimbRightAnimation(climbRight);
+        setClimbLeftAnimation(climbLeft);
+        
+        setScales(scale);
     }
     public void act()
     {

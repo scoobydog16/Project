@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Dog
-comment1.params=jumpHeight\ gravity
-comment1.target=Dog(float,\ float)
+comment1.params=jumpHeight\ gravity\ scale
+comment1.target=Dog(float,\ float,\ float)
 comment2.params=
 comment2.target=void\ act()
 numComments=3

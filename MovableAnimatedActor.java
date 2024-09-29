@@ -14,7 +14,6 @@ public class MovableAnimatedActor extends GravityActor
     private Animation swimLeft;
     private Animation climbRight;
     private Animation climbLeft;
-    private Animation[] animations;
     private String currentAction;
     private String direction;
     private float jumpForce;
@@ -28,7 +27,6 @@ public class MovableAnimatedActor extends GravityActor
     private int lives = 3;
     private int textX;
     private int textY;
-   
 
     public MovableAnimatedActor(float jumpForce, float gravity)
     {
@@ -41,8 +39,6 @@ public class MovableAnimatedActor extends GravityActor
        downKey = Keyboard.KEY_DOWN;
        leftKey = Keyboard.KEY_LEFT;
        rightKey = Keyboard.KEY_RIGHT;
-       animations = new Animation[] {walkRight, walkLeft, idleRight, idleLeft, 
-           fallRight, fallLeft, swimRight, swimLeft, climbRight, climbLeft};
     }
     
     public MovableAnimatedActor(float jumpForce, float gravity, float runSpeed, int up, int down, int left, int right)
@@ -233,6 +229,15 @@ public class MovableAnimatedActor extends GravityActor
         // ^^^ if moving up/down causes the player to run into a block
         // the player will no longer move up/down to avoid phasing through it
         
+        setLocation(x, y + vertVelocity);
+        if(isTouching(Block.class))
+        {
+          vertVelocity = 0;
+          setLocation(x,getOneIntersectingObject(Block.class).getY() + getOneIntersectingObject(Block.class).getHeight());
+        }    
+        else
+            setLocation(x, y);
+        
         // (current position + left/right movement, current position + up/down movement and changing velocity
         // up/down movement: instant changes so that way the player isn't touching something while jumping,
         // mostly to avoid errors
@@ -303,7 +308,6 @@ public class MovableAnimatedActor extends GravityActor
         lives -= amount;
         gameOver();
         updateText();
-        
     }
     
     public void increaseScore(int score)
@@ -334,13 +338,12 @@ public class MovableAnimatedActor extends GravityActor
     
     public void setScales(float scaleFactor)
     {
-        System.out.println("hi");
+        Animation[] animations = new Animation[] {walkRight, walkLeft, idleRight, idleLeft, 
+           fallRight, fallLeft, swimRight, swimLeft, climbRight, climbLeft};
         for(int i = 0; i < animations.length; i++)
         {
-
             if(animations[i] != null)
             {
-                System.out.println("hello");
                 for(int index = 0; index < animations[i].animSize(); index++) 
                 {
                     animations[i].scale(scaleFactor, index);

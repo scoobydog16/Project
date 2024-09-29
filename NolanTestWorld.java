@@ -42,14 +42,14 @@ public class NolanTestWorld extends World
         water = new Water(100, 100, 0,0);
         addObject(water, 300,300);
 
-        button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300});
+        button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300}, 1f);
         addObject(button, 400,400);
         Mayflower.showBounds(true);
         
         cat = new Cat(7f, 0.1f, 1f);
         addObject(cat, 400, 0);
-        
-        dog = new Dog(7f, 0.1f);
+        addObject(new ImageBlock("img/Tiles/6.png",40,40),100, 100);
+        dog = new Dog(7f, 0.1f, 1f);
         addObject(dog, 200, 100);
         
         showText("Cat ", 10, 30, Color.BLACK);

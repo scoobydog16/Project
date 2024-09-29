@@ -33,7 +33,7 @@ public class Danger extends Actor
         World w = getWorld();
         player.decreaseLives(1);
         respawn(player);
-        w.removeObject(this);
+        //w.removeObject(this);
     }
     
     public void respawn(MovableAnimatedActor player)

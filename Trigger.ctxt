@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Trigger
-comment1.params=obj\ type\ pos
-comment1.target=Trigger(mayflower.Actor,\ Trigger.TriggerType,\ int[])
+comment1.params=obj\ type\ pos\ scale
+comment1.target=Trigger(mayflower.Actor,\ Trigger.TriggerType,\ int[],\ float)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
