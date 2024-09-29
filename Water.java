@@ -8,7 +8,6 @@ public class Water extends Danger
     public Water(int width, int height, int x, int y)
     {
         super(width, height, x, y, "img/Tiles/18.png");
-        image = new MayflowerImage("img/Tiles/18.png");
         playerEnter = false;
     }
 
@@ -27,8 +26,7 @@ public class Water extends Danger
     {
         if(isTouching(Dog.class) && !playerEnter)
         {
-            image.setTransparency(30);
-            setImage(image);
+            getImage().setTransparency(30);
             playerEnter = true;
         }
         
@@ -43,7 +41,6 @@ public class Water extends Danger
     public void playerExit()
     {
         playerEnter = false;
-        image.setTransparency(0);
-        setImage(image);
+        getImage().setTransparency(0);
     }
 }

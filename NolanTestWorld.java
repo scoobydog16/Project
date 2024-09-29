@@ -25,12 +25,6 @@ public class NolanTestWorld extends World
     {
         setBackground("img/BG/BG.png");
         
-        cat = new Cat(7f, 0.1f);
-        addObject(cat, 400, 0);
-        
-        dog = new Dog(7f, 0.1f);
-        addObject(dog, 200, 100);
-        
         danger = new Danger( 20, 30, 100, 100, "img/NolanStuff/Empty.png");
         addObject(danger, 500, 200);
         blockA = new Block();
@@ -51,6 +45,12 @@ public class NolanTestWorld extends World
         button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300});
         addObject(button, 400,400);
         Mayflower.showBounds(true);
+        
+        cat = new Cat(7f, 0.1f);
+        addObject(cat, 400, 0);
+        
+        dog = new Dog(7f, 0.1f);
+        addObject(dog, 200, 100);
         
         showText("Cat ", 10, 30, Color.BLACK);
         showText("Lives: " + cat.getLives(), 80, 30, Color.BLACK);

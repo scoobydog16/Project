@@ -10,6 +10,10 @@ public class MovableAnimatedActor extends GravityActor
     private Animation idleLeft;
     private Animation fallRight;
     private Animation fallLeft;
+    private Animation swimRight;
+    private Animation swimLeft;
+    private Animation climbRight;
+    private Animation climbLeft;
     private String currentAction;
     private String direction;
     private float jumpForce;
@@ -170,7 +174,12 @@ public class MovableAnimatedActor extends GravityActor
             (isCat && !isTouching(Tree.class))))
             gravOn = true;
             
-        if(isJumping)
+        
+        if (isTouching(Ladder.class) || (isCat && isTouching(Tree.class)))
+            newAction = "climbing";
+        else if (isTouching(Water.class) && !isCat)
+            newAction = "swimming";
+        else if(isJumping)
             newAction = "fall";
         
         if(newAction != null && !currentAction.equals(newAction) || !newDir.equals(direction))
@@ -185,18 +194,22 @@ public class MovableAnimatedActor extends GravityActor
                 else if(newAction.equals("walk"))
                     setAnimation(walkLeft);
                 else if(newAction.equals("climbing"))
-                    System.out.print("climbing");
+                    setAnimation(climbLeft);
+                else if(newAction.equals("swimming") && !isCat)
+                    setAnimation(swimLeft);
             }
             else if(newDir.equals("right"))
             {
                 if(newAction.equals("idle"))
                     setAnimation(idleRight);
-                if(newAction.equals("fall"))
+                else if(newAction.equals("fall"))
                     setAnimation(fallRight);
-                if(newAction.equals("walk"))
+                else if(newAction.equals("walk"))
                     setAnimation(walkRight);
-                if(newAction.equals("climbing"))
-                    System.out.print("climbing");
+                else if(newAction.equals("climbing"))
+                    setAnimation(climbRight);
+                else if(newAction.equals("swimming") && !isCat)
+                    setAnimation(swimRight);
             }
             currentAction = newAction;
             direction = newDir;
@@ -237,7 +250,7 @@ public class MovableAnimatedActor extends GravityActor
         walkLeft = ani;
     }
     
-    public void setIdleAnimation(Animation ani)
+    public void setIdleRightAnimation(Animation ani)
     {
         idleRight = ani;
     }
@@ -247,7 +260,7 @@ public class MovableAnimatedActor extends GravityActor
         idleLeft = ani;
     }
     
-    public void setFallAnimation(Animation ani)
+    public void setFallRightAnimation(Animation ani)
     {
         fallRight = ani;
     }
@@ -255,6 +268,26 @@ public class MovableAnimatedActor extends GravityActor
     public void setFallLeftAnimation(Animation ani)
     {
         fallLeft = ani;
+    }
+    
+    public void setSwimRightAnimation(Animation ani)
+    {
+        swimRight = ani;
+    }
+    
+    public void setSwimLeftAnimation(Animation ani)
+    {
+        swimLeft = ani;
+    }
+    
+    public void setClimbRightAnimation(Animation ani)
+    {
+        climbRight = ani;
+    }
+    
+    public void setClimbLeftAnimation(Animation ani)
+    {
+        climbLeft = ani;
     }
     
     public int getLives()
