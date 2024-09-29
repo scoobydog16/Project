@@ -33,9 +33,22 @@ public class Animation
         return currentFrame + 1 == frames.length;
     }
     
+    public int animSize()
+    {
+        return frames.length;
+    }
+    
     public void scale(int w, int h) {
        for(int i = 0; i < frames.length; i++)
             frames[i].scale(w,h); 
+    }
+    
+    public void scale(float scaleFactor, int index) 
+    {
+        int w = (int)(frames[index].getWidth() * scaleFactor);
+        int h = (int)(frames[index].getHeight() * scaleFactor);
+        System.out.println("width: " + w + " height: " + h);
+        frames[index].scale(w,h); 
     }
     
     public void setTransparency(int percent) {

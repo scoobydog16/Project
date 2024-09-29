@@ -13,7 +13,7 @@ public class Cat extends MovableAnimatedActor
     private Animation climbLeft;
 
     
-    public Cat(float jumpHeight, float gravity) 
+    public Cat(float jumpHeight, float gravity, float scale) 
     {
         super(jumpHeight, gravity);
         isCat = true;

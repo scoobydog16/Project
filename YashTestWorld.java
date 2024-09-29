@@ -30,7 +30,7 @@ public class YashTestWorld extends World
         yarn = new Yarn();
         addObject(yarn, 200, 399);
         
-        cat = new Cat(20f, 0.09f);
+        cat = new Cat(20f, 0.09f, 1f);
         addObject(cat, 400, 0);
         
 

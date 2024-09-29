@@ -5,7 +5,7 @@ import mayflower.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class NolanTestWorld extends World
+public class Level02 extends World
 {
 
     
@@ -21,13 +21,14 @@ public class NolanTestWorld extends World
     
     Trigger button;
     
-    public NolanTestWorld() 
+    public Level02() 
     {
         setBackground("img/BG/BG.png");
         
         danger = new Danger( 20, 30, 100, 100, "img/NolanStuff/Empty.png");
         addObject(danger, 500, 200);
-        blockA = new Block();
+        
+        blockA = new Block(40,40);
         addObject(blockA, 400,500);
         blockB = new Block();
         addObject(blockB, 528,372);
@@ -46,11 +47,8 @@ public class NolanTestWorld extends World
         addObject(button, 400,400);
         Mayflower.showBounds(true);
         
-        cat = new Cat(7f, 0.1f, 1f);
-        addObject(cat, 400, 0);
-        
+        cat = new Cat(7f, 0.1f, 0.5f);
         dog = new Dog(7f, 0.1f);
-        addObject(dog, 200, 100);
         
         showText("Cat ", 10, 30, Color.BLACK);
         showText("Lives: " + cat.getLives(), 80, 30, Color.BLACK);
@@ -58,11 +56,22 @@ public class NolanTestWorld extends World
         showText("Dog ", 10, 60, Color.BLACK);
         showText("Lives: " + cat.getLives(), 80, 60, Color.BLACK);
         dog.setTextPosition(80, 60);
+        
+        spawnPlayers();
     }
     
     public void act()
     {
-        if(Mayflower.isKeyDown(Keyboard.KEY_N))
-            Mayflower.setWorld(new Level02());
+    }
+    
+    public void spawnPlayers()
+    {
+        
+        cat.setScales(0.5f);
+        addObject(cat, 400, 0);
+        
+
+        addObject(dog, 200, 100);
+        
     }
 }

@@ -14,6 +14,7 @@ public class MovableAnimatedActor extends GravityActor
     private Animation swimLeft;
     private Animation climbRight;
     private Animation climbLeft;
+    private Animation[] animations;
     private String currentAction;
     private String direction;
     private float jumpForce;
@@ -40,6 +41,8 @@ public class MovableAnimatedActor extends GravityActor
        downKey = Keyboard.KEY_DOWN;
        leftKey = Keyboard.KEY_LEFT;
        rightKey = Keyboard.KEY_RIGHT;
+       animations = new Animation[] {walkRight, walkLeft, idleRight, idleLeft, 
+           fallRight, fallLeft, swimRight, swimLeft, climbRight, climbLeft};
     }
     
     public MovableAnimatedActor(float jumpForce, float gravity, float runSpeed, int up, int down, int left, int right)
@@ -310,18 +313,14 @@ public class MovableAnimatedActor extends GravityActor
     
     public void gameOver()
     {
-     
            if(lives < 0)
            {
                Mayflower.setWorld(new GameOverWorld());
            }
-          
-        
     }
     
     public void setTextPosition(int x, int y)
     {
-        
         textX = x;
         textY =y;
     }
@@ -331,6 +330,22 @@ public class MovableAnimatedActor extends GravityActor
         World w = getWorld();
         w.removeText(textX, textY);
         w.showText("Lives: " + lives, textX, textY, Color.BLACK);
-        
+    }
+    
+    public void setScales(float scaleFactor)
+    {
+        System.out.println("hi");
+        for(int i = 0; i < animations.length; i++)
+        {
+
+            if(animations[i] != null)
+            {
+                System.out.println("hello");
+                for(int index = 0; index < animations[i].animSize(); index++) 
+                {
+                    animations[i].scale(scaleFactor, index);
+                }
+            }
+        }
     }
 }

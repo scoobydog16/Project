@@ -26,7 +26,7 @@ public class MyWorld extends World
         yarn = new Yarn();
         addObject(yarn, 200, 399);
         
-        cat = new Cat(12f, 0.6f);
+        cat = new Cat(12f, 0.6f, 1f);
         addObject(cat, 400, 0);
         
         //addObject(dog, 200, 100);
