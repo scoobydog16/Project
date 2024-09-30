@@ -39,11 +39,11 @@ public class NolanTestWorld extends World
         tree = new Tree();
         addObject(tree, 500, 300);
         
-        water = new Water(100, 100, 0,0);
-        addObject(water, 300,300);
+        //water = new Water(100, 100, 0,0);
+        //addObject(water, 300,300);
 
-        button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300}, 1f);
-        addObject(button, 400,400);
+        //button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300}, 1f);
+        //addObject(button, 400,400);
         Mayflower.showBounds(true);
         
         cat = new Cat(7f, 0.1f, 1f);
@@ -53,10 +53,10 @@ public class NolanTestWorld extends World
         addObject(dog, 200, 100);
         
         showText("Cat ", 10, 30, Color.BLACK);
-        showText("Lives: " + cat.getLives(), 80, 30, Color.BLACK);
+        showText("Lives: " + cat.getLives() + " Score: ", 80, 30, Color.BLACK);
         cat.setTextPosition(80, 30);
         showText("Dog ", 10, 60, Color.BLACK);
-        showText("Lives: " + cat.getLives(), 80, 60, Color.BLACK);
+        showText("Lives: " + dog.getLives() + " Score: ", 80, 60, Color.BLACK);
         dog.setTextPosition(80, 60);
     }
     

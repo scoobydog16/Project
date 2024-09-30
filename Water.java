@@ -5,9 +5,12 @@ public class Water extends Danger
     
     boolean playerEnter;
     MayflowerImage image;
-    public Water(int width, int height, int x, int y)
+    Image[] waterSprites;
+    
+    public Water(int width, int height, int x, int y, Image[] water)
     {
-        super(width, height, x, y, "img/Tiles/18.png");
+        super(width, height, x, y, "img/NolanStuff/Empty.png");
+        waterSprites = water;
         playerEnter = false;
     }
 
@@ -26,7 +29,8 @@ public class Water extends Danger
     {
         if(isTouching(Dog.class) && !playerEnter)
         {
-            getImage().setTransparency(30);
+            for(Image a : waterSprites)
+                a.getImage().setTransparency(30);
             playerEnter = true;
         }
         
@@ -41,6 +45,7 @@ public class Water extends Danger
     public void playerExit()
     {
         playerEnter = false;
-        getImage().setTransparency(0);
+        for(Image a : waterSprites)
+            a.getImage().setTransparency(0);
     }
 }

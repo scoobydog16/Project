@@ -30,10 +30,10 @@ public class Yarn extends Actor
         {
             //This block of code will only execute if this Yarn is touching a
             // Cat object
-            MovableAnimatedActor a = getOneIntersectingObject(MovableAnimatedActor.class);
+            MovableAnimatedActor c = getOneIntersectingObject(MovableAnimatedActor.class);
             // Now you can call Cat methods on the c variable
             World w = getWorld(); // get this Actor's World
-            a.increaseScore(1);
+            c.increaseScore(1);
             w.removeObject(this); // remove this Actor from the World
             
             

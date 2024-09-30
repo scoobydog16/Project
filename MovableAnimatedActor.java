@@ -303,6 +303,11 @@ public class MovableAnimatedActor extends GravityActor
         return lives;
     }
     
+    public int getScore()
+    {
+        return score;
+    }
+    
     public void decreaseLives(int amount)
     {
         lives -= amount;
@@ -312,15 +317,16 @@ public class MovableAnimatedActor extends GravityActor
     
     public void increaseScore(int score)
     {
-        score++;
+        this.score += score;
+        updateText();
     }
     
     public void gameOver()
     {
-           if(lives < 0)
-           {
-               Mayflower.setWorld(new GameOverWorld());
-           }
+       if(lives == 0)
+       {
+           Mayflower.setWorld(new GameOverWorld());
+       }
     }
     
     public void setTextPosition(int x, int y)
@@ -333,7 +339,7 @@ public class MovableAnimatedActor extends GravityActor
     {
         World w = getWorld();
         w.removeText(textX, textY);
-        w.showText("Lives: " + lives, textX, textY, Color.BLACK);
+        w.showText("Lives: " + lives + " Score: " + score, textX, textY, Color.BLACK);
     }
     
     public void setScales(float scaleFactor)

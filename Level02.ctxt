@@ -13,4 +13,6 @@ comment5.params=actor\ x\ y
 comment5.target=void\ addObject(mayflower.Actor,\ int,\ int)
 comment6.params=actor
 comment6.target=void\ removeObject(mayflower.Actor)
-numComments=7
+comment7.params=x\ y\ waterSprites
+comment7.target=void\ makeWater(int,\ int,\ Image[])
+numComments=8

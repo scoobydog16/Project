@@ -13,7 +13,7 @@ public class Danger extends Actor
     public Danger(int width, int height, int x, int y, String image)
     {
         MayflowerImage img = new MayflowerImage(image);
-        img.crop(0,0,width,height);
+        img.scale(width,height);
         setImage(img);
         respawnX = x;
         respawnY = y;

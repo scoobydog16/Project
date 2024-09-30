@@ -27,7 +27,7 @@ public class Level02 extends World
     public Level02() 
     {
         setBackground("img/BG/BG.png");
-        tiles = new String[15][20];
+        tiles = new String[16][20];
         // danger = new Danger( 20, 30, 100, 100, "img/NolanStuff/Empty.png");
         // addObject(danger, 500, 200);
         
@@ -49,20 +49,20 @@ public class Level02 extends World
         // button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300});
         // addObject(button, 400,400);
         Mayflower.showBounds(true);
-        
+        buildWorld();
         cat = new Cat(5f, 0.1f, 0.625f);
         addObject(cat, 5, 13);
         dog = new Dog(3f, 0.07f, 0.625f);
         addObject(dog, 6, 13);
         
         showText("Cat ", 10, 30, Color.BLACK);
-        showText("Lives: " + cat.getLives(), 80, 30, Color.BLACK);
+        showText("Lives: " + cat.getLives() + " Score: " + cat.getScore(), 80, 30, Color.BLACK);
         cat.setTextPosition(80, 30);
         showText("Dog ", 10, 60, Color.BLACK);
-        showText("Lives: " + cat.getLives(), 80, 60, Color.BLACK);
+        showText("Lives: " + dog.getLives() + " Score: " + dog.getScore(), 80, 60, Color.BLACK);
         dog.setTextPosition(80, 60);
         
-        buildWorld();
+
     }
     
     public void act()
@@ -82,7 +82,7 @@ public class Level02 extends World
             for(int x = 0; x < tiles[y].length; x++)
                 tiles[y][x] = "";
         
-        for(int i = 0; i < 16; i++)
+        for(int i = 0; i < 12; i++)
             tiles[14][i + 4] = "Ground";
         
         for(int y = 11; y < 15; y++)
@@ -91,15 +91,38 @@ public class Level02 extends World
             {
                 tiles[y][x] = "Wall";
             }
-            tiles[y][4] = "WallEdge";
+            tiles[y][4] = "WallEdgeR";
         }
-        tiles[14][4] = "WallEdgeB";
+        tiles[14][4] = "WallEdgeRB";
         for(int x = 0; x < 4; x++)
         {
             tiles[10][x] = "Ground";
         }
-        tiles[10][4] = "WallEdgeT";
+        tiles[10][4] = "WallEdgeRT";
         
+        for(int y = 11; y < 14; y++)
+        {
+            tiles[y][16] = "WallEdgeL";
+        }
+        tiles[14][16] = "WallEdgeLB";
+        tiles[10][16] = "WallEdgeLT";
+        
+        int waterCount = 0;
+        for(int i = 0; i < 3; i++)
+        {
+            tiles[10][17 + i] = "WaterTop";
+            waterCount++;
+            for(int j = 11; j < 15; j++)
+            {
+                tiles[j][17 + i] = "Water";
+                waterCount++;
+            }
+            tiles[15][17 + i] = "Ground";
+        }
+        Image[] waterSprites = new Image[waterCount];
+        int currentWaterIndex = 0;
+        
+        tiles[14][18] += "+Bone";
         tiles[10][13] = "LadderObject";
         tiles[11][13] = "Ladder";
         
@@ -118,18 +141,24 @@ public class Level02 extends World
         
         for(int x = 0; x < 20; x++)
         {
-            for(int y = 14; y >= 0; y--)
+            for(int y = 0; y < 15; y++)
             {
                 if(tiles[y][x].equals("Ground"))
                     addObject(new Block(40,40), x, y);
                 else if(tiles[y][x].equals("Wall"))
                     addObject(new Image("img/Tiles/5.png",40,40), x, y);
-                else if(tiles[y][x].equals("WallEdge"))
+                else if(tiles[y][x].equals("WallEdgeR"))
                     addObject(new ImageBlock("img/Tiles/6.png",40,40), x, y);
-                else if(tiles[y][x].equals("WallEdgeB"))
+                else if(tiles[y][x].equals("WallEdgeRB"))
                     addObject(new ImageBlock("img/Tiles/10.png",40,40), x, y);
-                else if(tiles[y][x].equals("WallEdgeT"))
+                else if(tiles[y][x].equals("WallEdgeRT"))
                     addObject(new ImageBlock("img/Tiles/3.png",40,40), x, y);
+                else if(tiles[y][x].equals("WallEdgeL"))
+                    addObject(new ImageBlock("img/Tiles/4.png",40,40), x, y);
+                else if(tiles[y][x].equals("WallEdgeLB"))
+                    addObject(new ImageBlock("img/Tiles/8.png",40,40), x, y);
+                else if(tiles[y][x].equals("WallEdgeLT"))
+                    addObject(new ImageBlock("img/Tiles/1.png",40,40), x, y);
                 else if(tiles[y][x].equals("LadderObject"))
                     addObject(new Ladder(0.8f),x, y);
                 else if(tiles[y][x].equals("PlatformPiece"))
@@ -142,12 +171,24 @@ public class Level02 extends World
                 }
                 else if(tiles[y][x].equals("Yarn"))
                     addObject(new Yarn(0.4f),x, y);
-                else if(tiles[y][x].equals("Bone"))
+                else if(tiles[y][x].contains("Bone"))
                     addObject(new Bone(0.4f),x, y);
+                if(tiles[y][x].contains("WaterTop"))
+                {
+                    Image img = new Image("img/Tiles/17.png", 40, 40);
+                    waterSprites[currentWaterIndex++] = img;
+                    addObject(img,x, y);
+                }
+                else if(tiles[y][x].contains("Water"))
+                {    
+                    Image img = new Image("img/Tiles/18.png", 40, 40);
+                    waterSprites[currentWaterIndex++] = img;
+                    addObject(img,x, y);
+                }
             }
         }
-        
-        }
+        makeWater(waterSprites[0].getX()/40, waterSprites[0].getY()/40, waterSprites);
+    }
         
     public void addPlatform(int x, int y)
     {
@@ -198,6 +239,13 @@ public class Level02 extends World
             while(height > 0);
         }
         super.removeObject(actor);
+    }
+    
+    public void makeWater(int x, int  y, Image[] waterSprites)
+    {
+        int height = waterSprites[waterSprites.length - 1].getY() + waterSprites[0].getHeight() - waterSprites[0].getY();
+        int width  = waterSprites[waterSprites.length - 1].getX() + waterSprites[0].getWidth() - waterSprites[0].getX();
+        addObject(new Water(width, height, 560, 480, waterSprites), x, y);
     }
 
 }
