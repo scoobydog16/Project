@@ -141,6 +141,12 @@ public class Level02 extends World
         tiles[9][4] = "DeactivateDangerPart";
         
         tiles[9][0] = "Trigger-PA";
+        tiles[9][1] = "Yarn";
+        
+        tiles[6][9] = "Bone";
+        tiles[6][10] = "Yarn";
+        
+        tiles[9][2] = "Tree";
         // Above sets the tiles, below adds them to the world
         
         
