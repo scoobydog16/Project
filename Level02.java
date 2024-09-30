@@ -175,8 +175,8 @@ public class Level02 extends World
                         addObject(new Trigger(new Ladder(0.8f), Trigger.TriggerType.holdActivate, 
                         new int[]{ 10, 12 }, 0.4f), x, y);
                     if(tiles[y][x].contains("-PA"))
-                        addObject(new Trigger(4, Trigger.TriggerType.pressActivate, 
-                        new int[]{ 8, 8 }, 0.4f), x, y);
+                        addObject(new Trigger(5, Trigger.TriggerType.pressActivate, 
+                        new int[]{ 8, 9 }, 0.4f), x, y);
                     if(tiles[y][x].contains("-PD"))
                         addObject(new Trigger(deactivateActor, Trigger.TriggerType.pressDeactivate, 
                         new int[]{ 10, 12 }, 0.4f), x, y);
