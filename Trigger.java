@@ -15,6 +15,8 @@ public class Trigger extends RunOnceAnimatedActor
     MayflowerImage image;
     Animation pressed;
     Animation unpressed;
+    boolean ledge;
+    int width;
     
     public Trigger(Actor obj, TriggerType type, int[] pos, float scale)
     {
@@ -35,7 +37,34 @@ public class Trigger extends RunOnceAnimatedActor
         img.scale((int)(img.getWidth() * scale), (int)(img.getHeight() * scale));
         setImage(img);
         trigger = type;
+        ledge = false;
+        width = 0;
         affectedObject = obj;
+        entered = false;
+        spawnPos = pos;
+    }
+    
+    public Trigger(int width, TriggerType type, int[] pos, float scale)
+    {
+        String[] frames = new String[8];
+
+        for(int i = 1; i < 9; i++)
+            frames[i-1] = "img/NolanStuff/Button (" + i + ").png";
+        pressed = new Animation(10000000, frames);
+        for(int i = 1; i < 9; i++)
+            frames[8-i] = "img/NolanStuff/Button (" + i + ").png";
+        unpressed = new Animation(10000000, frames);
+        for(int i = 0; i < 8; i++)
+        {
+            pressed.scale(scale, i);
+            unpressed.scale(scale, i);
+        }
+        MayflowerImage img = new MayflowerImage("img/NolanStuff/Button (1).png");
+        img.scale((int)(img.getWidth() * scale), (int)(img.getHeight() * scale));
+        setImage(img);
+        trigger = type;
+        ledge = true;
+        this.width = width;
         entered = false;
         spawnPos = pos;
     }
@@ -62,7 +91,10 @@ public class Trigger extends RunOnceAnimatedActor
         unpressed.reset();
         if(trigger == TriggerType.holdActivate)
         {
-            w.addObject(affectedObject, spawnPos[0], spawnPos[1]);
+            if(ledge)
+                w.addObject(new Ledge(width),spawnPos[0], spawnPos[1]);
+            else
+                w.addObject(affectedObject, spawnPos[0], spawnPos[1]);
         }
         else if(trigger == TriggerType.holdDeactivate)
         {
@@ -70,7 +102,10 @@ public class Trigger extends RunOnceAnimatedActor
         }
         else if(trigger == TriggerType.pressActivate)
         {
-            w.addObject(affectedObject, spawnPos[0], spawnPos[1]);
+            if(ledge)
+                w.addObject(new Ledge(width),spawnPos[0], spawnPos[1]);
+            else
+                w.addObject(affectedObject, spawnPos[0], spawnPos[1]);
         }
         else if(trigger == TriggerType.pressDeactivate)
         {

@@ -135,10 +135,16 @@ public class Level02 extends World
             
         tiles[13][15] = "Trigger-HA";
         
+        tiles[14][19] += "+Trigger-PD";
+        
+        tiles[9][3] = "DeactivateDanger";
+        tiles[9][4] = "DeactivateDangerPart";
+        
+        tiles[9][0] = "Trigger-PA";
         // Above sets the tiles, below adds them to the world
         
         
-        
+        Actor deactivateActor = new Danger(80,40,5, 11, "img/NolanStuff/Spike.png");;
         for(int x = 0; x < 20; x++)
         {
             for(int y = 0; y < 15; y++)
@@ -168,7 +174,15 @@ public class Level02 extends World
                     if(tiles[y][x].contains("-HA"))
                         addObject(new Trigger(new Ladder(0.8f), Trigger.TriggerType.holdActivate, 
                         new int[]{ 10, 12 }, 0.4f), x, y);
+                    if(tiles[y][x].contains("-PA"))
+                        addObject(new Trigger(4, Trigger.TriggerType.pressActivate, 
+                        new int[]{ 7, 15 }, 0.4f), x, y);
+                    if(tiles[y][x].contains("-PD"))
+                        addObject(new Trigger(deactivateActor, Trigger.TriggerType.pressDeactivate, 
+                        new int[]{ 10, 12 }, 0.4f), x, y);
                 }
+                else if(tiles[y][x].equals("DeactivateDanger"))
+                    addObject(deactivateActor, x, y);
                 else if(tiles[y][x].equals("Yarn"))
                     addObject(new Yarn(0.4f),x, y);
                 else if(tiles[y][x].contains("Bone"))
@@ -206,6 +220,26 @@ public class Level02 extends World
         addObject(new ImageBlock("img/Tiles/15.png",40,30), x, y);
     }
     
+    public void addPlatform(int x, int y, int width)
+    {
+        tiles[y][x] = "Platform";
+        addObject(new ImageBlock("img/Tiles/13.png",40,30), x, y);
+        x++;
+        width--;
+        do
+        {
+            tiles[y][x] = "Platform";
+            addObject(new ImageBlock("img/Tiles/14.png",40,30), x, y);
+            x++;
+            width--;
+        }
+        while (width > 1);
+        tiles[y][x] = "Platform";
+        addObject(new ImageBlock("img/Tiles/15.png",40,30), x, y);
+    }
+    
+
+    
     public void addObject(Actor actor, int x, int y)
     {
         if(actor.getClass() == Ladder.class)
@@ -220,7 +254,10 @@ public class Level02 extends World
             }
             while(height > 0);
         }
-        super.addObject(actor,x * 40,y * 40);
+        if(actor.getClass() == Ledge.class)
+            addPlatform(x,y,actor.getWidth());
+        else
+            super.addObject(actor,x * 40,y * 40);
     }
     
     public void removeObject(Actor actor)
@@ -238,6 +275,7 @@ public class Level02 extends World
             }
             while(height > 0);
         }
+        tiles[actor.getY()/40][actor.getX()/40] = "";
         super.removeObject(actor);
     }
     

@@ -2,10 +2,12 @@
 comment0.target=Trigger
 comment1.params=obj\ type\ pos\ scale
 comment1.target=Trigger(mayflower.Actor,\ Trigger.TriggerType,\ int[],\ float)
-comment2.params=
-comment2.target=void\ act()
+comment2.params=width\ type\ pos\ scale
+comment2.target=Trigger(int,\ Trigger.TriggerType,\ int[],\ float)
 comment3.params=
-comment3.target=void\ playerEnter()
+comment3.target=void\ act()
 comment4.params=
-comment4.target=void\ playerExit()
-numComments=5
+comment4.target=void\ playerEnter()
+comment5.params=
+comment5.target=void\ playerExit()
+numComments=6

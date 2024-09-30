@@ -1,0 +1,331 @@
+Project documentation
+<---- javadoc command: ---->
+javadoc
+-sourcepath
+/Users/s119590/Documents/GitHub/Project
+-source
+21
+-classpath
+/Users/s119590/Desktop/BlueJ.app/Contents/Java/bluejcore.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx-web-21.0.3-mac-aarch64.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx-base-21.0.3-mac-aarch64.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx-graphics-21.0.3-mac-aarch64.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx-media-21.0.3-mac-aarch64.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx-fxml-21.0.3-mac-aarch64.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx-swing-21.0.3-mac-aarch64.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx-controls-21.0.3-mac-aarch64.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-4.12.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-jupiter-params-5.5.2.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-jupiter-api-5.5.2.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-jupiter-engine-5.5.2.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-platform-suite-api-1.5.2.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-vintage-engine-5.5.2.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-jupiter-5.5.2.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-platform-engine-1.5.2.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-platform-launcher-1.5.2.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/junit-platform-commons-1.5.2.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/hamcrest-core-1.3.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/opentest4j-1.2.0.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/lang-stride.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx/javafx.base.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx/javafx.controls.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx/javafx.fxml.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx/javafx.graphics.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx/javafx.media.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx/javafx.properties.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx/javafx.swing.jar:/Users/s119590/Desktop/BlueJ.app/Contents/Java/javafx/javafx.web.jar:/Users/s119590/Documents/GitHub/Project
+-d
+/Users/s119590/Documents/GitHub/Project/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-doctitle
+Project
+-windowtitle
+Project
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-link
+https://docs.oracle.com/en/java/javase/21/docs/api/
+/Users/s119590/Documents/GitHub/Project/Water.java
+/Users/s119590/Documents/GitHub/Project/GravityActor.java
+/Users/s119590/Documents/GitHub/Project/Level02.java
+/Users/s119590/Documents/GitHub/Project/Image.java
+/Users/s119590/Documents/GitHub/Project/Yarn.java
+/Users/s119590/Documents/GitHub/Project/TitleWorld.java
+/Users/s119590/Documents/GitHub/Project/RunOnceAnimatedActor.java
+/Users/s119590/Documents/GitHub/Project/Trigger.java
+/Users/s119590/Documents/GitHub/Project/MovableAnimatedActor.java
+/Users/s119590/Documents/GitHub/Project/Ninja.java
+/Users/s119590/Documents/GitHub/Project/Danger.java
+/Users/s119590/Documents/GitHub/Project/Tree.java
+/Users/s119590/Documents/GitHub/Project/NolanTestWorld.java
+/Users/s119590/Documents/GitHub/Project/Jack.java
+/Users/s119590/Documents/GitHub/Project/NextLevel.java
+/Users/s119590/Documents/GitHub/Project/Bomb.java
+/Users/s119590/Documents/GitHub/Project/Dog.java
+/Users/s119590/Documents/GitHub/Project/MyWorld.java
+/Users/s119590/Documents/GitHub/Project/SamarthTestWorld.java
+/Users/s119590/Documents/GitHub/Project/ImageBlock.java
+/Users/s119590/Documents/GitHub/Project/GameWin.java
+/Users/s119590/Documents/GitHub/Project/Lab6Runner.java
+/Users/s119590/Documents/GitHub/Project/GameOverWorld.java
+/Users/s119590/Documents/GitHub/Project/AnimatedActor.java
+/Users/s119590/Documents/GitHub/Project/MovingBlock.java
+/Users/s119590/Documents/GitHub/Project/Ladder.java
+/Users/s119590/Documents/GitHub/Project/YashTestWorld.java
+/Users/s119590/Documents/GitHub/Project/Cat.java
+/Users/s119590/Documents/GitHub/Project/Animation.java
+/Users/s119590/Documents/GitHub/Project/Block.java
+/Users/s119590/Documents/GitHub/Project/MyMayflower.java
+/Users/s119590/Documents/GitHub/Project/Bone.java
+<---- end of javadoc command ---->
+Loading source file /Users/s119590/Documents/GitHub/Project/Water.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/GravityActor.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Level02.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Image.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Yarn.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/TitleWorld.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/RunOnceAnimatedActor.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Trigger.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/MovableAnimatedActor.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Ninja.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Danger.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Tree.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/NolanTestWorld.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Jack.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/NextLevel.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Bomb.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Dog.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/MyWorld.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/SamarthTestWorld.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/ImageBlock.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/GameWin.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Lab6Runner.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/GameOverWorld.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/AnimatedActor.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/MovingBlock.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Ladder.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/YashTestWorld.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Cat.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Animation.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Block.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/MyMayflower.java...
+Loading source file /Users/s119590/Documents/GitHub/Project/Bone.java...
+Constructing Javadoc information...
+/Users/s119590/Documents/GitHub/Project/Danger.java:8: error: cannot find symbol
+public class Danger extends Actor
+                            ^
+  symbol: class Actor
+/Users/s119590/Documents/GitHub/Project/Water.java:7: error: cannot find symbol
+    MayflowerImage image;
+    ^
+  symbol:   class MayflowerImage
+  location: class Water
+/Users/s119590/Documents/GitHub/Project/Image.java:8: error: cannot find symbol
+public class Image extends Actor
+                           ^
+  symbol: class Actor
+/Users/s119590/Documents/GitHub/Project/AnimatedActor.java:2: error: cannot find symbol
+public class AnimatedActor extends Actor
+                                   ^
+  symbol: class Actor
+/Users/s119590/Documents/GitHub/Project/Animation.java:6: error: cannot find symbol
+    private MayflowerImage frames[];
+            ^
+  symbol:   class MayflowerImage
+  location: class Animation
+/Users/s119590/Documents/GitHub/Project/Animation.java:23: error: cannot find symbol
+    public MayflowerImage getNextFrame()
+           ^
+  symbol:   class MayflowerImage
+  location: class Animation
+/Users/s119590/Documents/GitHub/Project/AnimatedActor.java:6: error: cannot find symbol
+    private Timer animationTimer;
+            ^
+  symbol:   class Timer
+  location: class AnimatedActor
+/Users/s119590/Documents/GitHub/Project/Water.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Image.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Danger.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/MovableAnimatedActor.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Animation.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/GravityActor.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/AnimatedActor.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Level02.java:8: error: cannot find symbol
+public class Level02 extends World
+                             ^
+  symbol: class World
+/Users/s119590/Documents/GitHub/Project/Block.java:3: error: cannot find symbol
+public class Block extends Actor
+                           ^
+  symbol: class Actor
+/Users/s119590/Documents/GitHub/Project/Ladder.java:10: error: cannot find symbol
+public class Ladder extends Actor
+                            ^
+  symbol: class Actor
+/Users/s119590/Documents/GitHub/Project/Tree.java:8: error: cannot find symbol
+public class Tree extends Actor
+                          ^
+  symbol: class Actor
+/Users/s119590/Documents/GitHub/Project/Level02.java:209: error: cannot find symbol
+    public void addObject(Actor actor, int x, int y)
+                          ^
+  symbol:   class Actor
+  location: class Level02
+/Users/s119590/Documents/GitHub/Project/Level02.java:226: error: cannot find symbol
+    public void removeObject(Actor actor)
+                             ^
+  symbol:   class Actor
+  location: class Level02
+/Users/s119590/Documents/GitHub/Project/Trigger.java:11: error: cannot find symbol
+    Actor affectedObject;
+    ^
+  symbol:   class Actor
+  location: class Trigger
+/Users/s119590/Documents/GitHub/Project/Trigger.java:15: error: cannot find symbol
+    MayflowerImage image;
+    ^
+  symbol:   class MayflowerImage
+  location: class Trigger
+/Users/s119590/Documents/GitHub/Project/Trigger.java:19: error: cannot find symbol
+    public Trigger(Actor obj, TriggerType type, int[] pos, float scale)
+                   ^
+  symbol:   class Actor
+  location: class Trigger
+/Users/s119590/Documents/GitHub/Project/Level02.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Trigger.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/RunOnceAnimatedActor.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Tree.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Ladder.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Block.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Dog.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Cat.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Yarn.java:2: error: cannot find symbol
+public class Yarn extends Actor
+                          ^
+  symbol: class Actor
+/Users/s119590/Documents/GitHub/Project/Yarn.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/TitleWorld.java:8: error: cannot find symbol
+public class TitleWorld extends World
+                                ^
+  symbol: class World
+/Users/s119590/Documents/GitHub/Project/TitleWorld.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Ninja.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/NolanTestWorld.java:8: error: cannot find symbol
+public class NolanTestWorld extends World
+                                    ^
+  symbol: class World
+/Users/s119590/Documents/GitHub/Project/NolanTestWorld.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Jack.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/NextLevel.java:3: error: cannot find symbol
+public class NextLevel extends World
+                               ^
+  symbol: class World
+/Users/s119590/Documents/GitHub/Project/NextLevel.java:7: error: cannot find symbol
+    World nextWorld;
+    ^
+  symbol:   class World
+  location: class NextLevel
+/Users/s119590/Documents/GitHub/Project/NextLevel.java:11: error: cannot find symbol
+    public NextLevel(World nextWorld)
+                     ^
+  symbol:   class World
+  location: class NextLevel
+/Users/s119590/Documents/GitHub/Project/NextLevel.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Bomb.java:4: error: cannot find symbol
+public class Bomb extends Actor
+                          ^
+  symbol: class Actor
+/Users/s119590/Documents/GitHub/Project/Bomb.java:8: error: cannot find symbol
+    private MayflowerImage frames[];
+            ^
+  symbol:   class MayflowerImage
+  location: class Bomb
+/Users/s119590/Documents/GitHub/Project/Bomb.java:10: error: cannot find symbol
+    private Timer animationTimer;
+            ^
+  symbol:   class Timer
+  location: class Bomb
+/Users/s119590/Documents/GitHub/Project/Bomb.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/MyWorld.java:5: error: cannot find symbol
+public class MyWorld extends World 
+                             ^
+  symbol: class World
+/Users/s119590/Documents/GitHub/Project/MyWorld.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/SamarthTestWorld.java:5: error: cannot find symbol
+public class SamarthTestWorld extends World 
+                                      ^
+  symbol: class World
+/Users/s119590/Documents/GitHub/Project/SamarthTestWorld.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/ImageBlock.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/GameWin.java:3: error: cannot find symbol
+public class GameWin extends World
+                             ^
+  symbol: class World
+/Users/s119590/Documents/GitHub/Project/GameWin.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Lab6Runner.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/GameOverWorld.java:3: error: cannot find symbol
+public class GameOverWorld extends World
+                                   ^
+  symbol: class World
+/Users/s119590/Documents/GitHub/Project/GameOverWorld.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/MovingBlock.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/YashTestWorld.java:8: error: cannot find symbol
+public class YashTestWorld extends World
+                                   ^
+  symbol: class World
+/Users/s119590/Documents/GitHub/Project/YashTestWorld.java:64: error: cannot find symbol
+    public void addRandomObject(Actor item)
+                                ^
+  symbol:   class Actor
+  location: class YashTestWorld
+/Users/s119590/Documents/GitHub/Project/YashTestWorld.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/MyMayflower.java:3: error: cannot find symbol
+public class MyMayflower extends Mayflower 
+                                 ^
+  symbol: class Mayflower
+/Users/s119590/Documents/GitHub/Project/MyMayflower.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+/Users/s119590/Documents/GitHub/Project/Bone.java:1: error: package mayflower does not exist
+import mayflower.*;
+^
+64 errors

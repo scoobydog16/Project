@@ -2,7 +2,7 @@
 comment0.target=Yarn
 comment1.params=
 comment1.target=Yarn()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Yarn\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Yarn\n
 comment2.params=scaleFactor
 comment2.target=Yarn(float)
 comment3.params=

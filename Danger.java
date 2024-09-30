@@ -38,6 +38,6 @@ public class Danger extends Actor
     
     public void respawn(MovableAnimatedActor player)
     {
-        player.setLocation(respawnX, respawnY);
+        player.setLocation(respawnX * 40, respawnY * 40);
     }
 }
