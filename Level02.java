@@ -176,7 +176,7 @@ public class Level02 extends World
                         new int[]{ 10, 12 }, 0.4f), x, y);
                     if(tiles[y][x].contains("-PA"))
                         addObject(new Trigger(4, Trigger.TriggerType.pressActivate, 
-                        new int[]{ 7, 15 }, 0.4f), x, y);
+                        new int[]{ 8, 8 }, 0.4f), x, y);
                     if(tiles[y][x].contains("-PD"))
                         addObject(new Trigger(deactivateActor, Trigger.TriggerType.pressDeactivate, 
                         new int[]{ 10, 12 }, 0.4f), x, y);
@@ -222,8 +222,9 @@ public class Level02 extends World
     
     public void addPlatform(int x, int y, int width)
     {
+        System.out.print(width);
         tiles[y][x] = "Platform";
-        addObject(new ImageBlock("img/Tiles/13.png",40,30), x, y);
+        super.addObject(new ImageBlock("img/Tiles/13.png",40,30), x * 40, y * 40);
         x++;
         width--;
         do
@@ -283,7 +284,7 @@ public class Level02 extends World
     {
         int height = waterSprites[waterSprites.length - 1].getY() + waterSprites[0].getHeight() - waterSprites[0].getY();
         int width  = waterSprites[waterSprites.length - 1].getX() + waterSprites[0].getWidth() - waterSprites[0].getX();
-        addObject(new Water(width, height, 560, 480, waterSprites), x, y);
+        addObject(new Water(width, height, 15, 11, waterSprites), x, y);
     }
 
 }
