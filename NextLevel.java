@@ -1,22 +1,21 @@
 import mayflower.*;
 
-public class NextLevel extends World
+public class NextLevel
 {
     // instance variables - replace the example below with your own
     
-    World nextWorld;
-    /**
-     * Constructor for objects of class NextLevel
-     */
-    public NextLevel(World nextWorld)
+    private static World allWorlds[] = new World[] { new TitleWorld(), new Level02(), 
+        new GameOverWorld(), new GameWin() };
+    private static int index = 0;
+
+    public NextLevel()
     {
-        System.out.print("Loading next World, enter to start");
-        this.nextWorld = nextWorld;
+
     }
     
-    public void act() 
+    public void LoadNextLevel()
     {
-        if(Mayflower.isKeyDown(Keyboard.KEY_ENTER))
-            Mayflower.setWorld(nextWorld);
+        index++;
+        Mayflower.setWorld(allWorlds[index]);
     }
 }

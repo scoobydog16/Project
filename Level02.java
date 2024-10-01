@@ -23,6 +23,7 @@ public class Level02 extends World
     
     private String[][] tiles;
     
+    int waterCount;
     
     public Level02() 
     {
@@ -48,12 +49,14 @@ public class Level02 extends World
 
         // button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300});
         // addObject(button, 400,400);
-        Mayflower.showBounds(true);
+        Mayflower.showBounds(false);
+        buildWorld();
+        addObjectsBelow();
         cat = new Cat(5f, 0.1f, 0.625f);
         addObject(cat, 5, 13);
         dog = new Dog(3f, 0.07f, 0.625f);
         addObject(dog, 6, 13);
-        buildWorld();
+        addObjectsAbove();
         
         
         showText("Cat ", 10, 30, Color.BLACK);
@@ -108,7 +111,7 @@ public class Level02 extends World
         tiles[14][16] = "WallEdgeLB";
         tiles[10][16] = "WallEdgeLT";
         
-        int waterCount = 0;
+        waterCount = 0;
         for(int i = 0; i < 3; i++)
         {
             tiles[10][17 + i] = "WaterTop";
@@ -120,8 +123,7 @@ public class Level02 extends World
             }
             tiles[15][17 + i] = "Ground";
         }
-        Image[] waterSprites = new Image[waterCount];
-        int currentWaterIndex = 0;
+        
         
         tiles[14][18] += "+Bone";
         tiles[10][13] = "LadderObject";
@@ -150,8 +152,45 @@ public class Level02 extends World
         tiles[6][1] = "TreeObject";
         // Above sets the tiles, below adds them to the world
         
+
         
-        Actor deactivateActor = new Danger(80,40,5, 11, "img/NolanStuff/Spike.png");;
+    }
+    
+    public void addObjectsBelow()
+    {
+        Actor deactivateActor = new Danger(80,40,5, 11, "img/NolanStuff/Spike.png");
+        
+        for(int x = 0; x < 20; x++)
+        {
+            for(int y = 0; y < 15; y++)
+            {
+                if(tiles[y][x].contains("Trigger"))
+                {
+                    if(tiles[y][x].contains("-HA"))
+                        addObject(new Trigger(new Ladder(0.8f), Trigger.TriggerType.holdActivate, 
+                        new int[]{ 10, 12 }, 0.4f), x, y);
+                    if(tiles[y][x].contains("-PA"))
+                        addObject(new Trigger(5, Trigger.TriggerType.pressActivate, 
+                        new int[]{ 8, 9 }, 0.4f), x, y);
+                    if(tiles[y][x].contains("-PD"))
+                        addObject(new Trigger(deactivateActor, Trigger.TriggerType.pressDeactivate, 
+                        new int[]{ 10, 12 }, 0.4f), x, y);
+                }
+                else if(tiles[y][x].equals("DeactivateDanger"))
+                    addObject(deactivateActor, x, y);
+                else if(tiles[y][x].equals("LadderObject"))
+                    addObject(new Ladder(0.8f),x, y);
+                else if(tiles[y][x].equals("TreeObject"))
+                    addObject(new Tree(1.8f),x, y);
+            }
+        }
+    }
+     
+    public void addObjectsAbove()
+    {
+        Image[] waterSprites = new Image[waterCount];
+        int currentWaterIndex = 0;
+        
         for(int x = 0; x < 20; x++)
         {
             for(int y = 0; y < 15; y++)
@@ -172,26 +211,8 @@ public class Level02 extends World
                     addObject(new ImageBlock("img/Tiles/8.png",40,40), x, y);
                 else if(tiles[y][x].equals("WallEdgeLT"))
                     addObject(new ImageBlock("img/Tiles/1.png",40,40), x, y);
-                else if(tiles[y][x].equals("LadderObject"))
-                    addObject(new Ladder(0.8f),x, y);
-                else if(tiles[y][x].equals("TreeObject"))
-                    addObject(new Tree(1.8f),x, y);
                 else if(tiles[y][x].equals("PlatformPiece"))
                     addPlatform(x, y);
-                else if(tiles[y][x].contains("Trigger"))
-                {
-                    if(tiles[y][x].contains("-HA"))
-                        addObject(new Trigger(new Ladder(0.8f), Trigger.TriggerType.holdActivate, 
-                        new int[]{ 10, 12 }, 0.4f), x, y);
-                    if(tiles[y][x].contains("-PA"))
-                        addObject(new Trigger(5, Trigger.TriggerType.pressActivate, 
-                        new int[]{ 8, 9 }, 0.4f), x, y);
-                    if(tiles[y][x].contains("-PD"))
-                        addObject(new Trigger(deactivateActor, Trigger.TriggerType.pressDeactivate, 
-                        new int[]{ 10, 12 }, 0.4f), x, y);
-                }
-                else if(tiles[y][x].equals("DeactivateDanger"))
-                    addObject(deactivateActor, x, y);
                 else if(tiles[y][x].equals("Yarn"))
                     addObject(new Yarn(0.4f),x, y);
                 else if(tiles[y][x].contains("Bone"))
@@ -212,7 +233,7 @@ public class Level02 extends World
         }
         makeWater(waterSprites[0].getX()/40, waterSprites[0].getY()/40, waterSprites);
     }
-        
+    
     public void addPlatform(int x, int y)
     {
         tiles[y][x] = "Platform";
