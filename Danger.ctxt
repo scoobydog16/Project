@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Danger
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Danger\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Danger\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=width\ height\ x\ y\ image
 comment1.target=Danger(int,\ int,\ int,\ int,\ java.lang.String)
 comment2.params=

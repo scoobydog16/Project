@@ -7,7 +7,6 @@ import mayflower.*;
  */
 public class Image extends Actor
 {
-
     public Image(String picture, int w, int h)
     {
         MayflowerImage image = new MayflowerImage(picture);
@@ -17,4 +16,5 @@ public class Image extends Actor
 
     public void act()
     {}
+    
 }
