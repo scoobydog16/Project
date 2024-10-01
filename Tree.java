@@ -17,7 +17,7 @@ public class Tree extends Actor
     public Tree(float scaleFactor)
     {
        MayflowerImage image = new MayflowerImage("img/NolanStuff/Tree.png");
-       int h = image.getHeight()* scaleFactor > 40 ? (int)(image.getHeight() * scaleFactor) : 40;
+       int h = (image.getHeight() * scaleFactor > 40) ? ((int)(image.getHeight() * scaleFactor)) : 40;
        h -= (h%40);
        image.scale(40,h);
        setImage(image);
