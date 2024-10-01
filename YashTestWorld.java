@@ -53,12 +53,14 @@ public class YashTestWorld extends World
         Mayflower.showBounds(true);
         
         showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
-        //showText("Score: " + cat.getScore(), 40, 30, Color.BLACK);
+        showText("Score: " + cat.getScore(), 40, 30, Color.BLACK);
 
     }
     
     public void act()
     {
+        if(Mayflower.isKeyDown(Keyboard.KEY_Y))
+            Mayflower.setWorld(new Level03());
     }
     
     public void addRandomObject(Actor bomb)
@@ -66,6 +68,8 @@ public class YashTestWorld extends World
         int x = 1;//random
         int y = 2; //random
         addObject(bomb, x , y);
+        
+        
     }
     
 }
