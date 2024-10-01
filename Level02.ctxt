@@ -9,6 +9,7 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ buildWorld()
+<<<<<<< HEAD
 comment4.params=
 comment4.target=void\ addObjectsBelow()
 comment5.params=
@@ -22,3 +23,14 @@ comment8.target=void\ addObject(mayflower.Actor,\ int,\ int)
 comment9.params=actor
 comment9.target=void\ removeObject(mayflower.Actor)
 numComments=11
+=======
+comment4.params=x\ y
+comment4.target=void\ addPlatform(int,\ int)
+comment5.params=x\ y\ width
+comment5.target=void\ addPlatform(int,\ int,\ int)
+comment6.params=actor\ x\ y
+comment6.target=void\ addObject(mayflower.Actor,\ int,\ int)
+comment7.params=actor
+comment7.target=void\ removeObject(mayflower.Actor)
+numComments=8
+>>>>>>> 2388d95a5ecdcf71fa69ddd02be206218dd62195

@@ -1,26 +1,28 @@
 import mayflower.*;
 
 
-public class Bomb extends Actor
+public class Bomb extends AnimatedActor
 
 {
     private int lives;
-    private MayflowerImage frames[];
+    private String frames[];
     private int currentFrame;
     private Timer animationTimer;
+    private Animation walk;
 
     
     public Bomb()
     {
-        /**
-        for(int i = 0; i < 10; i++)
+        animationTimer = new Timer(10000000);
+        frames = new String[2];
+        for(int i = 0; i < 2; i++)
         {
-            frames[i] = MayflowerImage("img/flyingbomb" + i + ".png");
+            frames[i] = ("img/flyingbomb" + i + ".png");
         }
         walk = new Animation(50, frames);
         setAnimation(walk);
         walk.scale(100, 87);
-        **/
+       
         
     }
 
@@ -45,6 +47,7 @@ public class Bomb extends Actor
         if(animationTimer.isDone())
         {
             animationTimer.reset();
+         
             currentFrame = (currentFrame + 1) % frames.length;
             setImage (frames[currentFrame]);
             
