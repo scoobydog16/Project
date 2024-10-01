@@ -1,7 +1,4 @@
 import mayflower.*;
-
-
-
 public class SamarthTestWorld extends World 
 {
     private Cat cat;
