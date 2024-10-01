@@ -141,12 +141,12 @@ public class Level02 extends World
         tiles[9][4] = "DeactivateDangerPart";
         
         tiles[9][0] = "Trigger-PA";
-        tiles[9][1] = "Yarn";
+        tiles[5][1] = "Yarn";
         
         tiles[6][9] = "Bone";
         tiles[6][10] = "Yarn";
         
-        tiles[9][2] = "Tree";
+        tiles[6][1] = "TreeObject";
         // Above sets the tiles, below adds them to the world
         
         
@@ -173,6 +173,8 @@ public class Level02 extends World
                     addObject(new ImageBlock("img/Tiles/1.png",40,40), x, y);
                 else if(tiles[y][x].equals("LadderObject"))
                     addObject(new Ladder(0.8f),x, y);
+                else if(tiles[y][x].equals("TreeObject"))
+                    addObject(new Tree(1.8f),x, y);
                 else if(tiles[y][x].equals("PlatformPiece"))
                     addPlatform(x, y);
                 else if(tiles[y][x].contains("Trigger"))
@@ -245,18 +247,17 @@ public class Level02 extends World
         addObject(new ImageBlock("img/Tiles/15.png",40,30), x, y);
     }
     
-
-    
     public void addObject(Actor actor, int x, int y)
     {
-        if(actor.getClass() == Ladder.class)
+        if(actor.getClass() == Ladder.class || actor.getClass() == Tree.class)
         {
+            String name = actor.getClass() == Ladder.class ? "Ladder" : "Tree";
             int height = actor.getHeight() / 40;
             int yPos = y;
             do
             {
-                tiles[yPos][x] = "Ladder";
-                yPos--;
+                tiles[yPos][x] = name;
+                yPos++;
                 height--;
             }
             while(height > 0);
