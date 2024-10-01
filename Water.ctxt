@@ -1,11 +1,9 @@
 #BlueJ class context
 comment0.target=Water
-comment1.params=width\ height\ x\ y\ water
-comment1.target=Water(int,\ int,\ int,\ int,\ Image[])
+comment1.params=
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ act()
+comment2.target=void\ playerEnter()
 comment3.params=
-comment3.target=void\ playerEnter()
-comment4.params=
-comment4.target=void\ playerExit()
-numComments=5
+comment3.target=void\ playerExit()
+numComments=4

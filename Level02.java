@@ -49,11 +49,12 @@ public class Level02 extends World
         // button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300});
         // addObject(button, 400,400);
         Mayflower.showBounds(true);
-        buildWorld();
         cat = new Cat(5f, 0.1f, 0.625f);
         addObject(cat, 5, 13);
         dog = new Dog(3f, 0.07f, 0.625f);
         addObject(dog, 6, 13);
+        buildWorld();
+        
         
         showText("Cat ", 10, 30, Color.BLACK);
         showText("Lives: " + cat.getLives() + " Score: " + cat.getScore(), 80, 30, Color.BLACK);

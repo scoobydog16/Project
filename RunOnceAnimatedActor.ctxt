@@ -5,6 +5,4 @@ comment1.params=
 comment1.target=RunOnceAnimatedActor()
 comment2.params=
 comment2.target=void\ act()
-comment3.params=a
-comment3.target=void\ setAnimation(Animation)
-numComments=4
+numComments=3
