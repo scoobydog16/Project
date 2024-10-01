@@ -17,9 +17,6 @@ public class SamarthTestWorld extends World
     {
         setBackground("img/BG/BG.png");
         
-        bomb = new Bomb();
-        addObject(bomb, 399, 300);
-        
         yarn = new Yarn();
         addObject(yarn, 200, 399);
         
@@ -35,10 +32,9 @@ public class SamarthTestWorld extends World
         ninja = new Ninja();
         //addObject(ninja, 400,100);
         
-        blockA = new MovingBlock();
-        addObject(blockA, 800,500);
-        
-        Mayflower.showBounds(true);
+        blockA = new Block();
+        for (int i = 0; i < 6; i++)
+          addObject(blockA, 50*i,300);
         
         showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
 
