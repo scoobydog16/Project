@@ -21,6 +21,7 @@ public class MyWorld extends World
         setBackground("img/BG/BG.png");
         
         bomb = new Bomb();
+        
         addObject(bomb, 399, 300);
         
         yarn = new Yarn();
@@ -50,6 +51,7 @@ public class MyWorld extends World
     
     public void act()
     {
+        
     }
     
     

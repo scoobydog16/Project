@@ -61,11 +61,11 @@ public class YashTestWorld extends World
     {
     }
     
-    public void addRandomObject(Actor item)
+    public void addRandomObject(Actor bomb)
     {
         int x = 1;//random
         int y = 2; //random
-        addObject(item, x , y);
+        addObject(bomb, x , y);
     }
     
 }
