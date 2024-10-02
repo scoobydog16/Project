@@ -311,7 +311,6 @@ public class MovableAnimatedActor extends GravityActor
     public void decreaseLives(int amount)
     {
         lives -= amount;
-        gameOver();
         updateText();
     }
     
@@ -319,14 +318,6 @@ public class MovableAnimatedActor extends GravityActor
     {
         this.score += score;
         updateText();
-    }
-    
-    public void gameOver()
-    {
-       if(lives == 0)
-       {
-           Mayflower.setWorld(new GameOverWorld());
-       }
     }
     
     public void setTextPosition(int x, int y)

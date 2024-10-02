@@ -32,12 +32,12 @@ public class Yarn extends Actor
             // Cat object
             MovableAnimatedActor c = getOneIntersectingObject(MovableAnimatedActor.class);
             // Now you can call Cat methods on the c variable
-            World w = getWorld(); // get this Actor's World
-            c.increaseScore(1);
-            w.removeObject(this); // remove this Actor from the World
-            
-            
-          
+            if(c.getClass() == type)
+            {
+                World w = getWorld(); // get this Actor's World
+                c.increaseScore(1);
+                w.removeObject(this); // remove this Actor from the World
+            }
         }
     }
 }

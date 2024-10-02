@@ -1,4 +1,5 @@
 import mayflower.*;
+import java.util.ArrayList;
 /**
  * Write a description of class NolanTestWorld here.
  *
@@ -7,7 +8,6 @@ import mayflower.*;
  */
 public class Level02 extends World
 {
-
     
     private Cat cat;
     private Dog dog;
@@ -25,31 +25,15 @@ public class Level02 extends World
     
     int waterCount;
     
+    private ArrayList<Integer[]> itemSpawnSpots;
+    NextLevel levelLoader;
     public Level02() 
     {
         setBackground("img/BG/BG.png");
         tiles = new String[16][20];
-        // danger = new Danger( 20, 30, 100, 100, "img/NolanStuff/Empty.png");
-        // addObject(danger, 500, 200);
         
-        // blockA = new Block(40,40);
-        // addObject(blockA, 400,500);
-        // blockB = new Block();
-        // addObject(blockB, 528,372);
-        // Block b = new Block();
-        // addObject(b, 200,500);
-        
-        // ladder = new Ladder();
-        // addObject(ladder, 200, 400);
-        // tree = new Tree();
-        // addObject(tree, 500, 300);
-        
-        // water = new Water(100, 100, 0,0);
-        // addObject(water, 300,300);
-
-        // button = new Trigger(water, Trigger.TriggerType.holdDeactivate, new int[] {300 , 300});
-        // addObject(button, 400,400);
         Mayflower.showBounds(false);
+        itemSpawnSpots = new ArrayList<Integer[]>();
         buildWorld();
         addObjectsBelow();
         cat = new Cat(5f, 0.1f, 0.625f);
@@ -57,7 +41,7 @@ public class Level02 extends World
         dog = new Dog(3f, 0.07f, 0.625f);
         addObject(dog, 6, 13);
         addObjectsAbove();
-        
+        addRandomPickups();
         
         showText("Cat ", 10, 30, Color.BLACK);
         showText("Lives: " + cat.getLives() + " Score: " + cat.getScore(), 80, 30, Color.BLACK);
@@ -65,8 +49,7 @@ public class Level02 extends World
         showText("Dog ", 10, 60, Color.BLACK);
         showText("Lives: " + dog.getLives() + " Score: " + dog.getScore(), 80, 60, Color.BLACK);
         dog.setTextPosition(80, 60);
-        
-
+        levelLoader = new NextLevel();
     }
     
     public void act()
@@ -78,16 +61,25 @@ public class Level02 extends World
                     System.out.print(b + ", ");
                 System.out.println();
             }
+            
+        if(cat.getScore() == 5 && dog.getScore() == 5)
+            levelLoader.LoadNextLevel();
+            
+        if(cat.getLives() == 0 || dog.getLives() == 0)
+            levelLoader.GameOver();
     }
     
     public void buildWorld() 
     {
+        int possibleSpawns;
         for(int y = 0; y < tiles.length; y++)
             for(int x = 0; x < tiles[y].length; x++)
                 tiles[y][x] = "";
         
         for(int i = 0; i < 12; i++)
+        {
             tiles[14][i + 4] = "Ground";
+        }
         
         for(int y = 11; y < 15; y++)
         {
@@ -121,9 +113,7 @@ public class Level02 extends World
                 tiles[j][17 + i] = "Water";
                 waterCount++;
             }
-            tiles[15][17 + i] = "Ground";
         }
-        
         
         tiles[14][18] += "+Bone";
         tiles[10][13] = "LadderObject";
@@ -135,7 +125,7 @@ public class Level02 extends World
         
         tiles[11][11] = "Yarn";
         tiles[11][12] = "Bone";
-            
+        
         tiles[13][15] = "Trigger-HA";
         
         tiles[14][19] += "+Trigger-PD";
@@ -150,10 +140,6 @@ public class Level02 extends World
         tiles[6][10] = "Yarn";
         
         tiles[6][1] = "TreeObject";
-        // Above sets the tiles, below adds them to the world
-        
-
-        
     }
     
     public void addObjectsBelow()
@@ -170,8 +156,12 @@ public class Level02 extends World
                         addObject(new Trigger(new Ladder(0.8f), Trigger.TriggerType.holdActivate, 
                         new int[]{ 10, 12 }, 0.4f), x, y);
                     if(tiles[y][x].contains("-PA"))
+                    {
                         addObject(new Trigger(5, Trigger.TriggerType.pressActivate, 
                         new int[]{ 8, 9 }, 0.4f), x, y);
+                        for(int i = 0; i < 5; i ++)
+                            itemSpawnSpots.add(new Integer[] {8 + i, 8});
+                    }
                     if(tiles[y][x].contains("-PD"))
                         addObject(new Trigger(deactivateActor, Trigger.TriggerType.pressDeactivate, 
                         new int[]{ 10, 12 }, 0.4f), x, y);
@@ -184,6 +174,8 @@ public class Level02 extends World
                     addObject(new Tree(1.8f),x, y);
             }
         }
+        
+        addObject(new ImageBlock("img/NolanStuff/Empty.png", 800,10), 0, 15);
     }
      
     public void addObjectsAbove()
@@ -196,7 +188,10 @@ public class Level02 extends World
             for(int y = 0; y < 15; y++)
             {
                 if(tiles[y][x].equals("Ground"))
+                {
                     addObject(new Block(40,40), x, y);
+                    itemSpawnSpots.add(new Integer[]{x, y - 1});
+                }
                 else if(tiles[y][x].equals("Wall"))
                     addObject(new Image("img/Tiles/5.png",40,40), x, y);
                 else if(tiles[y][x].equals("WallEdgeR"))
@@ -204,16 +199,22 @@ public class Level02 extends World
                 else if(tiles[y][x].equals("WallEdgeRB"))
                     addObject(new ImageBlock("img/Tiles/10.png",40,40), x, y);
                 else if(tiles[y][x].equals("WallEdgeRT"))
+                {
                     addObject(new ImageBlock("img/Tiles/3.png",40,40), x, y);
+                    itemSpawnSpots.add(new Integer[]{x, y - 1});
+                }
                 else if(tiles[y][x].equals("WallEdgeL"))
                     addObject(new ImageBlock("img/Tiles/4.png",40,40), x, y);
                 else if(tiles[y][x].equals("WallEdgeLB"))
                     addObject(new ImageBlock("img/Tiles/8.png",40,40), x, y);
                 else if(tiles[y][x].equals("WallEdgeLT"))
+                {
                     addObject(new ImageBlock("img/Tiles/1.png",40,40), x, y);
+                    itemSpawnSpots.add(new Integer[]{x, y - 1});
+                }
                 else if(tiles[y][x].equals("PlatformPiece"))
                     addPlatform(x, y);
-                else if(tiles[y][x].equals("Yarn"))
+                else if(tiles[y][x].contains("Yarn"))
                     addObject(new Yarn(0.4f),x, y);
                 else if(tiles[y][x].contains("Bone"))
                     addObject(new Bone(0.4f),x, y);
@@ -234,20 +235,55 @@ public class Level02 extends World
         makeWater(waterSprites[0].getX()/40, waterSprites[0].getY()/40, waterSprites);
     }
     
+    public void addRandomPickups()
+    {
+        // adds 2 cat Yarn items
+        for(int i = 0; i < 2;)
+        {
+            int index = (int)(Math.random() * itemSpawnSpots.size());
+            Integer[] pos = itemSpawnSpots.get(index);
+            int randomYIncrease = (int)(Math.random() * 4);
+            if(tiles[pos[1] - randomYIncrease][pos[0]].equals(""))
+            {
+                i++;
+                tiles[pos[1] - randomYIncrease][pos[0]] = "Yarn";
+                addObject(new Yarn(0.4f),pos[0],pos[1] - randomYIncrease);
+                itemSpawnSpots.remove(index);
+            }
+        }
+        // adds 2 random dog Bone items
+        for(int i = 0; i < 2;)
+        {
+            int index = (int)(Math.random() * itemSpawnSpots.size());
+            Integer[] pos = itemSpawnSpots.get(index);
+            int randomYIncrease = (int)(Math.random() * 2);
+            if(tiles[pos[1] - randomYIncrease][pos[0]].equals(""))
+            {
+                i++;
+                tiles[pos[1] - randomYIncrease][pos[0]] = "Bone";
+                addObject(new Bone(0.4f),pos[0],pos[1] - randomYIncrease);
+                itemSpawnSpots.remove(index);
+            }
+        }
+    }
+    
     public void addPlatform(int x, int y)
     {
         tiles[y][x] = "Platform";
         addObject(new ImageBlock("img/Tiles/13.png",40,30), x, y);
+        itemSpawnSpots.add(new Integer[]{x, y - 1});
         x++;
         do
         {
             tiles[y][x] = "Platform";
             addObject(new ImageBlock("img/Tiles/14.png",40,30), x, y);
+            itemSpawnSpots.add(new Integer[]{x, y - 1});
             x++;
         }
         while (tiles[y][x].equals("Platform"));
         tiles[y][x] = "Platform";
         addObject(new ImageBlock("img/Tiles/15.png",40,30), x, y);
+        itemSpawnSpots.add(new Integer[]{x, y - 1});
     }
     
     public void addPlatform(int x, int y, int width)
