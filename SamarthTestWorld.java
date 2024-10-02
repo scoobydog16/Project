@@ -42,6 +42,8 @@ public class SamarthTestWorld extends World
     
     public void act()
     {
+        if(Mayflower.isKeyDown(Keyboard.KEY_S))
+            Mayflower.setWorld(new Level03());
     }
     
 }
