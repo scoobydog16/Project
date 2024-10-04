@@ -17,7 +17,7 @@ public class Bomb extends AnimatedActor
         frames = new String[2];
         for(int i = 0; i < 2; i++)
         {
-            frames[i] = ("img/flyingbomb" + i + 1 + ".png");
+            frames[i] = ("img/flyingbomb" + (i + 1) + ".png");
         }
         walk = new Animation(50, frames);
         setAnimation(walk);
