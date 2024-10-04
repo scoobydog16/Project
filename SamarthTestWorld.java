@@ -31,13 +31,16 @@ public class SamarthTestWorld extends World
         
         ninja = new Ninja();
         //addObject(ninja, 400,100);
-        
+            
         for (int i = 0; i <= 6; i++)
         {
             blockA = new MovingBlock();
-            addObject(blockA, 700-128*i,300);
+            addObject(blockA, 700-128*i,472);
+            while(blockA.getX() + blockA.getWidth() < 0)
+            {
+                blockA.setLocation(672, 472);
+            }
         }
-            
         
         showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
 
@@ -45,8 +48,7 @@ public class SamarthTestWorld extends World
     
     public void act()
     {
-        if(Mayflower.isKeyDown(Keyboard.KEY_S))
-            Mayflower.setWorld(new Level03());
+        
     }
     
 }
