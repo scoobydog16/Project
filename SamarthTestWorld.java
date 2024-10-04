@@ -32,9 +32,12 @@ public class SamarthTestWorld extends World
         ninja = new Ninja();
         //addObject(ninja, 400,100);
         
-        blockA = new Block();
-        for (int i = 0; i < 6; i++)
-          addObject(blockA, 50*i,300);
+        for (int i = 0; i <= 6; i++)
+        {
+            blockA = new MovingBlock();
+            addObject(blockA, 700-128*i,300);
+        }
+            
         
         showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
 
