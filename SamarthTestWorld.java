@@ -21,7 +21,7 @@ public class SamarthTestWorld extends World
         addObject(yarn, 200, 399);
         
         cat = new Cat(15f, 0.45f, 1f);
-        //addObject(cat, 400, 0);
+        addObject(cat, 400, 0);
         
 
         //addObject(dog, 200, 100);
@@ -32,15 +32,8 @@ public class SamarthTestWorld extends World
         ninja = new Ninja();
         //addObject(ninja, 400,100);
             
-        for (int i = 0; i <= 6; i++)
-        {
-            blockA = new MovingBlock();
-            addObject(blockA, 700-128*i,472);
-            while(blockA.getX() + blockA.getWidth() < 0)
-            {
-                blockA.setLocation(672, 472);
-            }
-        }
+        blockA = new MovingBlock();
+        addObject(blockA, 0,472);
         
         showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
 

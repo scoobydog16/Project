@@ -3,15 +3,18 @@ public class MovingBlock extends Block
 {
     public MovingBlock()
     {
-        
+        setImage("img/longtile");
     }
 
     public void act()
     {
-        Timer animationTimer = new Timer(100000000); 
         int x = getX();
         int y = getY();
         int w = getWidth();
-        setLocation(x-2, y);
+        setLocation(x-5, y);
+        if (getX() + getWidth() < 0)
+            {
+                setLocation(800, 200);
+            }
     }
 }
