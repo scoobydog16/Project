@@ -8,7 +8,7 @@ public class GameOverWorld extends World
     public GameOverWorld()
     {
        //setImage... 
-       showText("GAME OVER", 250, 300);
+       showText("GAME OVER", 285, 300);
        showText("Press Enter to Restart", 220, 500, Color.BLACK);
        colorBlack = true;
        levelLoader = new NextLevel();

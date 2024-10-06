@@ -9,7 +9,7 @@ public class GameWin extends World
     public GameWin()
     {
        //setImage... 
-       showText("GG, YOU WON!", 250, 300);
+       showText("GG, YOU WON!", 270, 300);
        showText("Press Enter to Restart", 220, 500, Color.BLACK);
        colorBlack = true;
        levelLoader = new NextLevel();

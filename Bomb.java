@@ -8,20 +8,20 @@ public class Bomb extends AnimatedActor
     private String frames[];
     private int currentFrame;
     private Timer animationTimer;
-    private Animation walk;
+    private Animation bomb;
 
     
     public Bomb()
     {
-        animationTimer = new Timer(10000000);
+        animationTimer = new Timer(1000000000);
         frames = new String[2];
         for(int i = 0; i < 2; i++)
         {
             frames[i] = ("img/flyingbomb" + (i + 1) + ".png");
         }
-        walk = new Animation(50, frames);
-        setAnimation(walk);
-        walk.scale(100, 87);
+        bomb = new Animation(50, frames);
+        setAnimation(bomb);
+        bomb.scale(100, 87);
        
         
     }

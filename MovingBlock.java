@@ -3,7 +3,7 @@ public class MovingBlock extends Block
 {
     public MovingBlock()
     {
-        setImage("img/longtile");
+        
     }
 
     public void act()
@@ -12,9 +12,7 @@ public class MovingBlock extends Block
         int y = getY();
         int w = getWidth();
         setLocation(x-5, y);
-        if (getX() + getWidth() < 0)
-            {
-                setLocation(800, 200);
-            }
+        if (x + w < 0)
+            setLocation(7*122, 95*5);
     }
 }

@@ -13,6 +13,7 @@ public class TitleWorld extends World
     public TitleWorld()
     {
        //setImage... 
+       setBackground("img/BG/BG.png");
        showText("CAT ADVENTURE", 250, 300);
        showText("Press Enter to Begin", 220, 500, Color.BLACK);
        colorBlack = true;
@@ -25,12 +26,10 @@ public class TitleWorld extends World
     {
         if(Mayflower.isKeyDown(Keyboard.KEY_ENTER)) //gameplay
             levelLoader.LoadNextLevel();
-        if(Mayflower.isKeyDown(Keyboard.KEY_N))
-            Mayflower.setWorld(new NolanTestWorld());
         if(Mayflower.isKeyDown(Keyboard.KEY_S))
-           Mayflower.setWorld(new SamarthTestWorld());
+           Mayflower.setWorld(new Level01());
         if(Mayflower.isKeyDown(Keyboard.KEY_Y))
-            Mayflower.setWorld(new YashTestWorld());
+            Mayflower.setWorld(new Level03());
             
         if(blinkTimer.isDone())
         {

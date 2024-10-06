@@ -92,7 +92,6 @@ public class Cat extends MovableAnimatedActor
             Cat c = (Cat) a;
             World w  = getWorld();
             //w.removeObject(this);
-            
         }
     }
     

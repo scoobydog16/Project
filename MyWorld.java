@@ -38,8 +38,8 @@ public class MyWorld extends World
         ninja = new Ninja();
         //addObject(ninja, 400,100);
         
-        blockA = new MovingBlock();
-        addObject(blockA, 400,500);
+        //blockA = new MovingBlock();
+        //addObject(blockA, 400,500);
         blockB = new Block();
         addObject(blockB, 528,372);
         

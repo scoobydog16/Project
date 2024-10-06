@@ -2,29 +2,47 @@ import mayflower.*;
 
 public class MovableAnimatedActor extends GravityActor
 {
-    // instance variables - replace the example below with your own
-    
+    // walking animations
     private Animation walkRight;
     private Animation walkLeft;
+    
+    // idle animations
     private Animation idleRight;
     private Animation idleLeft;
+    
+    // falling animations
     private Animation fallRight;
     private Animation fallLeft;
+    
+    // swimming animations
     private Animation swimRight;
     private Animation swimLeft;
+    
+    // climbing animations
     private Animation climbRight;
     private Animation climbLeft;
+    
+    // current action that user-controlled character (UCC) is doing
     private String currentAction;
+    
     private String direction;
+    
     private float jumpForce;
+    
     private float runSpeed;
+    
     public boolean isCat;
+    
+    // arrow key inputs for controlling UCC
     private int upKey;
     private int downKey;
     private int leftKey;
     private int rightKey;
+    
     private int score = 0;
     private int lives = 3;
+    
+    // text displayed on screen that can be updated over time
     private int textX;
     private int textY;
 
