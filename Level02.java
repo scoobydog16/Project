@@ -11,15 +11,6 @@ public class Level02 extends World
     
     private Cat cat;
     private Dog dog;
-
-    private Block blockA;
-    private Block blockB;
-    private Ladder ladder;
-    private Tree tree;
-    private Danger danger;
-    private Water water;
-    
-    Trigger button;
     
     private String[][] tiles;
     
@@ -27,6 +18,7 @@ public class Level02 extends World
     
     private ArrayList<Integer[]> itemSpawnSpots;
     NextLevel levelLoader;
+    
     public Level02() 
     {
         setBackground("img/BG/BG.png");
@@ -52,6 +44,11 @@ public class Level02 extends World
         levelLoader = new NextLevel();
     }
     
+    /*
+     * constantly checks if the players collected all their items, if so then they win
+     * if either of them have lost all of their lives,they lose
+     * (also can display all of the tiles' values if the user press enter)
+     */
     public void act()
     {
         if(Mayflower.isKeyPressed(Keyboard.KEY_ENTER))
@@ -69,6 +66,9 @@ public class Level02 extends World
             levelLoader.GameOver();
     }
     
+    /*
+     * will add the objects to the string list tiles to represent the objects in the world
+     */
     public void buildWorld() 
     {
         int possibleSpawns;
@@ -142,6 +142,9 @@ public class Level02 extends World
         tiles[6][1] = "TreeObject";
     }
     
+    /*
+     * will add objects that need to appear under the player such as trees, ladders, and triggers
+     */
     public void addObjectsBelow()
     {
         Actor deactivateActor = new Danger(80,40,5, 11, "img/NolanStuff/Spike.png");
@@ -177,7 +180,10 @@ public class Level02 extends World
         
         addObject(new ImageBlock("img/NolanStuff/Empty.png", 800,10), 0, 15);
     }
-     
+    
+    /*
+     * adds objects that need to not appear below the player (like blocks and water)
+     */
     public void addObjectsAbove()
     {
         Image[] waterSprites = new Image[waterCount];
@@ -235,6 +241,10 @@ public class Level02 extends World
         makeWater(waterSprites[0].getX()/40, waterSprites[0].getY()/40, waterSprites);
     }
     
+    /*
+     * will randomly spawn 2 yarn/bone objects within places of reach for 
+     * the dog and cat respectively
+     */
     public void addRandomPickups()
     {
         // adds 2 cat Yarn items
@@ -267,6 +277,12 @@ public class Level02 extends World
         }
     }
     
+    /*
+     * will add playeforms starting from a given position, it then checks
+     * to the right of it, if the tiles position is called platform, it also becomes a part of the platform
+     * the first and last tiles called platform are the left/right ends of the platform, and 
+     * all between are the middle part of the platform (used with normal spawning at the start of the game)
+     */
     public void addPlatform(int x, int y)
     {
         tiles[y][x] = "Platform";
@@ -286,6 +302,12 @@ public class Level02 extends World
         itemSpawnSpots.add(new Integer[]{x, y - 1});
     }
     
+    /*
+     * will add playeforms starting from a given position, it then goes to the right
+     * by the given width variable, (used with triggers)
+     * the first and last tiles called platform are the left/right ends of the platform, and 
+     * all between are the middle part of the platform
+     */
     public void addPlatform(int x, int y, int width)
     {
         System.out.print(width);
@@ -305,6 +327,10 @@ public class Level02 extends World
         addObject(new ImageBlock("img/Tiles/15.png",40,30), x, y);
     }
     
+    /*
+     * can add objects, checks if they are ledges, ladders, or trees, it can help set the tiles
+     * accordingly because they are larger than normal objects (can take up multiple tiles)
+     */
     public void addObject(Actor actor, int x, int y)
     {
         if(actor.getClass() == Ladder.class || actor.getClass() == Tree.class)
@@ -326,6 +352,9 @@ public class Level02 extends World
             super.addObject(actor,x * 40,y * 40);
     }
     
+    /*
+     * will beyond normal removing objects, will also set the tiles to empty strings
+     */
     public void removeObject(Actor actor)
     {
         if(actor.getClass() == Ladder.class)
@@ -345,6 +374,12 @@ public class Level02 extends World
         super.removeObject(actor);
     }
     
+    /*
+     * gets the width/height of the water object to be created, the way we do it is by
+     * finding the first and last index of the watersprites array, the first is top left, and last
+     * is bottom right, by subtracting their resptive x and y positions, you can find the total 
+     * width/height of the images, so you can set the hitbox's width/height
+     */
     public void makeWater(int x, int  y, Image[] waterSprites)
     {
         int height = waterSprites[waterSprites.length - 1].getY() + waterSprites[0].getHeight() - waterSprites[0].getY();

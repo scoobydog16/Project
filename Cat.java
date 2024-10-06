@@ -12,7 +12,9 @@ public class Cat extends MovableAnimatedActor
     private Animation climbRight;
     private Animation climbLeft;
 
-    
+    /*
+     * sets the animation frames
+     */
     public Cat(float jumpHeight, float gravity, float scale) 
     {
         super(jumpHeight, gravity);

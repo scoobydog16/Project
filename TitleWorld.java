@@ -22,6 +22,10 @@ public class TitleWorld extends World
        blinkTimer.set(1000000000);
     }
     
+    /*
+     * will check if there is an input (enter) if there is one it loads the next level (level 1)
+     * also makes the text object change colors to blink
+     */
     public void act() 
     {
         if(Mayflower.isKeyDown(Keyboard.KEY_ENTER)) //gameplay

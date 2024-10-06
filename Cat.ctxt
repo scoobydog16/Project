@@ -2,4 +2,5 @@
 comment0.target=Cat
 comment1.params=jumpHeight\ gravity\ scale
 comment1.target=Cat(float,\ float,\ float)
+comment1.text=\r\n\ sets\ the\ animation\ frames\r\n
 numComments=2
