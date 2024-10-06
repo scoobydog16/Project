@@ -27,7 +27,9 @@ public class TitleWorld extends World
         if(Mayflower.isKeyDown(Keyboard.KEY_ENTER)) //gameplay
             levelLoader.LoadNextLevel();
         if(Mayflower.isKeyDown(Keyboard.KEY_S))
-           Mayflower.setWorld(new Level01());
+            Mayflower.setWorld(new Level01());
+        if(Mayflower.isKeyDown(Keyboard.KEY_S))
+            Mayflower.setWorld(new Level02());
         if(Mayflower.isKeyDown(Keyboard.KEY_Y))
             Mayflower.setWorld(new Level03());
             

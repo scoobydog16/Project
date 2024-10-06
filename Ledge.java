@@ -1,12 +1,10 @@
 import mayflower.*;
-/**
- * Write a description of class Ledge here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+
 public class Ledge extends Actor
 {
+    /*
+     * this class was used to generate a ledge with a trigger, it helps store a width variable
+     */
     public int width;
     public Ledge(int w)
     {

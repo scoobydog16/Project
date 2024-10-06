@@ -9,13 +9,16 @@ import mayflower.*;
  */
 public class Ladder extends Actor
 {
+    // sets the image to display the (custom) ladder image
     public Ladder()
     {
        MayflowerImage thisImage = new MayflowerImage("img/Ladder.png");
-       //thisImage.crop(0,0,40,100); 
        setImage(thisImage);
     }
-    
+    // in addition to setting the image to a ladder, it first scales image's height and width by some factor
+    // then if it is smaller than the traditional scale of the world (40x40, or each block/tile on the grid
+    // is 40 pixels wide and 40 pixels tall) if it smaller it sets it to 40
+    // this allows one to adjust how tall and wide the ladder is
     public Ladder(float scaleFactor)
     {
        MayflowerImage image = new MayflowerImage("img/Ladder.png");

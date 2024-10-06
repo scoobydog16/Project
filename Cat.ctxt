@@ -2,6 +2,4 @@
 comment0.target=Cat
 comment1.params=jumpHeight\ gravity\ scale
 comment1.target=Cat(float,\ float,\ float)
-comment2.params=
-comment2.target=void\ act()
-numComments=3
+numComments=2

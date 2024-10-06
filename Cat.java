@@ -82,19 +82,6 @@ public class Cat extends MovableAnimatedActor
         
         setScales(scale);
     }
-    public void act()
-    {
-        super.act();
-        
-        if(isTouching(Yarn.class))
-        {
-            Object a = getOneIntersectingObject(Cat.class);
-            Cat c = (Cat) a;
-            World w  = getWorld();
-            //w.removeObject(this);
-        }
-    }
-    
-    
+
    
 }
