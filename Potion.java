@@ -1,6 +1,6 @@
 import mayflower.*;
 
-public class Potion extends Actor
+public class Potion extends Yarn
 {
 
     /**
@@ -13,6 +13,6 @@ public class Potion extends Actor
 
     public void act()
     {
-        
+        super.act();
     }
 }

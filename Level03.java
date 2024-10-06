@@ -13,6 +13,7 @@ public class Level03 extends World
     
     
     private String[][] tiles;
+    private String[][] spawnSpots;
 
     /**
      * Constructor for objects of class Level03
@@ -22,9 +23,11 @@ public class Level03 extends World
         // initialise instance variables
         setBackground("img/BG/BG.png");
         p = new Potion();
-        p.scale(0.5);
         addObject(p, 100, 100);
+        
         tiles = new String[6][8];
+        spawnSpots = new String[6][7];
+        
         Mayflower.showBounds(true);
         cat = new Cat(10f, 0.1f, 1f);
         addObject(cat, 5, 13);
@@ -69,14 +72,19 @@ public class Level03 extends World
     
     public void randomizePotionLocation()
     {
-        /**int index = (int)(Math.random() * itemSpawnSpots.size());
-        Integer[] pos = itemSpawnSpots.get(index);
-        int randomYIncrease = (int)(Math.random() * 4);
-        **/
-    }
+        /**
+        if(cat.isTouching(Potion.class))
+        {
+            int row = (int)(Math.random() * spawnSpots.length);
+            int col = (int)(Math.random() * spawnSpots[0].length);
+            
+            addObject(p, col * 100, row * 100);
+            **/
+        }
+
     
     public void act()
     {
-        
+        //randomizePotionLocation();
     }
 }
