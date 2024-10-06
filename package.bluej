@@ -2,8 +2,13 @@
 dependency1.from=Ninja
 dependency1.to=Animation
 dependency1.type=UsesDependency
+<<<<<<< HEAD
 dependency10.from=Level01
 dependency10.to=Ladder
+=======
+dependency10.from=Level02
+dependency10.to=Danger
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 dependency10.type=UsesDependency
 dependency11.from=Level01
 dependency11.to=Yarn
@@ -35,7 +40,11 @@ dependency19.type=UsesDependency
 dependency2.from=Jack
 dependency2.to=Animation
 dependency2.type=UsesDependency
+<<<<<<< HEAD
 dependency20.from=Bomb
+=======
+dependency20.from=Yarn
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 dependency20.to=Cat
 dependency20.type=UsesDependency
 dependency21.from=MyWorld
@@ -59,15 +68,24 @@ dependency26.type=UsesDependency
 dependency27.from=MyWorld
 dependency27.to=Ladder
 dependency27.type=UsesDependency
+<<<<<<< HEAD
 dependency28.from=MyWorld
 dependency28.to=Yarn
 dependency28.type=UsesDependency
 dependency29.from=Lab6Runner
 dependency29.to=MyMayflower
+=======
+dependency28.from=Danger
+dependency28.to=Dog
+dependency28.type=UsesDependency
+dependency29.from=Jack
+dependency29.to=Animation
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 dependency29.type=UsesDependency
 dependency3.from=AnimatedActor
 dependency3.to=Animation
 dependency3.type=UsesDependency
+<<<<<<< HEAD
 dependency30.from=MyMayflower
 dependency30.to=TitleWorld
 dependency30.type=UsesDependency
@@ -97,10 +115,42 @@ dependency38.to=Cat
 dependency38.type=UsesDependency
 dependency39.from=Cat
 dependency39.to=Animation
+=======
+dependency30.from=NextLevel
+dependency30.to=TitleWorld
+dependency30.type=UsesDependency
+dependency31.from=NextLevel
+dependency31.to=Level02
+dependency31.type=UsesDependency
+dependency32.from=NextLevel
+dependency32.to=GameWin
+dependency32.type=UsesDependency
+dependency33.from=NextLevel
+dependency33.to=GameOverWorld
+dependency33.type=UsesDependency
+dependency34.from=Dog
+dependency34.to=Animation
+dependency34.type=UsesDependency
+dependency35.from=Lab6Runner
+dependency35.to=MyMayflower
+dependency35.type=UsesDependency
+dependency36.from=AnimatedActor
+dependency36.to=Animation
+dependency36.type=UsesDependency
+dependency37.from=MyMayflower
+dependency37.to=TitleWorld
+dependency37.type=UsesDependency
+dependency38.from=Bone
+dependency38.to=Dog
+dependency38.type=UsesDependency
+dependency39.from=MyWorld
+dependency39.to=Cat
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 dependency39.type=UsesDependency
 dependency4.from=Level01
 dependency4.to=Cat
 dependency4.type=UsesDependency
+<<<<<<< HEAD
 dependency40.from=Trigger
 dependency40.to=Animation
 dependency40.type=UsesDependency
@@ -130,10 +180,42 @@ dependency48.to=Tree
 dependency48.type=UsesDependency
 dependency49.from=MovableAnimatedActor
 dependency49.to=Block
+=======
+dependency40.from=MyWorld
+dependency40.to=Dog
+dependency40.type=UsesDependency
+dependency41.from=MyWorld
+dependency41.to=Jack
+dependency41.type=UsesDependency
+dependency42.from=MyWorld
+dependency42.to=Ninja
+dependency42.type=UsesDependency
+dependency43.from=MyWorld
+dependency43.to=Block
+dependency43.type=UsesDependency
+dependency44.from=MyWorld
+dependency44.to=Bomb
+dependency44.type=UsesDependency
+dependency45.from=MyWorld
+dependency45.to=Ladder
+dependency45.type=UsesDependency
+dependency46.from=MyWorld
+dependency46.to=Yarn
+dependency46.type=UsesDependency
+dependency47.from=Bomb
+dependency47.to=Animation
+dependency47.type=UsesDependency
+dependency48.from=Bomb
+dependency48.to=MovableAnimatedActor
+dependency48.type=UsesDependency
+dependency49.from=Bomb
+dependency49.to=Cat
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 dependency49.type=UsesDependency
 dependency5.from=Level01
 dependency5.to=Dog
 dependency5.type=UsesDependency
+<<<<<<< HEAD
 dependency50.from=Level02
 dependency50.to=Cat
 dependency50.type=UsesDependency
@@ -163,10 +245,42 @@ dependency58.to=Image
 dependency58.type=UsesDependency
 dependency59.from=Level02
 dependency59.to=Block
+=======
+dependency50.from=Level03
+dependency50.to=Cat
+dependency50.type=UsesDependency
+dependency51.from=Level03
+dependency51.to=Dog
+dependency51.type=UsesDependency
+dependency52.from=Level03
+dependency52.to=Block
+dependency52.type=UsesDependency
+dependency53.from=Level03
+dependency53.to=Potion
+dependency53.type=UsesDependency
+dependency54.from=MovableAnimatedActor
+dependency54.to=Animation
+dependency54.type=UsesDependency
+dependency55.from=MovableAnimatedActor
+dependency55.to=Ladder
+dependency55.type=UsesDependency
+dependency56.from=MovableAnimatedActor
+dependency56.to=Water
+dependency56.type=UsesDependency
+dependency57.from=MovableAnimatedActor
+dependency57.to=Tree
+dependency57.type=UsesDependency
+dependency58.from=MovableAnimatedActor
+dependency58.to=Block
+dependency58.type=UsesDependency
+dependency59.from=Cat
+dependency59.to=Animation
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 dependency59.type=UsesDependency
 dependency6.from=Level01
 dependency6.to=Jack
 dependency6.type=UsesDependency
+<<<<<<< HEAD
 dependency60.from=Level02
 dependency60.to=Yarn
 dependency60.type=UsesDependency
@@ -196,10 +310,42 @@ dependency68.to=Level02
 dependency68.type=UsesDependency
 dependency69.from=TitleWorld
 dependency69.to=Level03
+=======
+dependency60.from=Cat
+dependency60.to=Yarn
+dependency60.type=UsesDependency
+dependency61.from=GameWin
+dependency61.to=NextLevel
+dependency61.type=UsesDependency
+dependency62.from=GameOverWorld
+dependency62.to=NextLevel
+dependency62.type=UsesDependency
+dependency63.from=TitleWorld
+dependency63.to=NextLevel
+dependency63.type=UsesDependency
+dependency64.from=TitleWorld
+dependency64.to=Level01
+dependency64.type=UsesDependency
+dependency65.from=TitleWorld
+dependency65.to=Level03
+dependency65.type=UsesDependency
+dependency66.from=Level01
+dependency66.to=Cat
+dependency66.type=UsesDependency
+dependency67.from=Level01
+dependency67.to=Dog
+dependency67.type=UsesDependency
+dependency68.from=Level01
+dependency68.to=Jack
+dependency68.type=UsesDependency
+dependency69.from=Level01
+dependency69.to=Ninja
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 dependency69.type=UsesDependency
 dependency7.from=Level01
 dependency7.to=Ninja
 dependency7.type=UsesDependency
+<<<<<<< HEAD
 dependency70.from=NextLevel
 dependency70.to=TitleWorld
 dependency70.type=UsesDependency
@@ -234,6 +380,39 @@ package.frame.height=824
 package.frame.width=1127
 package.numDependencies=73
 package.numTargets=34
+=======
+dependency70.from=Level01
+dependency70.to=Bomb
+dependency70.type=UsesDependency
+dependency71.from=Level01
+dependency71.to=Ladder
+dependency71.type=UsesDependency
+dependency72.from=Level01
+dependency72.to=Yarn
+dependency72.type=UsesDependency
+dependency8.from=Level02
+dependency8.to=Ladder
+dependency8.type=UsesDependency
+dependency9.from=Level02
+dependency9.to=Tree
+dependency9.type=UsesDependency
+editor.fx.0.height=907
+editor.fx.0.width=880
+editor.fx.0.x=-1468
+editor.fx.0.y=33
+objectbench.height=96
+objectbench.width=1896
+package.divider.horizontal=0.6
+package.divider.vertical=0.8913502109704642
+package.editor.height=825
+package.editor.width=1806
+package.editor.x=0
+package.editor.y=0
+package.frame.height=1048
+package.frame.width=1936
+package.numDependencies=72
+package.numTargets=33
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -247,8 +426,13 @@ target1.name=Water
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=80
+<<<<<<< HEAD
 target1.x=410
 target1.y=530
+=======
+target1.x=600
+target1.y=640
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target10.height=70
 target10.name=attribution.txt
 target10.type=TextTarget
@@ -302,8 +486,13 @@ target17.name=Jack
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=80
+<<<<<<< HEAD
 target17.x=840
 target17.y=500
+=======
+target17.x=1710
+target17.y=560
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target18.height=50
 target18.name=NextLevel
 target18.showInterface=false
@@ -316,8 +505,13 @@ target19.name=Bomb
 target19.showInterface=false
 target19.type=ClassTarget
 target19.width=80
+<<<<<<< HEAD
 target19.x=200
 target19.y=20
+=======
+target19.x=1380
+target19.y=560
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target2.height=50
 target2.name=GravityActor
 target2.showInterface=false
@@ -330,22 +524,37 @@ target20.name=Dog
 target20.showInterface=false
 target20.type=ClassTarget
 target20.width=80
+<<<<<<< HEAD
 target20.x=500
 target20.y=270
+=======
+target20.x=720
+target20.y=330
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target21.height=50
 target21.name=MyWorld
 target21.showInterface=false
 target21.type=ClassTarget
 target21.width=80
+<<<<<<< HEAD
 target21.x=830
 target21.y=80
+=======
+target21.x=1560
+target21.y=660
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target22.height=70
 target22.name=ImageBlock
 target22.showInterface=false
 target22.type=ClassTarget
 target22.width=100
+<<<<<<< HEAD
 target22.x=170
 target22.y=340
+=======
+target22.x=1120
+target22.y=480
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target23.height=70
 target23.name=GameWin
 target23.showInterface=false
@@ -358,15 +567,24 @@ target24.name=Potion
 target24.showInterface=false
 target24.type=ClassTarget
 target24.width=120
+<<<<<<< HEAD
 target24.x=60
 target24.y=10
+=======
+target24.x=180
+target24.y=650
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target25.height=50
 target25.name=Lab6Runner
 target25.showInterface=false
 target25.type=ClassTarget
 target25.width=100
 target25.x=10
+<<<<<<< HEAD
 target25.y=170
+=======
+target25.y=160
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target26.height=50
 target26.name=GameOverWorld
 target26.showInterface=false
@@ -382,6 +600,7 @@ target27.width=120
 target27.x=530
 target27.y=20
 target28.height=70
+<<<<<<< HEAD
 target28.name=MovingBlock
 target28.showInterface=false
 target28.type=ClassTarget
@@ -395,11 +614,27 @@ target29.type=ClassTarget
 target29.width=80
 target29.x=300
 target29.y=450
+=======
+target28.name=Ladder
+target28.showInterface=false
+target28.type=ClassTarget
+target28.width=80
+target28.x=1240
+target28.y=710
+target29.height=50
+target29.name=Cat
+target29.showInterface=false
+target29.type=ClassTarget
+target29.width=80
+target29.x=720
+target29.y=260
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target3.height=70
 target3.name=Level01
 target3.showInterface=false
 target3.type=ClassTarget
 target3.width=120
+<<<<<<< HEAD
 target3.x=760
 target3.y=180
 target30.height=50
@@ -437,27 +672,74 @@ target34.type=ClassTarget
 target34.width=80
 target34.x=200
 target34.y=510
+=======
+target3.x=740
+target3.y=570
+target30.height=50
+target30.name=Animation
+target30.showInterface=false
+target30.type=ClassTarget
+target30.width=90
+target30.x=700
+target30.y=20
+target31.height=50
+target31.name=Block
+target31.showInterface=false
+target31.type=ClassTarget
+target31.width=80
+target31.x=520
+target31.y=450
+target32.height=50
+target32.name=MyMayflower
+target32.showInterface=false
+target32.type=ClassTarget
+target32.width=110
+target32.x=10
+target32.y=300
+target33.height=70
+target33.name=Bone
+target33.showInterface=false
+target33.type=ClassTarget
+target33.width=80
+target33.x=190
+target33.y=500
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target4.height=70
 target4.name=Level03
 target4.showInterface=false
 target4.type=ClassTarget
 target4.width=120
+<<<<<<< HEAD
 target4.x=760
 target4.y=340
+=======
+target4.x=1010
+target4.y=570
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target5.height=70
 target5.name=Level02
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=80
+<<<<<<< HEAD
 target5.x=760
 target5.y=260
+=======
+target5.x=900
+target5.y=570
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target6.height=70
 target6.name=Image
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=80
+<<<<<<< HEAD
 target6.x=300
 target6.y=340
+=======
+target6.x=850
+target6.y=690
+>>>>>>> 37d6e7869daf9e927269c01afd4ef618db5174a4
 target7.height=50
 target7.name=Yarn
 target7.showInterface=false
