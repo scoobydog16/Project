@@ -161,7 +161,7 @@ public class Level01 extends World
                     i--;
             }
             randomNum = (int)(Math.random() * possibleMovingObjects2.size());
-            movingObjects.add(possibleMovingObjects.get(randomNum));
+            movingObjects.add(possibleMovingObjects2.get(randomNum));
         }
     }
     
