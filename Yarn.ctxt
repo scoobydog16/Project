@@ -2,9 +2,10 @@
 comment0.target=Yarn
 comment1.params=
 comment1.target=Yarn()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Yarn\r\n
 comment2.params=scaleFactor
 comment2.target=Yarn(float)
+comment2.text=\r\n\ allows\ the\ yarn\ to\ be\ scaleds\ once\ created,\ to\ a\ ceratin\ size\r\n
 comment3.params=
 comment3.target=void\ act()
+comment3.text=\r\n\ checks\ that\ it\ is\ touching\ the\ correct\ type\ (dog/cat)\r\n\ if\ so\ it\ increases\ the\ touched\ cat/dog's\ score\ by\ 1\ and\ removes\r\n\ itself\ from\ the\ world\r\n
 numComments=4

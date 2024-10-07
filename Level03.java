@@ -102,6 +102,7 @@ public class Level03 extends World
     
     /*
      * does the basic removeObject unless it is a Potion object, which case it does randomizePotionLocation
+     * overrides the original to make the potion not actually delete itself but instead just reposition itself
      */
     public void removeObject(Actor a)
     {

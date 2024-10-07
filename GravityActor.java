@@ -4,7 +4,7 @@ public class GravityActor extends AnimatedActor
 {
     // a boolean to toggle gravity, used for water and ladder/tree
     public boolean gravOn;
-    // the current velocity 
+    // the current velocity, doesn't reset after every frame, so it can be small or large
     public float vertVelocity;
     public boolean isJumping;
     public boolean onBlock;

@@ -55,6 +55,12 @@ public class Level01 extends World
 
     }
     
+    /*
+     * first sets the tiles 2d array to empty strings
+     * then sets the bottom row of the 2D array ground
+     * then adds the block objects where it finds ground it sets them to
+     * block and adds those blocks to the moving objects array
+     */
     public void buildWorld()
     {
         for (int i = 0; i < tiles.length; i++)
@@ -86,6 +92,10 @@ public class Level01 extends World
         
     }
     
+    /*
+     * checks if the game was won (score is at least 8) or lost (lives are less than 1)
+     * preforms the adding random object method and move objects  method, and updates the text at 10, 30
+     */
     public void act()
     {
         addRandomObjects();
@@ -103,6 +113,10 @@ public class Level01 extends World
         showText("Lives: " + cat.getLives() + " Score: " + cat.getScore() , 10, 30, Color.BLACK);
     }
     
+    /*
+     * creates an array list that will store 1 of 3 possible actors
+     * yarn (the pickup), a block (obstacle) and a spike (another obstacle)
+     */
     public void addObjectstoList()
     {
         if(canBeRandomized)
@@ -135,9 +149,9 @@ public class Level01 extends World
                     possibleMovingObjects.remove(new Block());
                     i--;
                 }
-                else if (randomNum == 2 && possibleMovingObjects.contains(new Danger(128, 128, 400, 100, "img/NolanStuff/Spike.png")))
+                else if (randomNum == 2 && possibleMovingObjects.contains(new Danger(128, 128, 10, 1, "img/NolanStuff/Spike.png")))
                 {
-                    possibleMovingObjects.remove(new Danger(128, 128, 400, 100, "img/NolanStuff/Spike.png"));
+                    possibleMovingObjects.remove(new Danger(128, 128, 10, 1, "img/NolanStuff/Spike.png"));
                     i--;
                 }
                 else
@@ -146,6 +160,10 @@ public class Level01 extends World
         }
     }
     
+    /*
+     * adds the obstacles made in the array
+     * adds them once the precious one has gone past the left bound (x = 0)
+     */
     public void addRandomObjects()
     {
         if(firstObject || movingObjects.get(currentAction - 1).getX() + movingObjects.get(currentAction - 1).getWidth() <= 0)
@@ -164,6 +182,11 @@ public class Level01 extends World
         }
     }
     
+    /*
+     * moves all objects that are deemed a moving object by being in a certain array list
+     * some will move at different speeds
+     * and the ones that make up  the ground will respawn to the right once off screen
+     */
     public void moveObjects()
     {
         for(int i = 0; i < movingObjects.size(); i++)
