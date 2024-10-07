@@ -10,7 +10,7 @@ comment3.target=void\ act()
 comment3.text=\r\n\ checks\ if\ the\ game\ was\ won\ (score\ is\ at\ least\ 8)\ or\ lost\ (lives\ are\ less\ than\ 1)\r\n\ preforms\ the\ adding\ random\ object\ method\ and\ move\ objects\ \ method,\ and\ updates\ the\ text\ at\ 10,\ 30\r\n
 comment4.params=
 comment4.target=void\ addObjectstoList()
-comment4.text=\r\n\ creates\ an\ array\ list\ that\ will\ store\ 1\ of\ 3\ possible\ actors\r\n\ yarn\ (the\ pickup),\ a\ block\ (obstacle)\ and\ a\ spike\ (another\ obstacle)\r\n
+comment4.text=\r\n\ creates\ an\ array\ list\ that\ will\ store\ every\ actor\ (30\ total)\ that\ will\ be\ moved\ across\r\n\ the\ screen\ (yarn,\ block,\ or\ danger)\ with\ equal\ amouts\ of\ each\ appearing\ on\ the\ screen\r\n\ \r\n\ an\ addition\ actor\ is\ added\ to\ the\ class\ to\ check\ whether\ all\ the\ previous\ actors\ have\ gone\ \r\n\ across\ the\ screen\ -\ if\ so,\ and\ the\ cat\ doesn't\ have\ a\ score\ of\ 8,\ the\ game\ ends\r\n
 comment5.params=
 comment5.target=void\ addRandomObjects()
 comment5.text=\r\n\ adds\ the\ obstacles\ made\ in\ the\ array\r\n\ adds\ them\ once\ the\ precious\ one\ has\ gone\ past\ the\ left\ bound\ (x\ \=\ 0)\r\n

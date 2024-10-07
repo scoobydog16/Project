@@ -1,5 +1,5 @@
 import mayflower.*;
-import java.util.*;
+import java.util.ArrayList;
 
 public class Level01 extends World 
 {
@@ -44,7 +44,7 @@ public class Level01 extends World
         tiles = new String[6][8];
         
         cat = new Cat(15f, 0.45f, 1f);
-        addObject(cat, 400, 0);
+        addObject(cat, 200, 300);
         
         levelLoader = new NextLevel();
         
@@ -114,8 +114,11 @@ public class Level01 extends World
     }
     
     /*
-     * creates an array list that will store 1 of 3 possible actors
-     * yarn (the pickup), a block (obstacle) and a spike (another obstacle)
+     * creates an array list that will store every actor (30 total) that will be moved across
+     * the screen (yarn, block, or danger) with equal amouts of each appearing on the screen
+     * 
+     * an addition actor is added to the class to check whether all the previous actors have gone 
+     * across the screen - if so, and the cat doesn't have a score of 8, the game ends
      */
     public void addObjectstoList()
     {
@@ -157,6 +160,8 @@ public class Level01 extends World
                 else
                     i--;
             }
+            randomNum = (int)(Math.random() * possibleMovingObjects2.size());
+            movingObjects.add(possibleMovingObjects.get(randomNum));
         }
     }
     
@@ -178,6 +183,8 @@ public class Level01 extends World
             }
             if (currentAction < 38)
                 currentAction++;
+            else
+                levelLoader.GameOver();
             firstObject = false;
         }
     }

@@ -2,7 +2,7 @@ import mayflower.*;
 
 public class Level03 extends World
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private Cat cat;
     private Dog dog;
 
