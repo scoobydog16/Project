@@ -60,6 +60,8 @@ public class Level01 extends World
      * then sets the bottom row of the 2D array ground
      * then adds the block objects where it finds ground it sets them to
      * block and adds those blocks to the moving objects array
+     * 
+     * sets canBeRandomized to true when Actors are ready to be added to the world
      */
     public void buildWorld()
     {
@@ -166,8 +168,10 @@ public class Level01 extends World
     }
     
     /*
-     * adds the obstacles made in the array
-     * adds them once the precious one has gone past the left bound (x = 0)
+     * adds the moving objects made in the ArrayList to the world
+     * adds them once the previous one has gone past the left bound (x = 0)
+     * 
+     * if the last (30th) object is added to the world and the cat's score == 0, then the game over screen pops up
      */
     public void addRandomObjects()
     {
@@ -179,7 +183,7 @@ public class Level01 extends World
             }
             else
             {
-                addObject(movingObjects.get(currentAction), 800, 250);
+                addObject(movingObjects.get(currentAction), 800, 320);
             }
             if (currentAction < 38)
                 currentAction++;
@@ -190,9 +194,9 @@ public class Level01 extends World
     }
     
     /*
-     * moves all objects that are deemed a moving object by being in a certain array list
+     * moves all objects that are deemed a moving object by being in a certain ArrayList
      * some will move at different speeds
-     * and the ones that make up  the ground will respawn to the right once off screen
+     * and the ones that make up the ground will respawn to the right once off screen
      */
     public void moveObjects()
     {

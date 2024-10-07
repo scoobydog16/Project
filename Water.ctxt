@@ -1,11 +1,14 @@
 #BlueJ class context
 comment0.target=Water
-comment1.params=
-comment1.target=void\ act()
+comment1.params=width\ height\ x\ y\ water
+comment1.target=Water(int,\ int,\ int,\ int,\ Image[])
+comment1.text=\r\n\ sets\ the\ image\ to\ empty,\ this\ class\ acts\ as\ a\ hitbox\ to\ the\ given\ images\r\n
 comment2.params=
-comment2.target=void\ playerEnter()
-comment2.text=\r\n\ if\ the\ dog\ enters\ it\ sets\ all\ the\ water\ images\ to\ have\ a\ low\ transparency\r\n\ if\ the\ cat\ enters\ it\ runs\ the\ normal\ player\ enter\ (which\ decreases\ a\ life\ +\ respawns)\r\n
+comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ playerExit()
-comment3.text=\r\n\ should\ only\ run\ if\ the\ dog\ is\ touching\ it\r\n\ when\ it\ runs\ it\ sets\ the\ transparency\ back\ to\ normal\ (and\ sets\ boolean\ to\ false)\r\n
-numComments=4
+comment3.target=void\ playerEnter()
+comment3.text=\r\n\ if\ the\ dog\ enters\ it\ sets\ all\ the\ water\ images\ to\ have\ a\ low\ transparency\r\n\ if\ the\ cat\ enters\ it\ runs\ the\ normal\ player\ enter\ (which\ decreases\ a\ life\ +\ respawns)\r\n
+comment4.params=
+comment4.target=void\ playerExit()
+comment4.text=\r\n\ should\ only\ run\ if\ the\ dog\ is\ touching\ it\r\n\ when\ it\ runs\ it\ sets\ the\ transparency\ back\ to\ normal\ (and\ sets\ boolean\ to\ false)\r\n
+numComments=5

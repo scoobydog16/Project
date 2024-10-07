@@ -4,7 +4,7 @@ comment1.params=
 comment1.target=Level01()
 comment2.params=
 comment2.target=void\ buildWorld()
-comment2.text=\r\n\ first\ sets\ the\ tiles\ 2d\ array\ to\ empty\ strings\r\n\ then\ sets\ the\ bottom\ row\ of\ the\ 2D\ array\ ground\r\n\ then\ adds\ the\ block\ objects\ where\ it\ finds\ ground\ it\ sets\ them\ to\r\n\ block\ and\ adds\ those\ blocks\ to\ the\ moving\ objects\ array\r\n
+comment2.text=\r\n\ first\ sets\ the\ tiles\ 2d\ array\ to\ empty\ strings\r\n\ then\ sets\ the\ bottom\ row\ of\ the\ 2D\ array\ ground\r\n\ then\ adds\ the\ block\ objects\ where\ it\ finds\ ground\ it\ sets\ them\ to\r\n\ block\ and\ adds\ those\ blocks\ to\ the\ moving\ objects\ array\r\n\ \r\n\ sets\ canBeRandomized\ to\ true\ when\ Actors\ are\ ready\ to\ be\ added\ to\ the\ world\r\n
 comment3.params=
 comment3.target=void\ act()
 comment3.text=\r\n\ checks\ if\ the\ game\ was\ won\ (score\ is\ at\ least\ 8)\ or\ lost\ (lives\ are\ less\ than\ 1)\r\n\ preforms\ the\ adding\ random\ object\ method\ and\ move\ objects\ \ method,\ and\ updates\ the\ text\ at\ 10,\ 30\r\n
@@ -13,8 +13,8 @@ comment4.target=void\ addObjectstoList()
 comment4.text=\r\n\ creates\ an\ array\ list\ that\ will\ store\ every\ actor\ (30\ total)\ that\ will\ be\ moved\ across\r\n\ the\ screen\ (yarn,\ block,\ or\ danger)\ with\ equal\ amouts\ of\ each\ appearing\ on\ the\ screen\r\n\ \r\n\ an\ addition\ actor\ is\ added\ to\ the\ class\ to\ check\ whether\ all\ the\ previous\ actors\ have\ gone\ \r\n\ across\ the\ screen\ -\ if\ so,\ and\ the\ cat\ doesn't\ have\ a\ score\ of\ 8,\ the\ game\ ends\r\n
 comment5.params=
 comment5.target=void\ addRandomObjects()
-comment5.text=\r\n\ adds\ the\ obstacles\ made\ in\ the\ array\r\n\ adds\ them\ once\ the\ precious\ one\ has\ gone\ past\ the\ left\ bound\ (x\ \=\ 0)\r\n
+comment5.text=\r\n\ adds\ the\ moving\ objects\ made\ in\ the\ ArrayList\ to\ the\ world\r\n\ adds\ them\ once\ the\ previous\ one\ has\ gone\ past\ the\ left\ bound\ (x\ \=\ 0)\r\n\ \r\n\ if\ the\ last\ (30th)\ object\ is\ added\ to\ the\ world\ and\ the\ cat's\ score\ \=\=\ 0,\ then\ the\ game\ over\ screen\ pops\ up\r\n
 comment6.params=
 comment6.target=void\ moveObjects()
-comment6.text=\r\n\ moves\ all\ objects\ that\ are\ deemed\ a\ moving\ object\ by\ being\ in\ a\ certain\ array\ list\r\n\ some\ will\ move\ at\ different\ speeds\r\n\ and\ the\ ones\ that\ make\ up\ \ the\ ground\ will\ respawn\ to\ the\ right\ once\ off\ screen\r\n
+comment6.text=\r\n\ moves\ all\ objects\ that\ are\ deemed\ a\ moving\ object\ by\ being\ in\ a\ certain\ ArrayList\r\n\ some\ will\ move\ at\ different\ speeds\r\n\ and\ the\ ones\ that\ make\ up\ the\ ground\ will\ respawn\ to\ the\ right\ once\ off\ screen\r\n
 numComments=7
