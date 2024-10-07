@@ -1,16 +1,17 @@
 import mayflower.*;
 
-public class GameWin extends World
+public class FinalGameWin extends World
 {
     
     NextLevel levelLoader;
     private Timer blinkTimer;
     boolean colorBlack;
-    public GameWin()
+    public FinalGameWin()
     {
        //setImage... 
-       showText("GG, YOU WON!", 270, 300);
-       showText("Press Enter to Restart", 220, 500, Color.BLACK);
+       showText("YOU WON!!!! VERY COOL :)", 70, 300);
+       showText("CLICK ENTER TO RESTART", 70, 350);
+       showText("Press Enter to Play Again", 220, 500, Color.BLACK);
        colorBlack = true;
        levelLoader = new NextLevel();
        blinkTimer = new Timer(999999);
@@ -31,13 +32,13 @@ public class GameWin extends World
             if(colorBlack)
             {
                 removeText(220,500);
-                showText("Press Enter To Go To The Next Level", 120, 500, Color.BLUE);
+                showText("Press Enter To Play Again", 220, 500, Color.BLUE);
                 colorBlack = false;
             }
             else
             {
                 removeText(220,500);
-                showText("Press Enter To Go To The Next Level", 120, 500, Color.BLACK);
+                showText("Press Enter To Play Again", 220, 500, Color.BLACK);
                 colorBlack = true;
             }
                 

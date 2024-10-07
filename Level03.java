@@ -8,12 +8,15 @@ public class Level03 extends World
 
     private Block blockA;
     private Block blockB;
-    private Timer animationTimer;
+    private Timer countdownTimer;
+    private int time = 1000000000;
     private Potion p;
     
     
     private String[][] tiles;
     private String[][] spawnSpots;
+    
+    NextLevel levelLoader;
 
     /**
      * Constructor for objects of class Level03
@@ -22,6 +25,9 @@ public class Level03 extends World
     {
         // initialise instance variables
         setBackground("img/BG/BG.png");
+        
+        countdownTimer = new Timer(time);
+        
         p = new Potion();
         addObject(p, 100, 100);
         
@@ -31,8 +37,15 @@ public class Level03 extends World
         Mayflower.showBounds(true);
         cat = new Cat(10f, 0.1f, 1f);
         addObject(cat, 5, 13);
-        showText("Lives: " + cat.getLives() + " Score: " + cat.getScore(), 80, 30, Color.BLACK);
-        cat.setTextPosition(80, 25);
+        cat.setLives(1);
+        showText("Lives: " + cat.getLives() + " Score: " + cat.getScore(), 10, 30, Color.BLACK);
+        showText("Time Left: " + time, 10, 60, Color.BLACK);
+        
+        cat.setTextPosition(10, 30);
+        
+        randomizePotionLocation(p);
+        
+        levelLoader = new NextLevel();
         
         buildWorld();
     }
@@ -70,21 +83,34 @@ public class Level03 extends World
         }
     }
     
-    public void randomizePotionLocation()
+    public void randomizePotionLocation(Actor a)
     {
-        /**
-        if(cat.isTouching(Potion.class))
-        {
-            int row = (int)(Math.random() * spawnSpots.length);
-            int col = (int)(Math.random() * spawnSpots[0].length);
-            
-            addObject(p, col * 100, row * 100);
-            **/
-        }
+        countdownTimer.reset();
+        int row = (int)(Math.random() * spawnSpots.length);
+        int col = (int)(Math.random() * spawnSpots[0].length);    
+        a.setLocation(col * 80, row * 60);
+    }
+    
+    public void removeObject(Actor a)
+    {
+        if(a.getClass() == Potion.class)
+            randomizePotionLocation(a);
+        else
+            super.removeObject(a);
+    }
 
     
     public void act()
     {
-        //randomizePotionLocation();
+        if (cat.getScore() >= 12)
+        {
+            levelLoader.LoadNextLevel();
+        }
+        if (((countdownTimer.getTimeLeft()/1000000000) + 3) <= 0)
+        {
+            levelLoader.GameOver();
+        }
+        
+        showText("Time Left: " + ((countdownTimer.getTimeLeft()/1000000000) + 3), 10, 60, Color.BLACK);
     }
 }

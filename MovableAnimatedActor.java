@@ -384,4 +384,9 @@ public class MovableAnimatedActor extends GravityActor
             }
         }
     }
+    
+    public void setLives(int n)
+    {
+        lives = n;
+    }
 }

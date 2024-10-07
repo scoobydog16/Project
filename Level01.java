@@ -4,11 +4,7 @@ import java.util.*;
 public class Level01 extends World 
 {
     private Cat cat;
-    private Dog dog;
-    private Jack jack;
-    private Ninja ninja;
     private Block blockA;
-    private Bomb bomb;
     private Ladder ladder;
     private Yarn yarn;
     private String[][] tiles;

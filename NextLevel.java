@@ -4,7 +4,7 @@ public class NextLevel
 {
     // instance variables - replace the example below with your own
     // static variables, meaning they won't change, always those variables, so they are constant between worlds
-    private static World allWorlds[] = new World[] { new TitleWorld(), new Level02(), new GameWin(), 
+    private static World allWorlds[] = new World[] { new TitleWorld(), new Level02(), new GameWin(), new Level03(), new FinalGameWin(),
         new GameOverWorld()};
     private static int index = 0;
 
@@ -32,7 +32,7 @@ public class NextLevel
     public void Restart()
     {
         index = 0;
-        allWorlds = new World[] { new TitleWorld(), new Level02(), new GameWin(), new GameOverWorld()};
+        allWorlds = new World[] { new TitleWorld(), new Level02(), new GameWin(), new Level03(), new FinalGameWin(), new GameOverWorld()};
         Mayflower.setWorld(allWorlds[index]);
     }
 }

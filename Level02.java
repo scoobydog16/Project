@@ -24,7 +24,7 @@ public class Level02 extends World
         setBackground("img/BG/BG.png");
         tiles = new String[16][20];
         
-        Mayflower.showBounds(false);
+        //Mayflower.showBounds(false);
         itemSpawnSpots = new ArrayList<Integer[]>();
         buildWorld();
         addObjectsBelow();
