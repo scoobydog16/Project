@@ -7,7 +7,8 @@ import mayflower.*;
  */
 public class ImageBlock extends Block
 {
-
+    //basiclly block class but you can change the picture, allowing you to have the same
+    //mechanics of a block, with different images
     public ImageBlock(String picture, int w, int h)
     {
         MayflowerImage image = new MayflowerImage(picture);

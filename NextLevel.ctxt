@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.target=NextLevel
 comment1.params=
-comment1.target=NextLevel()
+comment1.target=void\ LoadNextLevel()
 comment2.params=
-comment2.target=void\ LoadNextLevel()
-numComments=3
+comment2.target=void\ GameOver()
+comment3.params=
+comment3.target=void\ Restart()
+comment4.params=
+comment4.target=int\ getCurrentIndex()
+numComments=5

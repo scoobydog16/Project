@@ -7,6 +7,8 @@ import mayflower.*;
  */
 public class Image extends Actor
 {
+    //creates an image, easy to change and doesn't collide with player
+    //also scalable sizing
     public Image(String picture, int w, int h)
     {
         MayflowerImage image = new MayflowerImage(picture);

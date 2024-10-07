@@ -1,17 +1,22 @@
 import mayflower.*;
 
-public class Level03 extends MyWorld
+public class Level03 extends World
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private Cat cat;
     private Dog dog;
 
     private Block blockA;
     private Block blockB;
-    
+    private Timer countdownTimer;
+    private int time = 1000000000;
+    private Potion p;
     
     
     private String[][] tiles;
+    private String[][] spawnSpots;
+    
+    NextLevel levelLoader;
 
     /**
      * Constructor for objects of class Level03
@@ -19,82 +24,110 @@ public class Level03 extends MyWorld
     public Level03()
     {
         // initialise instance variables
-        Mayflower.showBounds(true);
-        cat = new Cat(5f, 0.1f, 1f);
+        setBackground("img/BG/BG.png");
+        
+        countdownTimer = new Timer(time);
+        
+        p = new Potion();
+        addObject(p, 100, 100);
+        
+        tiles = new String[6][8];
+        spawnSpots = new String[6][7];
+        
+        Mayflower.showBounds(false);
+        cat = new Cat(10f, 0.1f, 1f);
         addObject(cat, 5, 13);
-        showText("Lives: " + cat.getLives() + " Score: " + cat.getScore(), 80, 30, Color.BLACK);
-        cat.setTextPosition(80, 25);
+        cat.setLives(1);
+        showText("Lives: " + cat.getLives() + " Score: " + cat.getScore(), 10, 30, Color.BLACK);
+        showText("Time Left: " + time, 10, 60, Color.BLACK);
+        
+        cat.setTextPosition(10, 30);
+        
+        randomizePotionLocation(p);
+        
+        levelLoader = new NextLevel();
+        
+        buildWorld();
     }
 
-   
+    /*
+     * builds the grid/tiles 2c array and then adds objects accordingly
+     */
     public void buildWorld()
     {
-        
-        for(int y = 0; y < tiles.length; y++)
-            for(int x = 0; x < tiles[y].length; x++)
-                tiles[y][x] = "";
-        
-        for(int i = 0; i < 12; i++)
-            tiles[14][i + 4] = "Ground";
-        
-        for(int y = 11; y < 15; y++)
+        for(int i = 0; i < tiles.length; i++)
         {
-            for(int x = 0; x < 4; x++)
+            for(int j = 0; j < tiles[i].length; j++)
             {
-                tiles[y][x] = "Wall";
+                tiles[i][j] = "";
             }
-            tiles[y][4] = "WallEdgeR";
         }
-        tiles[14][4] = "WallEdgeRB";
-        for(int x = 0; x < 4; x++)
+        
+        for (int i = 0; i < tiles[5].length; i++)
+            tiles[5][i] = "ground";
+        
+            for(int i = 0; i < tiles.length; i++)
         {
-            tiles[10][x] = "Ground";
+            for(int j = 0; j < tiles[i].length; j++)
+            {
+                if(tiles[i][j] == "ground")
+                    addObject(new Block(100,100), 100*j, 500);
+            }
         }
-        tiles[10][4] = "WallEdgeRT";
-        
-        for(int y = 11; y < 14; y++)
+            
+        for(int i = 0; i < tiles.length; i++)
         {
-            tiles[y][16] = "WallEdgeL";
+            for(int j = 0; j < tiles[i].length; j++)
+            {
+                System.out.print(tiles[i][j]);
+            }
+            System.out.println();
         }
-        tiles[14][16] = "WallEdgeLB";
-        tiles[10][16] = "WallEdgeLT";
-        
-        
     }
     
-    public void addPlatform(int x, int y)
+    /*
+     * randomly sets the position of the potion
+     * also sets the previous point in the grid to "" and the new one to "Potion"
+     * as well as resets the timer
+     */
+    public void randomizePotionLocation(Actor a)
     {
-        tiles[y][x] = "Platform";
-        addObject(new ImageBlock("img/Tiles/13.png",40,30), x, y);
-        x++;
-        do
-        {
-            tiles[y][x] = "Platform";
-            addObject(new ImageBlock("img/Tiles/14.png",40,30), x, y);
-            x++;
-        }
-        while (tiles[y][x].equals("Platform"));
-        tiles[y][x] = "Platform";
-        addObject(new ImageBlock("img/Tiles/15.png",40,30), x, y);
+        countdownTimer.reset();
+        tiles[a.getY()/100][a.getX()/100] = "";
+        int row = (int)(Math.random() * (spawnSpots.length - 1 ));
+        int col = (int)(Math.random() * (spawnSpots[0].length - 1));  
+        tiles[row][col] = "Potion";
+        a.setLocation(col * 100, row * 100);
     }
     
-    public void addPlatform(int x, int y, int width)
+    /*
+     * does the basic removeObject unless it is a Potion object, which case it does randomizePotionLocation
+     * overrides the original to make the potion not actually delete itself but instead just reposition itself
+     */
+    public void removeObject(Actor a)
     {
-        System.out.print(width);
-        tiles[y][x] = "Platform";
-        super.addObject(new ImageBlock("img/Tiles/13.png",40,30), x * 40, y * 40);
-        x++;
-        width--;
-        do
-        {
-            tiles[y][x] = "Platform";
-            addObject(new ImageBlock("img/Tiles/14.png",40,30), x, y);
-            x++;
-            width--;
-        }
-        while (width > 1);
-        tiles[y][x] = "Platform";
-        addObject(new ImageBlock("img/Tiles/15.png",40,30), x, y);
+        if(a.getClass() == Potion.class)
+            randomizePotionLocation(a);
+        else
+            super.removeObject(a);
     }
 
+    /*
+     * updates the text, and check if time ran out (game over) or if score is greater than 12 (game win)
+     */
+    public void act()
+    {
+        if (cat.getScore() >= 12)
+        {
+            levelLoader.LoadNextLevel();
+        }
+        if (((countdownTimer.getTimeLeft()/1000000000) + 3) <= 0)
+        {
+            levelLoader.GameOver();
+        }
+        
+        
+        showText("Time Left: " + ((countdownTimer.getTimeLeft()/1000000000) + 3), 10, 60, Color.BLACK);
+    }
+    
 }

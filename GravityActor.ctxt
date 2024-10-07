@@ -6,6 +6,7 @@ comment2.params=
 comment2.target=GravityActor()
 comment3.params=
 comment3.target=void\ act()
+comment3.text=\r\n\ every\ frame\ it\ will\ either\ decrease\ the\ gravity\ if\ it\ is\ not\ on\ a\ block\ or\ set\ the\ vert\ velocity\ to\ 0,\ \r\n
 comment4.params=
 comment4.target=boolean\ isBlocked()
 comment5.params=

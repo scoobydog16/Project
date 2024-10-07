@@ -2,29 +2,47 @@ import mayflower.*;
 
 public class MovableAnimatedActor extends GravityActor
 {
-    // instance variables - replace the example below with your own
-    
+    // walking animations
     private Animation walkRight;
     private Animation walkLeft;
+    
+    // idle animations
     private Animation idleRight;
     private Animation idleLeft;
+    
+    // falling animations
     private Animation fallRight;
     private Animation fallLeft;
+    
+    // swimming animations
     private Animation swimRight;
     private Animation swimLeft;
+    
+    // climbing animations
     private Animation climbRight;
     private Animation climbLeft;
+    
+    // current action that user-controlled character (UCC) is doing
     private String currentAction;
+    
     private String direction;
+    
     private float jumpForce;
+    
     private float runSpeed;
+    
     public boolean isCat;
+    
+    // arrow key inputs for controlling UCC
     private int upKey;
     private int downKey;
     private int leftKey;
     private int rightKey;
+    
     private int score = 0;
     private int lives = 3;
+    
+    // text displayed on screen that can be updated over time
     private int textX;
     private int textY;
 
@@ -41,6 +59,8 @@ public class MovableAnimatedActor extends GravityActor
        rightKey = Keyboard.KEY_RIGHT;
     }
     
+    // you can control what keys control the player movement
+    // (allows the dog to be WASD and cat arrow keys)
     public MovableAnimatedActor(float jumpForce, float gravity, float runSpeed, int up, int down, int left, int right)
     {
        super(gravity); 
@@ -74,7 +94,18 @@ public class MovableAnimatedActor extends GravityActor
         int h = getHeight();
         float horzChange = 0;
         float vertChange = 0;
-
+    
+        /*
+         * if the player presses up, it will increase height (vert change) by a little so it isn't on the
+         * block at that instance, and will set the veritcal speed to its jump, IF IT IS ON THE GROUND
+         * 
+         * if the player presses left/right, only moves left/right by a set amount (horz change, not a verlocity)
+         * 
+         * if they are touching a ladder or water (and is a dog) or tree (and is a cat) then they are not affected
+         * by gravity, and instead only are affected by vert change and horz change, not vert velocity
+         * 
+         * also sets the direction and animation accordingly
+         */
         if(Mayflower.isKeyDown(rightKey) && x + w < 800) // Moving Right
         {
             if(Mayflower.isKeyDown(upKey) && y > 0 && onBlock && !isJumping)
@@ -237,6 +268,8 @@ public class MovableAnimatedActor extends GravityActor
         }    
         else
             setLocation(x, y);
+        // ^^^ if moving up/down causes the player to run into a block
+        // the player will no longer move up/down to avoid phasing through it
         
         // (current position + left/right movement, current position + up/down movement and changing velocity
         // up/down movement: instant changes so that way the player isn't touching something while jumping,
@@ -311,7 +344,7 @@ public class MovableAnimatedActor extends GravityActor
     public void decreaseLives(int amount)
     {
         lives -= amount;
-        gameOver();
+        vertVelocity = 0;
         updateText();
     }
     
@@ -321,20 +354,14 @@ public class MovableAnimatedActor extends GravityActor
         updateText();
     }
     
-    public void gameOver()
-    {
-       if(lives == 0)
-       {
-           Mayflower.setWorld(new GameOverWorld());
-       }
-    }
-    
+    //sets the text position, so the updateText method can find the text objects
     public void setTextPosition(int x, int y)
     {
         textX = x;
         textY =y;
     }
     
+    //updates the text of its position
     public void updateText()
     {
         World w = getWorld();
@@ -342,6 +369,7 @@ public class MovableAnimatedActor extends GravityActor
         w.showText("Lives: " + lives + " Score: " + score, textX, textY, Color.BLACK);
     }
     
+    // Will scale all of the animations and their frames
     public void setScales(float scaleFactor)
     {
         Animation[] animations = new Animation[] {walkRight, walkLeft, idleRight, idleLeft, 
@@ -356,5 +384,10 @@ public class MovableAnimatedActor extends GravityActor
                 }
             }
         }
+    }
+    
+    public void setLives(int n)
+    {
+        lives = n;
     }
 }

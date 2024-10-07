@@ -14,8 +14,12 @@ public class Dog extends MovableAnimatedActor
     private Animation climbRight;
     private Animation climbLeft;
     
+    /*
+     * sets the animation frames
+     */
     public Dog(float jumpHeight, float gravity, float scale) 
     {
+        // will instead of being controled by arrow keys like cat, it is controlled by WASD
         super(jumpHeight, gravity, 2f, Keyboard.KEY_W, Keyboard.KEY_S, Keyboard.KEY_A, Keyboard.KEY_D);
         isCat = false;
         String frames[] = new String[10];

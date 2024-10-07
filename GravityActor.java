@@ -2,11 +2,13 @@ import mayflower.*;
 
 public class GravityActor extends AnimatedActor
 {
-    
+    // a boolean to toggle gravity, used for water and ladder/tree
     public boolean gravOn;
+    // the current velocity, doesn't reset after every frame, so it can be small or large
     public float vertVelocity;
     public boolean isJumping;
     public boolean onBlock;
+    // how much the velocity changes by per second (if in the air)
     public float gravity;
     
     public GravityActor(float gravity)
@@ -26,7 +28,10 @@ public class GravityActor extends AnimatedActor
         onBlock = false;
         this.gravity = -0.09f;
     }
-     
+    
+    /*
+     * every frame it will either decrease the gravity if it is not on a block or set the vert velocity to 0, 
+     */
     public void act() 
     {
         super.act();

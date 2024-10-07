@@ -1,38 +1,32 @@
 #BlueJ class context
 comment0.target=Level02
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ NolanTestWorld\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Level02()
-comment10.params=x\ y\ waterSprites
-comment10.target=void\ makeWater(int,\ int,\ Image[])
+comment10.params=actor
+comment10.target=void\ removeObject(mayflower.Actor)
+comment10.text=\r\n\ will\ beyond\ normal\ removing\ objects,\ will\ also\ set\ the\ tiles\ to\ empty\ strings\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ constantly\ checks\ if\ the\ players\ collected\ all\ their\ items,\ if\ so\ then\ they\ win\r\n\ if\ either\ of\ them\ have\ lost\ all\ of\ their\ lives,they\ lose\r\n\ (also\ can\ display\ all\ of\ the\ tiles'\ values\ if\ the\ user\ press\ enter)\r\n
 comment3.params=
 comment3.target=void\ buildWorld()
-<<<<<<< HEAD
-comment4.params=x\ y
-comment4.target=void\ addPlatform(int,\ int)
-comment5.params=x\ y\ width
-comment5.target=void\ addPlatform(int,\ int,\ int)
-comment6.params=actor\ x\ y
-comment6.target=void\ addObject(mayflower.Actor,\ int,\ int)
-comment7.params=actor
-comment7.target=void\ removeObject(mayflower.Actor)
-comment8.params=x\ y\ waterSprites
-comment8.target=void\ makeWater(int,\ int,\ Image[])
-numComments=9
-=======
+comment3.text=\r\n\ will\ add\ the\ objects\ to\ the\ string\ list\ tiles\ to\ represent\ the\ objects\ in\ the\ world\r\n
 comment4.params=
 comment4.target=void\ addObjectsBelow()
+comment4.text=\r\n\ will\ add\ objects\ that\ need\ to\ appear\ under\ the\ player\ such\ as\ trees,\ ladders,\ and\ triggers\r\n
 comment5.params=
 comment5.target=void\ addObjectsAbove()
-comment6.params=x\ y
-comment6.target=void\ addPlatform(int,\ int)
-comment7.params=x\ y\ width
-comment7.target=void\ addPlatform(int,\ int,\ int)
-comment8.params=actor\ x\ y
-comment8.target=void\ addObject(mayflower.Actor,\ int,\ int)
-comment9.params=actor
-comment9.target=void\ removeObject(mayflower.Actor)
+comment5.text=\r\n\ adds\ objects\ that\ need\ to\ not\ appear\ below\ the\ player\ (like\ blocks\ and\ water)\r\n
+comment6.params=
+comment6.target=void\ addRandomPickups()
+comment6.text=\r\n\ will\ randomly\ spawn\ 2\ yarn/bone\ objects\ within\ places\ of\ reach\ for\ \r\n\ the\ dog\ and\ cat\ respectively\r\n
+comment7.params=x\ y
+comment7.target=void\ addPlatform(int,\ int)
+comment7.text=\r\n\ will\ add\ playeforms\ starting\ from\ a\ given\ position,\ it\ then\ checks\r\n\ to\ the\ right\ of\ it,\ if\ the\ tiles\ position\ is\ called\ platform,\ it\ also\ becomes\ a\ part\ of\ the\ platform\r\n\ the\ first\ and\ last\ tiles\ called\ platform\ are\ the\ left/right\ ends\ of\ the\ platform,\ and\ \r\n\ all\ between\ are\ the\ middle\ part\ of\ the\ platform\ (used\ with\ normal\ spawning\ at\ the\ start\ of\ the\ game)\r\n
+comment8.params=x\ y\ width
+comment8.target=void\ addPlatform(int,\ int,\ int)
+comment8.text=\r\n\ will\ add\ playeforms\ starting\ from\ a\ given\ position,\ it\ then\ goes\ to\ the\ right\r\n\ by\ the\ given\ width\ variable,\ (used\ with\ triggers)\r\n\ the\ first\ and\ last\ tiles\ called\ platform\ are\ the\ left/right\ ends\ of\ the\ platform,\ and\ \r\n\ all\ between\ are\ the\ middle\ part\ of\ the\ platform\r\n
+comment9.params=actor\ x\ y
+comment9.target=void\ addObject(mayflower.Actor,\ int,\ int)
+comment9.text=\r\n\ can\ add\ objects,\ checks\ if\ they\ are\ ledges,\ ladders,\ or\ trees,\ it\ can\ help\ set\ the\ tiles\r\n\ accordingly\ because\ they\ are\ larger\ than\ normal\ objects\ (can\ take\ up\ multiple\ tiles)\r\n
 numComments=11
->>>>>>> d5f08f94dbc9372fa29f346aa9f43d5666c9c259

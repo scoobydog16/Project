@@ -12,7 +12,9 @@ public class Cat extends MovableAnimatedActor
     private Animation climbRight;
     private Animation climbLeft;
 
-    
+    /*
+     * sets the animation frames
+     */
     public Cat(float jumpHeight, float gravity, float scale) 
     {
         super(jumpHeight, gravity);
@@ -82,20 +84,6 @@ public class Cat extends MovableAnimatedActor
         
         setScales(scale);
     }
-    public void act()
-    {
-        super.act();
-        
-        if(isTouching(Yarn.class))
-        {
-            Object a = getOneIntersectingObject(Cat.class);
-            Cat c = (Cat) a;
-            World w  = getWorld();
-            //w.removeObject(this);
-            
-        }
-    }
-    
-    
+
    
 }

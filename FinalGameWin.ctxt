@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=GameWin
+comment0.target=FinalGameWin
 comment1.params=
-comment1.target=GameWin()
+comment1.target=FinalGameWin()
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ will\ check\ if\ there\ is\ an\ input\ (enter)\ if\ there\ is\ one\ it\ loads\ the\ next\ level\ (title)\r\n\ also\ makes\ the\ text\ object\ change\ colors\ to\ blink\r\n

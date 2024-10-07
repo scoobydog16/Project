@@ -28,6 +28,10 @@ public class Animation
         return frame;
     }
     
+    /*
+     * will return if the animation is currently on its final frame, used in runonce animated actor
+     * in order to know when to stop animation
+     */
     public boolean lastFrame()
     {
         return currentFrame + 1 == frames.length;
@@ -43,6 +47,9 @@ public class Animation
             frames[i].scale(w,h); 
     }
     
+    /*
+     * can scale a single index in the frames list to a certain scale
+     */
     public void scale(float scaleFactor, int index) 
     {
         int w = (int)(frames[index].getWidth() * scaleFactor);
@@ -66,6 +73,8 @@ public class Animation
         return frameRate;
     }
     
+    // used if you want to restart an animation, instead of picking  it up where it was left 
+    // (if you changed mid animation)
     public void reset()
     {
         currentFrame = 0;

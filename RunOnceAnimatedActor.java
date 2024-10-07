@@ -7,12 +7,19 @@ import mayflower.*;
  */
 public class RunOnceAnimatedActor extends AnimatedActor
 {
-    boolean finishedAnim;
+    // this controls if the  normal animator runs or not, represents if it is on the last frame of the animation
+    boolean finishedAnim; 
     public RunOnceAnimatedActor()
     {
         finishedAnim = true;
     }
 
+    /*
+     * only does the normal animation act method
+     * if it is not on its last frame of animation
+     * also checks if its on the last frame after the
+     * animated actor's act method
+     */
     public void act()
     {
         if(!finishedAnim)
@@ -23,6 +30,10 @@ public class RunOnceAnimatedActor extends AnimatedActor
         }
     }
     
+    /*
+     * preforms animated actor's set animation and
+     * additionally sets the boolean to false
+     */
     public void setAnimation(Animation a)
     {
         super.setAnimation(a);
