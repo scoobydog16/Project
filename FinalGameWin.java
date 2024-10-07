@@ -25,7 +25,7 @@ public class FinalGameWin extends World
     public void act() 
     {
         if(Mayflower.isKeyDown(Keyboard.KEY_ENTER))
-            levelLoader.LoadNextLevel();
+            levelLoader.Restart();
         if(blinkTimer.isDone())
         {
             blinkTimer.reset();

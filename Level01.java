@@ -28,11 +28,11 @@ public class Level01 extends World
         possibleMovingObjects = new ArrayList<Actor>();
         possibleMovingObjects.add(new Yarn());
         possibleMovingObjects.add(new Block());
-        possibleMovingObjects.add(new Danger(128, 128, 400, 100, "img/NolanStuff/Spike.png"));
+        possibleMovingObjects.add(new Danger(128, 128, 10, 1, "img/NolanStuff/Spike.png"));
         possibleMovingObjects2 = new ArrayList<Actor>();
         possibleMovingObjects2.add(new Yarn());
         possibleMovingObjects2.add(new Block());
-        possibleMovingObjects2.add(new Danger(128, 128, 400, 100, "img/NolanStuff/Spike.png"));
+        possibleMovingObjects2.add(new Danger(128, 128, 10, 1, "img/NolanStuff/Spike.png"));
         yAmount = 10;
         bAmount = 10;
         dAmount = 10;
@@ -50,7 +50,7 @@ public class Level01 extends World
         
         buildWorld();
         addObjectstoList();
-        cat.setLives(1);
+        cat.setLives(3);
         showText("Lives: " + cat.getLives() + " Score: " + cat.getScore() , 10, 30, Color.BLACK);
 
     }

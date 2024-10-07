@@ -344,6 +344,7 @@ public class MovableAnimatedActor extends GravityActor
     public void decreaseLives(int amount)
     {
         lives -= amount;
+        vertVelocity = 0;
         updateText();
     }
     
