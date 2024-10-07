@@ -1,11 +1,6 @@
 import mayflower.*;
 import java.util.ArrayList;
-/**
- * Write a description of class NolanTestWorld here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+
 public class Level02 extends World
 {
     
@@ -24,7 +19,7 @@ public class Level02 extends World
         setBackground("img/BG/BG.png");
         tiles = new String[16][20];
         
-        //Mayflower.showBounds(false);
+        Mayflower.showBounds(false);
         itemSpawnSpots = new ArrayList<Integer[]>();
         buildWorld();
         addObjectsBelow();

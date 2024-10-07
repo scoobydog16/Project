@@ -10,11 +10,8 @@ public class Potion extends Yarn
     public Potion()
     {
         MayflowerImage image = new MayflowerImage("img/potion.png");
+        image.scale(70,70);
         setImage(image);
-    }
-
-    public void act()
-    {
-        super.act();
+        System.out.print(getWidth());
     }
 }

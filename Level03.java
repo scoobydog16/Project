@@ -34,7 +34,7 @@ public class Level03 extends World
         tiles = new String[6][8];
         spawnSpots = new String[6][7];
         
-        Mayflower.showBounds(true);
+        Mayflower.showBounds(false);
         cat = new Cat(10f, 0.1f, 1f);
         addObject(cat, 5, 13);
         cat.setLives(1);
@@ -50,7 +50,9 @@ public class Level03 extends World
         buildWorld();
     }
 
-   
+    /*
+     * builds the grid/tiles 2c array and then adds objects accordingly
+     */
     public void buildWorld()
     {
         for(int i = 0; i < tiles.length; i++)
@@ -69,7 +71,7 @@ public class Level03 extends World
             for(int j = 0; j < tiles[i].length; j++)
             {
                 if(tiles[i][j] == "ground")
-                    addObject(new Block(), 128*j, 472);
+                    addObject(new Block(100,100), 100*j, 500);
             }
         }
             
@@ -83,14 +85,24 @@ public class Level03 extends World
         }
     }
     
+    /*
+     * randomly sets the position of the potion
+     * also sets the previous point in the grid to "" and the new one to "Potion"
+     * as well as resets the timer
+     */
     public void randomizePotionLocation(Actor a)
     {
         countdownTimer.reset();
-        int row = (int)(Math.random() * spawnSpots.length);
-        int col = (int)(Math.random() * spawnSpots[0].length);    
-        a.setLocation(col * 80, row * 60);
+        tiles[a.getY()/100][a.getX()/100] = "";
+        int row = (int)(Math.random() * (spawnSpots.length - 1 ));
+        int col = (int)(Math.random() * (spawnSpots[0].length - 1));  
+        tiles[row][col] = "Potion";
+        a.setLocation(col * 100, row * 100);
     }
     
+    /*
+     * does the basic removeObject unless it is a Potion object, which case it does randomizePotionLocation
+     */
     public void removeObject(Actor a)
     {
         if(a.getClass() == Potion.class)
@@ -99,7 +111,9 @@ public class Level03 extends World
             super.removeObject(a);
     }
 
-    
+    /*
+     * updates the text, and check if time ran out (game over) or if score is greater than 12 (game win)
+     */
     public void act()
     {
         if (cat.getScore() >= 12)
