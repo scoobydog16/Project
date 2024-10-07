@@ -14,6 +14,8 @@ public class NextLevel
         index++;
         if(index == allWorlds.length)
             index = 0;
+        if(index == 5)
+            allWorlds[index].removeObject(new Potion());
         Mayflower.setWorld(allWorlds[index]);
     }
     // will load the last world which is game over
@@ -30,5 +32,9 @@ public class NextLevel
         allWorlds = new World[] { new TitleWorld(), new Level01(), new GameWin(), 
             new Level02(), new GameWin(), new Level03(), new FinalGameWin(),new GameOverWorld()};
         Mayflower.setWorld(allWorlds[index]);
+    }
+    public int getCurrentIndex()
+    {
+        return index;
     }
 }

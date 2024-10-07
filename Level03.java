@@ -126,6 +126,8 @@ public class Level03 extends World
             levelLoader.GameOver();
         }
         
+        
         showText("Time Left: " + ((countdownTimer.getTimeLeft()/1000000000) + 3), 10, 60, Color.BLACK);
     }
+    
 }
