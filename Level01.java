@@ -9,29 +9,49 @@ public class Level01 extends World
     private Yarn yarn;
     private String[][] tiles;
     private boolean canBeRandomized;
+    private boolean firstObject;
+    private int randomNum;
     private ArrayList<Actor> movingObjects; 
     private ArrayList<Actor> possibleMovingObjects;
-    
+    private ArrayList<Actor> possibleMovingObjects2;
+    private int currentAction;
+    private int yAmount;
+    private int bAmount;
+    private int dAmount;
+    NextLevel levelLoader;
     
     public Level01() 
     {
         setBackground("img/BG/BG.png");
         
-        //possibleMovingObjects = new ArrayList<>(Arrays.asList(new Yarn(), new Block(), new Danger((128, 128, 800, 600, "img\NolanStuff\Spike.png"))));
-        
         movingObjects = new ArrayList<Actor>();
+        possibleMovingObjects = new ArrayList<Actor>();
+        possibleMovingObjects.add(new Yarn());
+        possibleMovingObjects.add(new Block());
+        possibleMovingObjects.add(new Danger(128, 128, 400, 100, "img/NolanStuff/Spike.png"));
+        possibleMovingObjects2 = new ArrayList<Actor>();
+        possibleMovingObjects2.add(new Yarn());
+        possibleMovingObjects2.add(new Block());
+        possibleMovingObjects2.add(new Danger(128, 128, 400, 100, "img/NolanStuff/Spike.png"));
+        yAmount = 10;
+        bAmount = 10;
+        dAmount = 10;
+        currentAction = 8;
         
         canBeRandomized = false;
+        firstObject = true;
         
         tiles = new String[6][8];
         
         cat = new Cat(15f, 0.45f, 1f);
         addObject(cat, 400, 0);
         
-        buildWorld();
-        addRandomObjects();
+        levelLoader = new NextLevel();
         
-        showText("Lives: " + cat.getLives(), 10, 30, Color.BLACK);
+        buildWorld();
+        addObjectstoList();
+        cat.setLives(1);
+        showText("Lives: " + cat.getLives() + " Score: " + cat.getScore() , 10, 30, Color.BLACK);
 
     }
     
@@ -68,16 +88,79 @@ public class Level01 extends World
     
     public void act()
     {
+        addRandomObjects();
         moveObjects();
+        
+        if (cat.getScore() >= 8)
+        {
+            levelLoader.LoadNextLevel();
+        }
+        if (cat.getLives() <= 0)
+        {
+            levelLoader.GameOver();
+        }
+        
+        showText("Lives: " + cat.getLives() + " Score: " + cat.getScore() , 10, 30, Color.BLACK);
+    }
+    
+    public void addObjectstoList()
+    {
+        if(canBeRandomized)
+        {
+            for (int i = 0; i < 30; i++)
+            {
+                randomNum = (int)(Math.random() * possibleMovingObjects.size());
+                if (randomNum == 0 && yAmount > 0)
+                {
+                    movingObjects.add(possibleMovingObjects.get(randomNum));
+                    yAmount--;
+                }
+                else if (randomNum == 1 && bAmount > 0)
+                {
+                    movingObjects.add(possibleMovingObjects.get(randomNum));
+                    bAmount--;
+                }
+                else if (randomNum == 2 && dAmount > 0)
+                {
+                    movingObjects.add(possibleMovingObjects.get(randomNum));
+                    dAmount--;
+                }
+                else if (randomNum == 0 && possibleMovingObjects.contains(new Yarn()))
+                {
+                    possibleMovingObjects.remove(new Yarn());
+                    i--;
+                }
+                else if (randomNum == 1 && possibleMovingObjects.contains(new Block()))
+                {
+                    possibleMovingObjects.remove(new Block());
+                    i--;
+                }
+                else if (randomNum == 2 && possibleMovingObjects.contains(new Danger(128, 128, 400, 100, "img/NolanStuff/Spike.png")))
+                {
+                    possibleMovingObjects.remove(new Danger(128, 128, 400, 100, "img/NolanStuff/Spike.png"));
+                    i--;
+                }
+                else
+                    i--;
+            }
+        }
     }
     
     public void addRandomObjects()
     {
-        if(canBeRandomized)
+        if(firstObject || movingObjects.get(currentAction - 1).getX() + movingObjects.get(currentAction - 1).getWidth() <= 0)
         {
-            Actor a = new Yarn();
-            addObject(a, 800, 300);
-            movingObjects.add(a);
+            if(movingObjects.get(currentAction).equals(possibleMovingObjects.get(2)))
+            {
+                addObject(movingObjects.get(currentAction), 800, 7*50);
+            }
+            else
+            {
+                addObject(movingObjects.get(currentAction), 800, 250);
+            }
+            if (currentAction < 38)
+                currentAction++;
+            firstObject = false;
         }
     }
     
@@ -89,7 +172,12 @@ public class Level01 extends World
             int x = currentActor.getX();
             int y = currentActor.getY();
             int w = currentActor.getWidth();
-            currentActor.setLocation(x-5, y);
+            if (i <= 7)
+                currentActor.setLocation(x-5, y);
+            else if (currentActor.equals(possibleMovingObjects2.get(2)))
+                currentActor.setLocation(x-0.25, y);
+            else
+                currentActor.setLocation(x-1, y);
             if (x + w < 0 && i <= 7)
                 currentActor.setLocation(7*122, 95*5);
         }
